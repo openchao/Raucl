@@ -1,0 +1,12 @@
+BT: 0.1
+alpha: null
+bt: 0.001
+d: null
+embedding_size: 64
+encoder: MF
+gamma: null
+std: null
+times: 1
+training_neg_sample_num: 0
+witem: 0.1
+wuser: 0.8
