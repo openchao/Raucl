@@ -1,12 +1,12 @@
 BT: 0.1
-alpha: 0.7
+alpha: 0.9
 alpha_i: null
 alpha_u: null
-d: 0.0
+d: 0.7
 embedding_size: 64
 encoder: MF
 gamma: 0.5
-std: 10.0
+std: 0.1
 std_i: null
 std_u: null
 times: 1

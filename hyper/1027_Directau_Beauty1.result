@@ -1,0 +1,432 @@
+alpha:0.3, d:0.7, gamma:0.5, gpu_id:2, std:0, train_batch_size:256, weight_decay:1e-06
+Valid result:
+recall@10 : 0.0972    recall@20 : 0.1396    recall@50 : 0.2008    ndcg@10 : 0.0555    ndcg@20 : 0.0666    ndcg@50 : 0.0791    
+Test result:
+recall@10 : 0.0996    recall@20 : 0.1407    recall@50 : 0.2063    ndcg@10 : 0.0586    ndcg@20 : 0.0693    ndcg@50 : 0.0828    
+
+alpha:0.2, d:0.2, gamma:0.5, gpu_id:2, std:0, train_batch_size:256, weight_decay:1e-06
+Valid result:
+recall@10 : 0.0992    recall@20 : 0.1408    recall@50 : 0.2045    ndcg@10 : 0.0568    ndcg@20 : 0.0677    ndcg@50 : 0.0806    
+Test result:
+recall@10 : 0.1013    recall@20 : 0.1425    recall@50 : 0.207    ndcg@10 : 0.0583    ndcg@20 : 0.069    ndcg@50 : 0.0823    
+
+alpha:0.4, d:1, gamma:0.5, gpu_id:2, std:0.01, train_batch_size:256, weight_decay:1e-06
+Valid result:
+recall@10 : 0.0971    recall@20 : 0.1372    recall@50 : 0.1979    ndcg@10 : 0.0553    ndcg@20 : 0.0658    ndcg@50 : 0.0782    
+Test result:
+recall@10 : 0.0988    recall@20 : 0.1387    recall@50 : 0.2025    ndcg@10 : 0.0578    ndcg@20 : 0.0681    ndcg@50 : 0.0812    
+
+alpha:0.1, d:0.7, gamma:0.5, gpu_id:2, std:0, train_batch_size:256, weight_decay:1e-06
+Valid result:
+recall@10 : 0.0974    recall@20 : 0.1378    recall@50 : 0.2    ndcg@10 : 0.0557    ndcg@20 : 0.0662    ndcg@50 : 0.079    
+Test result:
+recall@10 : 0.0997    recall@20 : 0.139    recall@50 : 0.2046    ndcg@10 : 0.0586    ndcg@20 : 0.0688    ndcg@50 : 0.0822    
+
+alpha:0.1, d:1, gamma:0.5, gpu_id:2, std:0, train_batch_size:256, weight_decay:1e-06
+Valid result:
+recall@10 : 0.0967    recall@20 : 0.1367    recall@50 : 0.1989    ndcg@10 : 0.0558    ndcg@20 : 0.0662    ndcg@50 : 0.0789    
+Test result:
+recall@10 : 0.0982    recall@20 : 0.1386    recall@50 : 0.2064    ndcg@10 : 0.0574    ndcg@20 : 0.0679    ndcg@50 : 0.0818    
+
+alpha:0.1, d:0, gamma:0.5, gpu_id:2, std:0.1, train_batch_size:256, weight_decay:1e-06
+Valid result:
+recall@10 : 0.0976    recall@20 : 0.1381    recall@50 : 0.204    ndcg@10 : 0.0559    ndcg@20 : 0.0664    ndcg@50 : 0.0799    
+Test result:
+recall@10 : 0.0994    recall@20 : 0.1415    recall@50 : 0.2066    ndcg@10 : 0.0579    ndcg@20 : 0.0688    ndcg@50 : 0.0822    
+
+alpha:0.4, d:0.5, gamma:0.5, gpu_id:2, std:0, train_batch_size:256, weight_decay:1e-06
+Valid result:
+recall@10 : 0.098    recall@20 : 0.1396    recall@50 : 0.202    ndcg@10 : 0.0557    ndcg@20 : 0.0665    ndcg@50 : 0.0793    
+Test result:
+recall@10 : 0.1005    recall@20 : 0.1409    recall@50 : 0.2078    ndcg@10 : 0.059    ndcg@20 : 0.0695    ndcg@50 : 0.0832    
+
+alpha:0.2, d:1, gamma:0.5, gpu_id:2, std:0.1, train_batch_size:256, weight_decay:1e-06
+Valid result:
+recall@10 : 0.0936    recall@20 : 0.1325    recall@50 : 0.1952    ndcg@10 : 0.0541    ndcg@20 : 0.0643    ndcg@50 : 0.0771    
+Test result:
+recall@10 : 0.0964    recall@20 : 0.136    recall@50 : 0.1988    ndcg@10 : 0.0565    ndcg@20 : 0.0667    ndcg@50 : 0.0796    
+
+alpha:0.2, d:2, gamma:0.5, gpu_id:2, std:0.01, train_batch_size:256, weight_decay:1e-06
+Valid result:
+recall@10 : 0.093    recall@20 : 0.1331    recall@50 : 0.1956    ndcg@10 : 0.0539    ndcg@20 : 0.0644    ndcg@50 : 0.0772    
+Test result:
+recall@10 : 0.0967    recall@20 : 0.1366    recall@50 : 0.1991    ndcg@10 : 0.0568    ndcg@20 : 0.0672    ndcg@50 : 0.08    
+
+alpha:0.3, d:2, gamma:0.5, gpu_id:2, std:0.01, train_batch_size:256, weight_decay:1e-06
+Valid result:
+recall@10 : 0.0922    recall@20 : 0.1327    recall@50 : 0.1938    ndcg@10 : 0.0531    ndcg@20 : 0.0637    ndcg@50 : 0.0762    
+Test result:
+recall@10 : 0.0964    recall@20 : 0.1347    recall@50 : 0.1986    ndcg@10 : 0.0564    ndcg@20 : 0.0663    ndcg@50 : 0.0794    
+
+alpha:0.1, d:0.2, gamma:0.5, gpu_id:2, std:0, train_batch_size:256, weight_decay:1e-06
+Valid result:
+recall@10 : 0.0984    recall@20 : 0.1375    recall@50 : 0.2009    ndcg@10 : 0.0563    ndcg@20 : 0.0665    ndcg@50 : 0.0795    
+Test result:
+recall@10 : 0.1004    recall@20 : 0.1391    recall@50 : 0.204    ndcg@10 : 0.0577    ndcg@20 : 0.0678    ndcg@50 : 0.0811    
+
+alpha:0.4, d:0.7, gamma:0.5, gpu_id:2, std:0.01, train_batch_size:256, weight_decay:1e-06
+Valid result:
+recall@10 : 0.0978    recall@20 : 0.1375    recall@50 : 0.2006    ndcg@10 : 0.0557    ndcg@20 : 0.0661    ndcg@50 : 0.0791    
+Test result:
+recall@10 : 0.1005    recall@20 : 0.1402    recall@50 : 0.2072    ndcg@10 : 0.0587    ndcg@20 : 0.0691    ndcg@50 : 0.0828    
+
+alpha:0.1, d:0.5, gamma:0.5, gpu_id:2, std:0.1, train_batch_size:256, weight_decay:1e-06
+Valid result:
+recall@10 : 0.0991    recall@20 : 0.1388    recall@50 : 0.2026    ndcg@10 : 0.0567    ndcg@20 : 0.0671    ndcg@50 : 0.0801    
+Test result:
+recall@10 : 0.1019    recall@20 : 0.142    recall@50 : 0.2067    ndcg@10 : 0.059    ndcg@20 : 0.0694    ndcg@50 : 0.0827    
+
+alpha:0.2, d:0.5, gamma:0.5, gpu_id:2, std:0.01, train_batch_size:256, weight_decay:1e-06
+Valid result:
+recall@10 : 0.0974    recall@20 : 0.1387    recall@50 : 0.2013    ndcg@10 : 0.0555    ndcg@20 : 0.0663    ndcg@50 : 0.0791    
+Test result:
+recall@10 : 0.1001    recall@20 : 0.1414    recall@50 : 0.2056    ndcg@10 : 0.0587    ndcg@20 : 0.0694    ndcg@50 : 0.0825    
+
+alpha:0.3, d:0.2, gamma:0.5, gpu_id:2, std:0.01, train_batch_size:256, weight_decay:1e-06
+Valid result:
+recall@10 : 0.0987    recall@20 : 0.1381    recall@50 : 0.2018    ndcg@10 : 0.0561    ndcg@20 : 0.0664    ndcg@50 : 0.0794    
+Test result:
+recall@10 : 0.1007    recall@20 : 0.1396    recall@50 : 0.204    ndcg@10 : 0.0582    ndcg@20 : 0.0683    ndcg@50 : 0.0815    
+
+alpha:0.1, d:2, gamma:0.5, gpu_id:2, std:0.1, train_batch_size:256, weight_decay:1e-06
+Valid result:
+recall@10 : 0.0869    recall@20 : 0.125    recall@50 : 0.1847    ndcg@10 : 0.0506    ndcg@20 : 0.0605    ndcg@50 : 0.0728    
+Test result:
+recall@10 : 0.0909    recall@20 : 0.1277    recall@50 : 0.1913    ndcg@10 : 0.0532    ndcg@20 : 0.0629    ndcg@50 : 0.0759    
+
+alpha:0.2, d:2, gamma:0.5, gpu_id:2, std:0.1, train_batch_size:256, weight_decay:1e-06
+Valid result:
+recall@10 : 0.087    recall@20 : 0.1254    recall@50 : 0.1861    ndcg@10 : 0.0507    ndcg@20 : 0.0607    ndcg@50 : 0.0732    
+Test result:
+recall@10 : 0.0911    recall@20 : 0.1283    recall@50 : 0.1917    ndcg@10 : 0.0529    ndcg@20 : 0.0626    ndcg@50 : 0.0756    
+
+alpha:0.3, d:0.5, gamma:0.5, gpu_id:2, std:0.1, train_batch_size:256, weight_decay:1e-06
+Valid result:
+recall@10 : 0.0985    recall@20 : 0.1384    recall@50 : 0.2025    ndcg@10 : 0.0564    ndcg@20 : 0.0667    ndcg@50 : 0.0798    
+Test result:
+recall@10 : 0.1006    recall@20 : 0.1413    recall@50 : 0.2071    ndcg@10 : 0.0592    ndcg@20 : 0.0697    ndcg@50 : 0.0832    
+
+alpha:0.3, d:0.2, gamma:0.5, gpu_id:2, std:0, train_batch_size:256, weight_decay:1e-06
+Valid result:
+recall@10 : 0.0987    recall@20 : 0.1396    recall@50 : 0.2032    ndcg@10 : 0.0565    ndcg@20 : 0.0671    ndcg@50 : 0.0801    
+Test result:
+recall@10 : 0.1012    recall@20 : 0.1412    recall@50 : 0.2073    ndcg@10 : 0.0585    ndcg@20 : 0.0688    ndcg@50 : 0.0824    
+
+alpha:0.3, d:0.7, gamma:0.5, gpu_id:2, std:0.1, train_batch_size:256, weight_decay:1e-06
+Valid result:
+recall@10 : 0.0976    recall@20 : 0.1379    recall@50 : 0.2013    ndcg@10 : 0.0559    ndcg@20 : 0.0664    ndcg@50 : 0.0794    
+Test result:
+recall@10 : 0.1001    recall@20 : 0.1404    recall@50 : 0.2062    ndcg@10 : 0.0587    ndcg@20 : 0.0691    ndcg@50 : 0.0826    
+
+alpha:0.4, d:0.7, gamma:0.5, gpu_id:2, std:0, train_batch_size:256, weight_decay:1e-06
+Valid result:
+recall@10 : 0.098    recall@20 : 0.1381    recall@50 : 0.2012    ndcg@10 : 0.0558    ndcg@20 : 0.0662    ndcg@50 : 0.0792    
+Test result:
+recall@10 : 0.1001    recall@20 : 0.1403    recall@50 : 0.2072    ndcg@10 : 0.0585    ndcg@20 : 0.069    ndcg@50 : 0.0826    
+
+alpha:0.4, d:0.2, gamma:0.5, gpu_id:2, std:0.1, train_batch_size:256, weight_decay:1e-06
+Valid result:
+recall@10 : 0.0991    recall@20 : 0.1388    recall@50 : 0.2035    ndcg@10 : 0.0563    ndcg@20 : 0.0667    ndcg@50 : 0.0799    
+Test result:
+recall@10 : 0.1014    recall@20 : 0.1406    recall@50 : 0.2059    ndcg@10 : 0.0583    ndcg@20 : 0.0685    ndcg@50 : 0.0819    
+
+alpha:0.2, d:0.7, gamma:0.5, gpu_id:2, std:0, train_batch_size:256, weight_decay:1e-06
+Valid result:
+recall@10 : 0.0977    recall@20 : 0.1385    recall@50 : 0.2001    ndcg@10 : 0.0555    ndcg@20 : 0.0661    ndcg@50 : 0.0787    
+Test result:
+recall@10 : 0.0996    recall@20 : 0.139    recall@50 : 0.2042    ndcg@10 : 0.0582    ndcg@20 : 0.0685    ndcg@50 : 0.0819    
+
+alpha:0.4, d:0.2, gamma:0.5, gpu_id:2, std:0.01, train_batch_size:256, weight_decay:1e-06
+Valid result:
+recall@10 : 0.0994    recall@20 : 0.1394    recall@50 : 0.203    ndcg@10 : 0.0564    ndcg@20 : 0.0668    ndcg@50 : 0.0798    
+Test result:
+recall@10 : 0.0998    recall@20 : 0.1407    recall@50 : 0.2064    ndcg@10 : 0.0581    ndcg@20 : 0.0688    ndcg@50 : 0.0822    
+
+alpha:0.2, d:0, gamma:0.5, gpu_id:2, std:0.1, train_batch_size:256, weight_decay:1e-06
+Valid result:
+recall@10 : 0.095    recall@20 : 0.1354    recall@50 : 0.1978    ndcg@10 : 0.0547    ndcg@20 : 0.0653    ndcg@50 : 0.0781    
+Test result:
+recall@10 : 0.0994    recall@20 : 0.1371    recall@50 : 0.203    ndcg@10 : 0.0575    ndcg@20 : 0.0673    ndcg@50 : 0.0808    
+
+alpha:0.3, d:0, gamma:0.5, gpu_id:2, std:0.01, train_batch_size:256, weight_decay:1e-06
+Valid result:
+recall@10 : 0.0972    recall@20 : 0.138    recall@50 : 0.2021    ndcg@10 : 0.0558    ndcg@20 : 0.0664    ndcg@50 : 0.0795    
+Test result:
+recall@10 : 0.0991    recall@20 : 0.1397    recall@50 : 0.2068    ndcg@10 : 0.0575    ndcg@20 : 0.0681    ndcg@50 : 0.0818    
+
+alpha:0.1, d:2, gamma:0.5, gpu_id:2, std:0.01, train_batch_size:256, weight_decay:1e-06
+Valid result:
+recall@10 : 0.0934    recall@20 : 0.1321    recall@50 : 0.1924    ndcg@10 : 0.054    ndcg@20 : 0.0641    ndcg@50 : 0.0765    
+Test result:
+recall@10 : 0.0969    recall@20 : 0.1344    recall@50 : 0.1986    ndcg@10 : 0.0565    ndcg@20 : 0.0663    ndcg@50 : 0.0794    
+
+alpha:0.4, d:0, gamma:0.5, gpu_id:2, std:0.1, train_batch_size:256, weight_decay:1e-06
+Valid result:
+recall@10 : 0.0965    recall@20 : 0.1393    recall@50 : 0.2033    ndcg@10 : 0.0555    ndcg@20 : 0.0667    ndcg@50 : 0.0797    
+Test result:
+recall@10 : 0.0999    recall@20 : 0.1407    recall@50 : 0.2068    ndcg@10 : 0.0581    ndcg@20 : 0.0687    ndcg@50 : 0.0822    
+
+alpha:0.2, d:0.5, gamma:0.5, gpu_id:2, std:0.1, train_batch_size:256, weight_decay:1e-06
+Valid result:
+recall@10 : 0.0961    recall@20 : 0.1376    recall@50 : 0.1993    ndcg@10 : 0.0551    ndcg@20 : 0.066    ndcg@50 : 0.0786    
+Test result:
+recall@10 : 0.0998    recall@20 : 0.139    recall@50 : 0.2045    ndcg@10 : 0.059    ndcg@20 : 0.0691    ndcg@50 : 0.0825    
+
+alpha:0.3, d:2, gamma:0.5, gpu_id:2, std:0, train_batch_size:256, weight_decay:1e-06
+Valid result:
+recall@10 : 0.0971    recall@20 : 0.1372    recall@50 : 0.2005    ndcg@10 : 0.0559    ndcg@20 : 0.0664    ndcg@50 : 0.0794    
+Test result:
+recall@10 : 0.0989    recall@20 : 0.1395    recall@50 : 0.2035    ndcg@10 : 0.0583    ndcg@20 : 0.0689    ndcg@50 : 0.082    
+
+alpha:0.2, d:2, gamma:0.5, gpu_id:2, std:0, train_batch_size:256, weight_decay:1e-06
+Valid result:
+recall@10 : 0.0962    recall@20 : 0.1386    recall@50 : 0.2003    ndcg@10 : 0.0554    ndcg@20 : 0.0664    ndcg@50 : 0.0791    
+Test result:
+recall@10 : 0.0987    recall@20 : 0.1391    recall@50 : 0.2038    ndcg@10 : 0.0579    ndcg@20 : 0.0684    ndcg@50 : 0.0816    
+
+alpha:0.3, d:2, gamma:0.5, gpu_id:2, std:0.1, train_batch_size:256, weight_decay:1e-06
+Valid result:
+recall@10 : 0.0924    recall@20 : 0.1336    recall@50 : 0.193    ndcg@10 : 0.0533    ndcg@20 : 0.064    ndcg@50 : 0.0762    
+Test result:
+recall@10 : 0.0965    recall@20 : 0.135    recall@50 : 0.1989    ndcg@10 : 0.0565    ndcg@20 : 0.0665    ndcg@50 : 0.0796    
+
+alpha:0.1, d:1, gamma:0.5, gpu_id:2, std:0.1, train_batch_size:256, weight_decay:1e-06
+Valid result:
+recall@10 : 0.0967    recall@20 : 0.1363    recall@50 : 0.1989    ndcg@10 : 0.0555    ndcg@20 : 0.0659    ndcg@50 : 0.0787    
+Test result:
+recall@10 : 0.0989    recall@20 : 0.1381    recall@50 : 0.2049    ndcg@10 : 0.0578    ndcg@20 : 0.068    ndcg@50 : 0.0817    
+
+alpha:0.4, d:2, gamma:0.5, gpu_id:2, std:0.01, train_batch_size:256, weight_decay:1e-06
+Valid result:
+recall@10 : 0.0939    recall@20 : 0.1335    recall@50 : 0.1941    ndcg@10 : 0.0538    ndcg@20 : 0.0641    ndcg@50 : 0.0765    
+Test result:
+recall@10 : 0.0961    recall@20 : 0.1349    recall@50 : 0.2001    ndcg@10 : 0.056    ndcg@20 : 0.0661    ndcg@50 : 0.0794    
+
+alpha:0.2, d:0.5, gamma:0.5, gpu_id:2, std:0, train_batch_size:256, weight_decay:1e-06
+Valid result:
+recall@10 : 0.0965    recall@20 : 0.1365    recall@50 : 0.1985    ndcg@10 : 0.0552    ndcg@20 : 0.0656    ndcg@50 : 0.0783    
+Test result:
+recall@10 : 0.0996    recall@20 : 0.1388    recall@50 : 0.2036    ndcg@10 : 0.0582    ndcg@20 : 0.0683    ndcg@50 : 0.0816    
+
+alpha:0.3, d:1, gamma:0.5, gpu_id:2, std:0.1, train_batch_size:256, weight_decay:1e-06
+Valid result:
+recall@10 : 0.0977    recall@20 : 0.1387    recall@50 : 0.2001    ndcg@10 : 0.0562    ndcg@20 : 0.0669    ndcg@50 : 0.0795    
+Test result:
+recall@10 : 0.0998    recall@20 : 0.1406    recall@50 : 0.2068    ndcg@10 : 0.0587    ndcg@20 : 0.0692    ndcg@50 : 0.0828    
+
+alpha:0.3, d:0, gamma:0.5, gpu_id:2, std:0, train_batch_size:256, weight_decay:1e-06
+Valid result:
+recall@10 : 0.0956    recall@20 : 0.1373    recall@50 : 0.1994    ndcg@10 : 0.055    ndcg@20 : 0.0659    ndcg@50 : 0.0786    
+Test result:
+recall@10 : 0.0985    recall@20 : 0.1382    recall@50 : 0.2049    ndcg@10 : 0.0575    ndcg@20 : 0.0678    ndcg@50 : 0.0815    
+
+alpha:0.2, d:1, gamma:0.5, gpu_id:2, std:0.01, train_batch_size:256, weight_decay:1e-06
+Valid result:
+recall@10 : 0.0964    recall@20 : 0.1366    recall@50 : 0.1997    ndcg@10 : 0.0554    ndcg@20 : 0.0659    ndcg@50 : 0.0788    
+Test result:
+recall@10 : 0.0997    recall@20 : 0.1383    recall@50 : 0.2027    ndcg@10 : 0.0581    ndcg@20 : 0.0681    ndcg@50 : 0.0813    
+
+alpha:0.4, d:0.2, gamma:0.5, gpu_id:2, std:0, train_batch_size:256, weight_decay:1e-06
+Valid result:
+recall@10 : 0.0988    recall@20 : 0.1394    recall@50 : 0.2023    ndcg@10 : 0.0561    ndcg@20 : 0.0667    ndcg@50 : 0.0796    
+Test result:
+recall@10 : 0.0999    recall@20 : 0.1412    recall@50 : 0.2063    ndcg@10 : 0.0579    ndcg@20 : 0.0686    ndcg@50 : 0.0819    
+
+alpha:0.4, d:1, gamma:0.5, gpu_id:2, std:0.1, train_batch_size:256, weight_decay:1e-06
+Valid result:
+recall@10 : 0.0968    recall@20 : 0.1365    recall@50 : 0.2009    ndcg@10 : 0.0556    ndcg@20 : 0.0659    ndcg@50 : 0.0791    
+Test result:
+recall@10 : 0.1003    recall@20 : 0.1394    recall@50 : 0.203    ndcg@10 : 0.0583    ndcg@20 : 0.0685    ndcg@50 : 0.0815    
+
+alpha:0.4, d:0.5, gamma:0.5, gpu_id:2, std:0.01, train_batch_size:256, weight_decay:1e-06
+Valid result:
+recall@10 : 0.0975    recall@20 : 0.1402    recall@50 : 0.2027    ndcg@10 : 0.0553    ndcg@20 : 0.0664    ndcg@50 : 0.0792    
+Test result:
+recall@10 : 0.1    recall@20 : 0.1423    recall@50 : 0.2081    ndcg@10 : 0.0585    ndcg@20 : 0.0695    ndcg@50 : 0.083    
+
+alpha:0.4, d:0, gamma:0.5, gpu_id:2, std:0, train_batch_size:256, weight_decay:1e-06
+Valid result:
+recall@10 : 0.096    recall@20 : 0.1392    recall@50 : 0.2031    ndcg@10 : 0.0553    ndcg@20 : 0.0666    ndcg@50 : 0.0796    
+Test result:
+recall@10 : 0.1    recall@20 : 0.1405    recall@50 : 0.207    ndcg@10 : 0.058    ndcg@20 : 0.0686    ndcg@50 : 0.0822    
+
+alpha:0.1, d:2, gamma:0.5, gpu_id:2, std:0, train_batch_size:256, weight_decay:1e-06
+Valid result:
+recall@10 : 0.0866    recall@20 : 0.125    recall@50 : 0.1866    ndcg@10 : 0.0505    ndcg@20 : 0.0605    ndcg@50 : 0.0732    
+Test result:
+recall@10 : 0.0901    recall@20 : 0.1287    recall@50 : 0.1913    ndcg@10 : 0.0529    ndcg@20 : 0.0629    ndcg@50 : 0.0758    
+
+alpha:0.1, d:0.2, gamma:0.5, gpu_id:2, std:0.1, train_batch_size:256, weight_decay:1e-06
+Valid result:
+recall@10 : 0.0982    recall@20 : 0.1404    recall@50 : 0.2043    ndcg@10 : 0.0566    ndcg@20 : 0.0676    ndcg@50 : 0.0807    
+Test result:
+recall@10 : 0.1011    recall@20 : 0.1417    recall@50 : 0.2068    ndcg@10 : 0.0582    ndcg@20 : 0.0688    ndcg@50 : 0.0821    
+
+alpha:0.4, d:2, gamma:0.5, gpu_id:2, std:0.1, train_batch_size:256, weight_decay:1e-06
+Valid result:
+recall@10 : 0.0925    recall@20 : 0.1329    recall@50 : 0.1953    ndcg@10 : 0.0534    ndcg@20 : 0.0639    ndcg@50 : 0.0767    
+Test result:
+recall@10 : 0.0957    recall@20 : 0.1336    recall@50 : 0.1979    ndcg@10 : 0.0561    ndcg@20 : 0.066    ndcg@50 : 0.0792    
+
+alpha:0.1, d:0, gamma:0.5, gpu_id:2, std:0, train_batch_size:256, weight_decay:1e-06
+Valid result:
+recall@10 : 0.0965    recall@20 : 0.1376    recall@50 : 0.2029    ndcg@10 : 0.0554    ndcg@20 : 0.0661    ndcg@50 : 0.0795    
+Test result:
+recall@10 : 0.099    recall@20 : 0.1404    recall@50 : 0.2056    ndcg@10 : 0.0575    ndcg@20 : 0.0683    ndcg@50 : 0.0817    
+
+alpha:0.1, d:0.5, gamma:0.5, gpu_id:2, std:0, train_batch_size:256, weight_decay:1e-06
+Valid result:
+recall@10 : 0.0987    recall@20 : 0.137    recall@50 : 0.2009    ndcg@10 : 0.0562    ndcg@20 : 0.0663    ndcg@50 : 0.0793    
+Test result:
+recall@10 : 0.0986    recall@20 : 0.1394    recall@50 : 0.2045    ndcg@10 : 0.058    ndcg@20 : 0.0686    ndcg@50 : 0.0819    
+
+alpha:0.4, d:1, gamma:0.5, gpu_id:2, std:0, train_batch_size:256, weight_decay:1e-06
+Valid result:
+recall@10 : 0.0978    recall@20 : 0.1378    recall@50 : 0.2004    ndcg@10 : 0.056    ndcg@20 : 0.0665    ndcg@50 : 0.0793    
+Test result:
+recall@10 : 0.0995    recall@20 : 0.1408    recall@50 : 0.2074    ndcg@10 : 0.0586    ndcg@20 : 0.0693    ndcg@50 : 0.083    
+
+alpha:0.1, d:0.2, gamma:0.5, gpu_id:2, std:0.01, train_batch_size:256, weight_decay:1e-06
+Valid result:
+recall@10 : 0.0985    recall@20 : 0.1391    recall@50 : 0.2025    ndcg@10 : 0.0564    ndcg@20 : 0.067    ndcg@50 : 0.08    
+Test result:
+recall@10 : 0.1012    recall@20 : 0.1402    recall@50 : 0.2052    ndcg@10 : 0.0579    ndcg@20 : 0.068    ndcg@50 : 0.0814    
+
+alpha:0.1, d:0.7, gamma:0.5, gpu_id:2, std:0.1, train_batch_size:256, weight_decay:1e-06
+Valid result:
+recall@10 : 0.098    recall@20 : 0.1376    recall@50 : 0.1994    ndcg@10 : 0.0557    ndcg@20 : 0.0661    ndcg@50 : 0.0788    
+Test result:
+recall@10 : 0.099    recall@20 : 0.1385    recall@50 : 0.2042    ndcg@10 : 0.0582    ndcg@20 : 0.0685    ndcg@50 : 0.0819    
+
+alpha:0.3, d:0.2, gamma:0.5, gpu_id:2, std:0.1, train_batch_size:256, weight_decay:1e-06
+Valid result:
+recall@10 : 0.0989    recall@20 : 0.1382    recall@50 : 0.2014    ndcg@10 : 0.0562    ndcg@20 : 0.0665    ndcg@50 : 0.0794    
+Test result:
+recall@10 : 0.1005    recall@20 : 0.1397    recall@50 : 0.2045    ndcg@10 : 0.0583    ndcg@20 : 0.0685    ndcg@50 : 0.0817    
+
+alpha:0.1, d:0, gamma:0.5, gpu_id:2, std:0.01, train_batch_size:256, weight_decay:1e-06
+Valid result:
+recall@10 : 0.0966    recall@20 : 0.1359    recall@50 : 0.2008    ndcg@10 : 0.0552    ndcg@20 : 0.0654    ndcg@50 : 0.0787    
+Test result:
+recall@10 : 0.0985    recall@20 : 0.1385    recall@50 : 0.2041    ndcg@10 : 0.0575    ndcg@20 : 0.0679    ndcg@50 : 0.0814    
+
+alpha:0.2, d:0, gamma:0.5, gpu_id:2, std:0, train_batch_size:256, weight_decay:1e-06
+Valid result:
+recall@10 : 0.0944    recall@20 : 0.1354    recall@50 : 0.1978    ndcg@10 : 0.0545    ndcg@20 : 0.0653    ndcg@50 : 0.0781    
+Test result:
+recall@10 : 0.0988    recall@20 : 0.1377    recall@50 : 0.2035    ndcg@10 : 0.0572    ndcg@20 : 0.0673    ndcg@50 : 0.0807    
+
+alpha:0.2, d:0.7, gamma:0.5, gpu_id:2, std:0.01, train_batch_size:256, weight_decay:1e-06
+Valid result:
+recall@10 : 0.098    recall@20 : 0.138    recall@50 : 0.2    ndcg@10 : 0.056    ndcg@20 : 0.0664    ndcg@50 : 0.0791    
+Test result:
+recall@10 : 0.1006    recall@20 : 0.1398    recall@50 : 0.2057    ndcg@10 : 0.0587    ndcg@20 : 0.0689    ndcg@50 : 0.0824    
+
+alpha:0.2, d:0.2, gamma:0.5, gpu_id:2, std:0.01, train_batch_size:256, weight_decay:1e-06
+Valid result:
+recall@10 : 0.099    recall@20 : 0.1391    recall@50 : 0.2028    ndcg@10 : 0.0568    ndcg@20 : 0.0672    ndcg@50 : 0.0802    
+Test result:
+recall@10 : 0.1001    recall@20 : 0.1411    recall@50 : 0.2055    ndcg@10 : 0.0579    ndcg@20 : 0.0686    ndcg@50 : 0.0818    
+
+alpha:0.2, d:1, gamma:0.5, gpu_id:2, std:0, train_batch_size:256, weight_decay:1e-06
+Valid result:
+recall@10 : 0.0967    recall@20 : 0.1373    recall@50 : 0.1993    ndcg@10 : 0.0555    ndcg@20 : 0.0661    ndcg@50 : 0.0788    
+Test result:
+recall@10 : 0.0995    recall@20 : 0.1392    recall@50 : 0.2038    ndcg@10 : 0.058    ndcg@20 : 0.0683    ndcg@50 : 0.0815    
+
+alpha:0.1, d:0.5, gamma:0.5, gpu_id:2, std:0.01, train_batch_size:256, weight_decay:1e-06
+Valid result:
+recall@10 : 0.0987    recall@20 : 0.139    recall@50 : 0.2037    ndcg@10 : 0.0566    ndcg@20 : 0.0671    ndcg@50 : 0.0803    
+Test result:
+recall@10 : 0.1015    recall@20 : 0.1416    recall@50 : 0.2072    ndcg@10 : 0.0588    ndcg@20 : 0.0692    ndcg@50 : 0.0826    
+
+alpha:0.2, d:0.7, gamma:0.5, gpu_id:2, std:0.1, train_batch_size:256, weight_decay:1e-06
+Valid result:
+recall@10 : 0.0986    recall@20 : 0.1391    recall@50 : 0.2006    ndcg@10 : 0.056    ndcg@20 : 0.0666    ndcg@50 : 0.0792    
+Test result:
+recall@10 : 0.1009    recall@20 : 0.1402    recall@50 : 0.2065    ndcg@10 : 0.0589    ndcg@20 : 0.0691    ndcg@50 : 0.0827    
+
+alpha:0.2, d:0, gamma:0.5, gpu_id:2, std:0.01, train_batch_size:256, weight_decay:1e-06
+Valid result:
+recall@10 : 0.0947    recall@20 : 0.1361    recall@50 : 0.1979    ndcg@10 : 0.0546    ndcg@20 : 0.0654    ndcg@50 : 0.0781    
+Test result:
+recall@10 : 0.0992    recall@20 : 0.1374    recall@50 : 0.2033    ndcg@10 : 0.0573    ndcg@20 : 0.0673    ndcg@50 : 0.0808    
+
+alpha:0.4, d:0.5, gamma:0.5, gpu_id:2, std:0.1, train_batch_size:256, weight_decay:1e-06
+Valid result:
+recall@10 : 0.0988    recall@20 : 0.1374    recall@50 : 0.2016    ndcg@10 : 0.0562    ndcg@20 : 0.0663    ndcg@50 : 0.0794    
+Test result:
+recall@10 : 0.1011    recall@20 : 0.1407    recall@50 : 0.2067    ndcg@10 : 0.0591    ndcg@20 : 0.0694    ndcg@50 : 0.0829    
+
+alpha:0.1, d:0.7, gamma:0.5, gpu_id:2, std:0.01, train_batch_size:256, weight_decay:1e-06
+Valid result:
+recall@10 : 0.0908    recall@20 : 0.131    recall@50 : 0.1904    ndcg@10 : 0.0526    ndcg@20 : 0.0631    ndcg@50 : 0.0752    
+Test result:
+recall@10 : 0.0952    recall@20 : 0.1318    recall@50 : 0.1947    ndcg@10 : 0.0558    ndcg@20 : 0.0652    ndcg@50 : 0.0781    
+
+alpha:0.3, d:0.5, gamma:0.5, gpu_id:2, std:0.01, train_batch_size:256, weight_decay:1e-06
+Valid result:
+recall@10 : 0.0979    recall@20 : 0.1372    recall@50 : 0.2004    ndcg@10 : 0.0564    ndcg@20 : 0.0667    ndcg@50 : 0.0797    
+Test result:
+recall@10 : 0.1001    recall@20 : 0.1394    recall@50 : 0.2071    ndcg@10 : 0.0588    ndcg@20 : 0.069    ndcg@50 : 0.0829    
+
+alpha:0.3, d:1, gamma:0.5, gpu_id:2, std:0.01, train_batch_size:256, weight_decay:1e-06
+Valid result:
+recall@10 : 0.0966    recall@20 : 0.1377    recall@50 : 0.1994    ndcg@10 : 0.0556    ndcg@20 : 0.0663    ndcg@50 : 0.0789    
+Test result:
+recall@10 : 0.0985    recall@20 : 0.1382    recall@50 : 0.2041    ndcg@10 : 0.0577    ndcg@20 : 0.068    ndcg@50 : 0.0815    
+
+alpha:0.2, d:0.2, gamma:0.5, gpu_id:2, std:0.1, train_batch_size:256, weight_decay:1e-06
+Valid result:
+recall@10 : 0.0987    recall@20 : 0.1385    recall@50 : 0.2016    ndcg@10 : 0.0567    ndcg@20 : 0.067    ndcg@50 : 0.0799    
+Test result:
+recall@10 : 0.1001    recall@20 : 0.1402    recall@50 : 0.2049    ndcg@10 : 0.0579    ndcg@20 : 0.0683    ndcg@50 : 0.0816    
+
+alpha:0.4, d:0.7, gamma:0.5, gpu_id:2, std:0.1, train_batch_size:256, weight_decay:1e-06
+Valid result:
+recall@10 : 0.0987    recall@20 : 0.1393    recall@50 : 0.202    ndcg@10 : 0.0561    ndcg@20 : 0.0666    ndcg@50 : 0.0795    
+Test result:
+recall@10 : 0.1006    recall@20 : 0.1409    recall@50 : 0.2075    ndcg@10 : 0.0589    ndcg@20 : 0.0694    ndcg@50 : 0.0831    
+
+alpha:0.4, d:0, gamma:0.5, gpu_id:2, std:0.01, train_batch_size:256, weight_decay:1e-06
+Valid result:
+recall@10 : 0.0968    recall@20 : 0.1399    recall@50 : 0.2029    ndcg@10 : 0.0555    ndcg@20 : 0.0668    ndcg@50 : 0.0797    
+Test result:
+recall@10 : 0.0996    recall@20 : 0.1416    recall@50 : 0.2074    ndcg@10 : 0.0576    ndcg@20 : 0.0686    ndcg@50 : 0.0821    
+
+alpha:0.3, d:1, gamma:0.5, gpu_id:2, std:0, train_batch_size:256, weight_decay:1e-06
+Valid result:
+recall@10 : 0.0909    recall@20 : 0.1309    recall@50 : 0.1919    ndcg@10 : 0.0525    ndcg@20 : 0.0629    ndcg@50 : 0.0754    
+Test result:
+recall@10 : 0.0946    recall@20 : 0.1325    recall@50 : 0.1962    ndcg@10 : 0.0557    ndcg@20 : 0.0656    ndcg@50 : 0.0786    
+
+alpha:0.4, d:2, gamma:0.5, gpu_id:2, std:0, train_batch_size:256, weight_decay:1e-06
+Valid result:
+recall@10 : 0.0957    recall@20 : 0.1363    recall@50 : 0.1986    ndcg@10 : 0.055    ndcg@20 : 0.0656    ndcg@50 : 0.0784    
+Test result:
+recall@10 : 0.0997    recall@20 : 0.1383    recall@50 : 0.2017    ndcg@10 : 0.0575    ndcg@20 : 0.0676    ndcg@50 : 0.0807    
+
+alpha:0.3, d:0.5, gamma:0.5, gpu_id:2, std:0, train_batch_size:256, weight_decay:1e-06
+Valid result:
+recall@10 : 0.0987    recall@20 : 0.1373    recall@50 : 0.2007    ndcg@10 : 0.0567    ndcg@20 : 0.0668    ndcg@50 : 0.0798    
+Test result:
+recall@10 : 0.0999    recall@20 : 0.1393    recall@50 : 0.2069    ndcg@10 : 0.0588    ndcg@20 : 0.069    ndcg@50 : 0.0829    
+
+alpha:0.3, d:0.7, gamma:0.5, gpu_id:2, std:0.01, train_batch_size:256, weight_decay:1e-06
+Valid result:
+recall@10 : 0.0978    recall@20 : 0.1399    recall@50 : 0.2012    ndcg@10 : 0.0558    ndcg@20 : 0.0668    ndcg@50 : 0.0794    
+Test result:
+recall@10 : 0.0995    recall@20 : 0.1411    recall@50 : 0.2069    ndcg@10 : 0.0586    ndcg@20 : 0.0694    ndcg@50 : 0.0829    
+
+alpha:0.1, d:1, gamma:0.5, gpu_id:2, std:0.01, train_batch_size:256, weight_decay:1e-06
+Valid result:
+recall@10 : 0.0971    recall@20 : 0.1364    recall@50 : 0.1985    ndcg@10 : 0.0558    ndcg@20 : 0.0661    ndcg@50 : 0.0788    
+Test result:
+recall@10 : 0.0982    recall@20 : 0.1385    recall@50 : 0.2051    ndcg@10 : 0.0575    ndcg@20 : 0.0679    ndcg@50 : 0.0815    
+
+alpha:0.3, d:0, gamma:0.5, gpu_id:2, std:0.1, train_batch_size:256, weight_decay:1e-06
+Valid result:
+recall@10 : 0.097    recall@20 : 0.138    recall@50 : 0.2018    ndcg@10 : 0.0558    ndcg@20 : 0.0665    ndcg@50 : 0.0796    
+Test result:
+recall@10 : 0.0997    recall@20 : 0.1395    recall@50 : 0.2068    ndcg@10 : 0.0579    ndcg@20 : 0.0682    ndcg@50 : 0.082    
+
