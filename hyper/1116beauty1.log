@@ -1,0 +1,13 @@
+  0%|          | 0/1 [00:00<?, ?trial/s, best loss=?]                                                     running parameters:
+  0%|          | 0/1 [00:00<?, ?trial/s, best loss=?]                                                     {'alpha_i': 0.5, 'alpha_u': 0.5, 'd': 0.7, 'gamma': 0.5, 'gpu_id': 5, 'std_i': 0.1, 'std_u': 0.1, 'train_batch_size': 256, 'weight_decay': 1e-06}
+  0%|          | 0/1 [00:00<?, ?trial/s, best loss=?]                                                     this is encoder MF...
+  0%|          | 0/1 [00:02<?, ?trial/s, best loss=?]                                                     这是directau 的 RE 版本...
+  0%|          | 0/1 [00:02<?, ?trial/s, best loss=?]                                                     current best valid score: 0.0652
+  0%|          | 0/1 [44:42<?, ?trial/s, best loss=?]                                                     current best valid result:
+  0%|          | 0/1 [44:42<?, ?trial/s, best loss=?]                                                     {'recall@10': 0.0951, 'recall@20': 0.1348, 'recall@50': 0.1979, 'ndcg@10': 0.0548, 'ndcg@20': 0.0652, 'ndcg@50': 0.0781}
+  0%|          | 0/1 [44:42<?, ?trial/s, best loss=?]                                                     current test result:
+  0%|          | 0/1 [44:42<?, ?trial/s, best loss=?]                                                     {'recall@10': 0.0977, 'recall@20': 0.1372, 'recall@50': 0.2027, 'ndcg@10': 0.0577, 'ndcg@20': 0.0679, 'ndcg@50': 0.0813}
+  0%|          | 0/1 [44:42<?, ?trial/s, best loss=?]100%|██████████| 1/1 [44:42<00:00, 2682.49s/trial, best loss: -0.0652]100%|██████████| 1/1 [44:42<00:00, 2682.49s/trial, best loss: -0.0652]
+best params:  {'alpha_i': 0.5, 'alpha_u': 0.5, 'd': 0.7, 'gamma': 0.5, 'gpu_id': 5, 'std_i': 0.1, 'std_u': 0.1, 'train_batch_size': 256, 'weight_decay': 1e-06}
+best result: 
+{'best_valid_score': 0.0652, 'valid_score_bigger': True, 'best_valid_result': {'recall@10': 0.0951, 'recall@20': 0.1348, 'recall@50': 0.1979, 'ndcg@10': 0.0548, 'ndcg@20': 0.0652, 'ndcg@50': 0.0781}, 'test_result': {'recall@10': 0.0977, 'recall@20': 0.1372, 'recall@50': 0.2027, 'ndcg@10': 0.0577, 'ndcg@20': 0.0679, 'ndcg@50': 0.0813}}

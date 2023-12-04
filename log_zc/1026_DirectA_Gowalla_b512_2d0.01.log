@@ -1,0 +1,707 @@
+command line args [--zc 0.01] will not be used in RecBole
+26 Oct 21:21    INFO  
+General Hyper Parameters:
+gpu_id = 3
+use_gpu = True
+seed = 0
+state = INFO
+reproducibility = True
+data_path = dataset/Gowalla
+show_progress = False
+
+Training Hyper Parameters:
+checkpoint_dir = saved
+epochs = 500
+train_batch_size = 512
+learner = adam
+learning_rate = 0.001
+training_neg_sample_num = 0
+training_neg_sample_distribution = uniform
+eval_step = 1
+stopping_step = 10
+clip_grad_norm = None
+weight_decay = 1e-06
+draw_loss_pic = False
+loss_decimal_place = 4
+
+Evaluation Hyper Parameters:
+eval_setting = RO_RS,full
+group_by_user = True
+split_ratio = [0.8, 0.1, 0.1]
+leave_one_num = 2
+real_time_process = False
+metrics = ['Recall', 'NDCG']
+topk = [10, 20, 50]
+valid_metric = NDCG@20
+eval_batch_size = 4096
+metric_decimal_place = 4
+
+Dataset Hyper Parameters:
+field_separator = 	
+seq_separator =  
+USER_ID_FIELD = user_id
+ITEM_ID_FIELD = item_id
+RATING_FIELD = rating
+TIME_FIELD = timestamp
+seq_len = None
+LABEL_FIELD = label
+threshold = None
+NEG_PREFIX = neg_
+load_col = {'inter': ['user_id', 'item_id', 'timestamp']}
+unload_col = None
+unused_col = None
+additional_feat_suffix = None
+lowest_val = None
+highest_val = None
+equal_val = None
+not_equal_val = None
+max_user_inter_num = None
+min_user_inter_num = 5
+max_item_inter_num = None
+min_item_inter_num = 5
+fields_in_same_space = None
+preload_weight = None
+normalize_field = None
+normalize_all = None
+ITEM_LIST_LENGTH_FIELD = item_length
+LIST_SUFFIX = _list
+MAX_ITEM_LIST_LENGTH = 50
+POSITION_FIELD = position_id
+HEAD_ENTITY_ID_FIELD = head_id
+TAIL_ENTITY_ID_FIELD = tail_id
+RELATION_ID_FIELD = relation_id
+ENTITY_ID_FIELD = entity_id
+
+Other Hyper Parameters: 
+valid_metric_bigger = True
+BT = 0.1
+bt = 0.001
+embedding_size = 64
+encoder = MF
+gamma = 5
+times = 1
+witem = 0.1
+wuser = 0.8
+zc = 0.01
+rm_dup_inter = None
+filter_inter_by_user_or_item = True
+SOURCE_ID_FIELD = source_id
+TARGET_ID_FIELD = target_id
+benchmark_filename = None
+MODEL_TYPE = ModelType.GENERAL
+MODEL_INPUT_TYPE = InputType.POINTWISE
+eval_type = EvaluatorType.RANKING
+device = cuda
+train_neg_sample_args = {'strategy': 'none'}
+
+
+26 Oct 21:21    INFO  Gowalla
+The number of users: 29859
+Average actions of users: 34.408533726304505
+The number of items: 40982
+Average actions of items: 25.06942241526561
+The number of inters: 1027370
+The sparsity of the dataset: 99.91604269835769%
+Remain Fields: ['user_id', 'item_id']
+26 Oct 21:21    INFO  Build [GeneralDataLoader] for [train] with format [InputType.POINTWISE]
+26 Oct 21:21    INFO  [train] No Negative Sampling
+26 Oct 21:21    INFO  [train] batch_size = [512], shuffle = [True]
+
+26 Oct 21:21    INFO  Build [GeneralFullDataLoader] for [evaluation] with format [InputType.POINTWISE]
+26 Oct 21:21    INFO  Evaluation Setting:
+	Group by user_id
+	Ordering: {'strategy': 'shuffle'}
+	Splitting: {'strategy': 'by_ratio', 'ratios': [0.8, 0.1, 0.1]}
+	Negative Sampling: {'strategy': 'full', 'distribution': 'uniform'}
+26 Oct 21:21    INFO  [evaluation] batch_size = [4096], shuffle = [False]
+
+26 Oct 21:21    WARNING  Batch size is changed to 40982.
+26 Oct 21:21    WARNING  Batch size is changed to 40982.
+{'BT': 0.1, 'bt': 0.001, 'embedding_size': 64, 'encoder': 'MF', 'gamma': None, 'times': 1, 'training_neg_sample_num': 0, 'witem': 0.1, 'wuser': 0.8, 'zc': 0.01}
+this is encoder MF...
+这是directau 的 WUBT 版本...0.01
+26 Oct 21:21    INFO  DirectAU(
+  (encoder): MFEncoder(
+    (user_embedding): Embedding(29859, 64)
+    (item_embedding): Embedding(40982, 64)
+  )
+  (bn): BatchNorm1d(64, eps=1e-05, momentum=0.1, affine=False, track_running_stats=True)
+  (projector): Sequential(
+    (0): Linear(in_features=64, out_features=64, bias=False)
+    (1): BatchNorm1d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU(inplace=True)
+    (3): Linear(in_features=64, out_features=64, bias=False)
+    (4): BatchNorm1d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (5): ReLU(inplace=True)
+    (6): Linear(in_features=64, out_features=64, bias=False)
+  )
+)
+Trainable parameters: 4546368
+26 Oct 21:21    INFO  epoch 0 training [time: 13.07s, train loss: -17.4080]
+26 Oct 21:23    INFO  epoch 0 evaluating [time: 84.08s, valid_score: 0.018600]
+26 Oct 21:23    INFO  valid result: 
+recall@10 : 0.0203    recall@20 : 0.0315    recall@50 : 0.0537    ndcg@10 : 0.015    ndcg@20 : 0.0186    ndcg@50 : 0.0247    
+26 Oct 21:23    INFO  Saving current best: saved/DirectAU-Oct-26-2023_21-21-27.pth
+26 Oct 21:23    INFO  epoch 1 training [time: 15.55s, train loss: -17.7662]
+26 Oct 21:24    INFO  epoch 1 evaluating [time: 85.05s, valid_score: 0.032700]
+26 Oct 21:24    INFO  valid result: 
+recall@10 : 0.0367    recall@20 : 0.056    recall@50 : 0.0919    ndcg@10 : 0.0267    ndcg@20 : 0.0327    ndcg@50 : 0.0422    
+26 Oct 21:24    INFO  Saving current best: saved/DirectAU-Oct-26-2023_21-21-27.pth
+26 Oct 21:24    INFO  epoch 2 training [time: 12.98s, train loss: -17.8683]
+26 Oct 21:26    INFO  epoch 2 evaluating [time: 83.74s, valid_score: 0.039000]
+26 Oct 21:26    INFO  valid result: 
+recall@10 : 0.0448    recall@20 : 0.0679    recall@50 : 0.1128    ndcg@10 : 0.0319    ndcg@20 : 0.039    ndcg@50 : 0.0506    
+26 Oct 21:26    INFO  Saving current best: saved/DirectAU-Oct-26-2023_21-21-27.pth
+26 Oct 21:26    INFO  epoch 3 training [time: 12.95s, train loss: -17.9270]
+26 Oct 21:28    INFO  epoch 3 evaluating [time: 86.35s, valid_score: 0.044400]
+26 Oct 21:28    INFO  valid result: 
+recall@10 : 0.0502    recall@20 : 0.0773    recall@50 : 0.1287    ndcg@10 : 0.0362    ndcg@20 : 0.0444    ndcg@50 : 0.0576    
+26 Oct 21:28    INFO  Saving current best: saved/DirectAU-Oct-26-2023_21-21-27.pth
+26 Oct 21:28    INFO  epoch 4 training [time: 13.01s, train loss: -17.9702]
+26 Oct 21:29    INFO  epoch 4 evaluating [time: 85.26s, valid_score: 0.048200]
+26 Oct 21:29    INFO  valid result: 
+recall@10 : 0.0561    recall@20 : 0.0855    recall@50 : 0.1432    ndcg@10 : 0.0394    ndcg@20 : 0.0482    ndcg@50 : 0.063    
+26 Oct 21:29    INFO  Saving current best: saved/DirectAU-Oct-26-2023_21-21-27.pth
+26 Oct 21:29    INFO  epoch 5 training [time: 12.99s, train loss: -18.0064]
+26 Oct 21:31    INFO  epoch 5 evaluating [time: 83.75s, valid_score: 0.052900]
+26 Oct 21:31    INFO  valid result: 
+recall@10 : 0.0625    recall@20 : 0.0939    recall@50 : 0.1543    ndcg@10 : 0.0434    ndcg@20 : 0.0529    ndcg@50 : 0.0682    
+26 Oct 21:31    INFO  Saving current best: saved/DirectAU-Oct-26-2023_21-21-27.pth
+26 Oct 21:31    INFO  epoch 6 training [time: 13.13s, train loss: -18.0363]
+26 Oct 21:32    INFO  epoch 6 evaluating [time: 86.98s, valid_score: 0.056600]
+26 Oct 21:32    INFO  valid result: 
+recall@10 : 0.0659    recall@20 : 0.1    recall@50 : 0.165    ndcg@10 : 0.0463    ndcg@20 : 0.0566    ndcg@50 : 0.073    
+26 Oct 21:32    INFO  Saving current best: saved/DirectAU-Oct-26-2023_21-21-27.pth
+26 Oct 21:33    INFO  epoch 7 training [time: 14.41s, train loss: -18.0639]
+26 Oct 21:34    INFO  epoch 7 evaluating [time: 84.11s, valid_score: 0.060200]
+26 Oct 21:34    INFO  valid result: 
+recall@10 : 0.0708    recall@20 : 0.106    recall@50 : 0.1763    ndcg@10 : 0.0497    ndcg@20 : 0.0602    ndcg@50 : 0.0779    
+26 Oct 21:34    INFO  Saving current best: saved/DirectAU-Oct-26-2023_21-21-27.pth
+26 Oct 21:34    INFO  epoch 8 training [time: 13.26s, train loss: -18.0865]
+26 Oct 21:36    INFO  epoch 8 evaluating [time: 87.10s, valid_score: 0.063300]
+26 Oct 21:36    INFO  valid result: 
+recall@10 : 0.0749    recall@20 : 0.1126    recall@50 : 0.1863    ndcg@10 : 0.0522    ndcg@20 : 0.0633    ndcg@50 : 0.0817    
+26 Oct 21:36    INFO  Saving current best: saved/DirectAU-Oct-26-2023_21-21-27.pth
+26 Oct 21:36    INFO  epoch 9 training [time: 13.08s, train loss: -18.1086]
+26 Oct 21:37    INFO  epoch 9 evaluating [time: 85.39s, valid_score: 0.067000]
+26 Oct 21:37    INFO  valid result: 
+recall@10 : 0.081    recall@20 : 0.1194    recall@50 : 0.1955    ndcg@10 : 0.0556    ndcg@20 : 0.067    ndcg@50 : 0.0859    
+26 Oct 21:37    INFO  Saving current best: saved/DirectAU-Oct-26-2023_21-21-27.pth
+26 Oct 21:38    INFO  epoch 10 training [time: 13.16s, train loss: -18.1273]
+26 Oct 21:39    INFO  epoch 10 evaluating [time: 83.96s, valid_score: 0.069800]
+26 Oct 21:39    INFO  valid result: 
+recall@10 : 0.083    recall@20 : 0.1238    recall@50 : 0.2039    ndcg@10 : 0.0578    ndcg@20 : 0.0698    ndcg@50 : 0.0898    
+26 Oct 21:39    INFO  Saving current best: saved/DirectAU-Oct-26-2023_21-21-27.pth
+26 Oct 21:39    INFO  epoch 11 training [time: 13.01s, train loss: -18.1440]
+26 Oct 21:41    INFO  epoch 11 evaluating [time: 87.14s, valid_score: 0.073100]
+26 Oct 21:41    INFO  valid result: 
+recall@10 : 0.0878    recall@20 : 0.1303    recall@50 : 0.213    ndcg@10 : 0.0606    ndcg@20 : 0.0731    ndcg@50 : 0.0936    
+26 Oct 21:41    INFO  Saving current best: saved/DirectAU-Oct-26-2023_21-21-27.pth
+26 Oct 21:41    INFO  epoch 12 training [time: 14.42s, train loss: -18.1592]
+26 Oct 21:42    INFO  epoch 12 evaluating [time: 84.16s, valid_score: 0.076000]
+26 Oct 21:42    INFO  valid result: 
+recall@10 : 0.0904    recall@20 : 0.1364    recall@50 : 0.2205    ndcg@10 : 0.0625    ndcg@20 : 0.076    ndcg@50 : 0.0968    
+26 Oct 21:42    INFO  Saving current best: saved/DirectAU-Oct-26-2023_21-21-27.pth
+26 Oct 21:43    INFO  epoch 13 training [time: 13.02s, train loss: -18.1730]
+26 Oct 21:44    INFO  epoch 13 evaluating [time: 86.89s, valid_score: 0.078200]
+26 Oct 21:44    INFO  valid result: 
+recall@10 : 0.0938    recall@20 : 0.1415    recall@50 : 0.2259    ndcg@10 : 0.0643    ndcg@20 : 0.0782    ndcg@50 : 0.0992    
+26 Oct 21:44    INFO  Saving current best: saved/DirectAU-Oct-26-2023_21-21-27.pth
+26 Oct 21:44    INFO  epoch 14 training [time: 13.17s, train loss: -18.1851]
+26 Oct 21:46    INFO  epoch 14 evaluating [time: 85.53s, valid_score: 0.080500]
+26 Oct 21:46    INFO  valid result: 
+recall@10 : 0.0961    recall@20 : 0.1442    recall@50 : 0.2315    ndcg@10 : 0.0663    ndcg@20 : 0.0805    ndcg@50 : 0.1021    
+26 Oct 21:46    INFO  Saving current best: saved/DirectAU-Oct-26-2023_21-21-27.pth
+26 Oct 21:46    INFO  epoch 15 training [time: 13.08s, train loss: -18.1959]
+26 Oct 21:47    INFO  epoch 15 evaluating [time: 84.34s, valid_score: 0.083100]
+26 Oct 21:47    INFO  valid result: 
+recall@10 : 0.1005    recall@20 : 0.1487    recall@50 : 0.2384    ndcg@10 : 0.0689    ndcg@20 : 0.0831    ndcg@50 : 0.1052    
+26 Oct 21:47    INFO  Saving current best: saved/DirectAU-Oct-26-2023_21-21-27.pth
+26 Oct 21:48    INFO  epoch 16 training [time: 13.05s, train loss: -18.2056]
+26 Oct 21:49    INFO  epoch 16 evaluating [time: 86.66s, valid_score: 0.085400]
+26 Oct 21:49    INFO  valid result: 
+recall@10 : 0.1031    recall@20 : 0.1529    recall@50 : 0.2431    ndcg@10 : 0.0707    ndcg@20 : 0.0854    ndcg@50 : 0.1077    
+26 Oct 21:49    INFO  Saving current best: saved/DirectAU-Oct-26-2023_21-21-27.pth
+26 Oct 21:49    INFO  epoch 17 training [time: 13.01s, train loss: -18.2135]
+26 Oct 21:51    INFO  epoch 17 evaluating [time: 85.91s, valid_score: 0.087100]
+26 Oct 21:51    INFO  valid result: 
+recall@10 : 0.1055    recall@20 : 0.1556    recall@50 : 0.2488    ndcg@10 : 0.0724    ndcg@20 : 0.0871    ndcg@50 : 0.1102    
+26 Oct 21:51    INFO  Saving current best: saved/DirectAU-Oct-26-2023_21-21-27.pth
+26 Oct 21:51    INFO  epoch 18 training [time: 13.07s, train loss: -18.2215]
+26 Oct 21:52    INFO  epoch 18 evaluating [time: 86.90s, valid_score: 0.089200]
+26 Oct 21:52    INFO  valid result: 
+recall@10 : 0.1071    recall@20 : 0.1592    recall@50 : 0.2542    ndcg@10 : 0.074    ndcg@20 : 0.0892    ndcg@50 : 0.1126    
+26 Oct 21:52    INFO  Saving current best: saved/DirectAU-Oct-26-2023_21-21-27.pth
+26 Oct 21:52    INFO  epoch 19 training [time: 13.03s, train loss: -18.2289]
+26 Oct 21:54    INFO  epoch 19 evaluating [time: 85.82s, valid_score: 0.090300]
+26 Oct 21:54    INFO  valid result: 
+recall@10 : 0.1099    recall@20 : 0.1617    recall@50 : 0.2567    ndcg@10 : 0.0751    ndcg@20 : 0.0903    ndcg@50 : 0.1137    
+26 Oct 21:54    INFO  Saving current best: saved/DirectAU-Oct-26-2023_21-21-27.pth
+26 Oct 21:54    INFO  epoch 20 training [time: 13.02s, train loss: -18.2350]
+26 Oct 21:56    INFO  epoch 20 evaluating [time: 84.23s, valid_score: 0.091900]
+26 Oct 21:56    INFO  valid result: 
+recall@10 : 0.1104    recall@20 : 0.1639    recall@50 : 0.26    ndcg@10 : 0.0763    ndcg@20 : 0.0919    ndcg@50 : 0.1156    
+26 Oct 21:56    INFO  Saving current best: saved/DirectAU-Oct-26-2023_21-21-27.pth
+26 Oct 21:56    INFO  epoch 21 training [time: 13.44s, train loss: -18.2405]
+26 Oct 21:57    INFO  epoch 21 evaluating [time: 87.00s, valid_score: 0.092600]
+26 Oct 21:57    INFO  valid result: 
+recall@10 : 0.1122    recall@20 : 0.165    recall@50 : 0.2645    ndcg@10 : 0.0772    ndcg@20 : 0.0926    ndcg@50 : 0.117    
+26 Oct 21:57    INFO  Saving current best: saved/DirectAU-Oct-26-2023_21-21-27.pth
+26 Oct 21:57    INFO  epoch 22 training [time: 13.15s, train loss: -18.2456]
+26 Oct 21:59    INFO  epoch 22 evaluating [time: 85.55s, valid_score: 0.094100]
+26 Oct 21:59    INFO  valid result: 
+recall@10 : 0.1124    recall@20 : 0.1688    recall@50 : 0.2671    ndcg@10 : 0.0777    ndcg@20 : 0.0941    ndcg@50 : 0.1182    
+26 Oct 21:59    INFO  Saving current best: saved/DirectAU-Oct-26-2023_21-21-27.pth
+26 Oct 21:59    INFO  epoch 23 training [time: 13.07s, train loss: -18.2499]
+26 Oct 22:01    INFO  epoch 23 evaluating [time: 87.17s, valid_score: 0.095300]
+26 Oct 22:01    INFO  valid result: 
+recall@10 : 0.1151    recall@20 : 0.1702    recall@50 : 0.2692    ndcg@10 : 0.0792    ndcg@20 : 0.0953    ndcg@50 : 0.1196    
+26 Oct 22:01    INFO  Saving current best: saved/DirectAU-Oct-26-2023_21-21-27.pth
+26 Oct 22:01    INFO  epoch 24 training [time: 13.10s, train loss: -18.2549]
+26 Oct 22:02    INFO  epoch 24 evaluating [time: 85.53s, valid_score: 0.096600]
+26 Oct 22:02    INFO  valid result: 
+recall@10 : 0.1167    recall@20 : 0.1718    recall@50 : 0.2718    ndcg@10 : 0.0805    ndcg@20 : 0.0966    ndcg@50 : 0.1211    
+26 Oct 22:02    INFO  Saving current best: saved/DirectAU-Oct-26-2023_21-21-27.pth
+26 Oct 22:02    INFO  epoch 25 training [time: 13.18s, train loss: -18.2585]
+26 Oct 22:04    INFO  epoch 25 evaluating [time: 84.45s, valid_score: 0.097600]
+26 Oct 22:04    INFO  valid result: 
+recall@10 : 0.1181    recall@20 : 0.1726    recall@50 : 0.2738    ndcg@10 : 0.0817    ndcg@20 : 0.0976    ndcg@50 : 0.1224    
+26 Oct 22:04    INFO  Saving current best: saved/DirectAU-Oct-26-2023_21-21-27.pth
+26 Oct 22:04    INFO  epoch 26 training [time: 13.01s, train loss: -18.2625]
+26 Oct 22:05    INFO  epoch 26 evaluating [time: 87.07s, valid_score: 0.098400]
+26 Oct 22:05    INFO  valid result: 
+recall@10 : 0.1185    recall@20 : 0.1749    recall@50 : 0.2752    ndcg@10 : 0.082    ndcg@20 : 0.0984    ndcg@50 : 0.1231    
+26 Oct 22:05    INFO  Saving current best: saved/DirectAU-Oct-26-2023_21-21-27.pth
+26 Oct 22:06    INFO  epoch 27 training [time: 13.09s, train loss: -18.2667]
+26 Oct 22:07    INFO  epoch 27 evaluating [time: 85.54s, valid_score: 0.099300]
+26 Oct 22:07    INFO  valid result: 
+recall@10 : 0.12    recall@20 : 0.1765    recall@50 : 0.28    ndcg@10 : 0.0827    ndcg@20 : 0.0993    ndcg@50 : 0.1246    
+26 Oct 22:07    INFO  Saving current best: saved/DirectAU-Oct-26-2023_21-21-27.pth
+26 Oct 22:07    INFO  epoch 28 training [time: 13.04s, train loss: -18.2707]
+26 Oct 22:09    INFO  epoch 28 evaluating [time: 87.20s, valid_score: 0.100900]
+26 Oct 22:09    INFO  valid result: 
+recall@10 : 0.1218    recall@20 : 0.1787    recall@50 : 0.2817    ndcg@10 : 0.0843    ndcg@20 : 0.1009    ndcg@50 : 0.1261    
+26 Oct 22:09    INFO  Saving current best: saved/DirectAU-Oct-26-2023_21-21-27.pth
+26 Oct 22:09    INFO  epoch 29 training [time: 12.99s, train loss: -18.2747]
+26 Oct 22:10    INFO  epoch 29 evaluating [time: 85.49s, valid_score: 0.101100]
+26 Oct 22:10    INFO  valid result: 
+recall@10 : 0.1229    recall@20 : 0.1797    recall@50 : 0.2835    ndcg@10 : 0.0845    ndcg@20 : 0.1011    ndcg@50 : 0.1264    
+26 Oct 22:10    INFO  Saving current best: saved/DirectAU-Oct-26-2023_21-21-27.pth
+26 Oct 22:11    INFO  epoch 30 training [time: 13.03s, train loss: -18.2776]
+26 Oct 22:12    INFO  epoch 30 evaluating [time: 84.27s, valid_score: 0.101700]
+26 Oct 22:12    INFO  valid result: 
+recall@10 : 0.1244    recall@20 : 0.1806    recall@50 : 0.2845    ndcg@10 : 0.0853    ndcg@20 : 0.1017    ndcg@50 : 0.127    
+26 Oct 22:12    INFO  Saving current best: saved/DirectAU-Oct-26-2023_21-21-27.pth
+26 Oct 22:12    INFO  epoch 31 training [time: 13.26s, train loss: -18.2801]
+26 Oct 22:14    INFO  epoch 31 evaluating [time: 87.07s, valid_score: 0.102500]
+26 Oct 22:14    INFO  valid result: 
+recall@10 : 0.1242    recall@20 : 0.1818    recall@50 : 0.2874    ndcg@10 : 0.0856    ndcg@20 : 0.1025    ndcg@50 : 0.1281    
+26 Oct 22:14    INFO  Saving current best: saved/DirectAU-Oct-26-2023_21-21-27.pth
+26 Oct 22:14    INFO  epoch 32 training [time: 13.14s, train loss: -18.2816]
+26 Oct 22:15    INFO  epoch 32 evaluating [time: 85.56s, valid_score: 0.102900]
+26 Oct 22:15    INFO  valid result: 
+recall@10 : 0.1243    recall@20 : 0.1824    recall@50 : 0.2895    ndcg@10 : 0.0859    ndcg@20 : 0.1029    ndcg@50 : 0.129    
+26 Oct 22:15    INFO  Saving current best: saved/DirectAU-Oct-26-2023_21-21-27.pth
+26 Oct 22:16    INFO  epoch 33 training [time: 13.11s, train loss: -18.2831]
+26 Oct 22:17    INFO  epoch 33 evaluating [time: 86.73s, valid_score: 0.103500]
+26 Oct 22:17    INFO  valid result: 
+recall@10 : 0.1245    recall@20 : 0.1843    recall@50 : 0.291    ndcg@10 : 0.086    ndcg@20 : 0.1035    ndcg@50 : 0.1295    
+26 Oct 22:17    INFO  Saving current best: saved/DirectAU-Oct-26-2023_21-21-27.pth
+26 Oct 22:17    INFO  epoch 34 training [time: 13.05s, train loss: -18.2840]
+26 Oct 22:19    INFO  epoch 34 evaluating [time: 85.91s, valid_score: 0.103500]
+26 Oct 22:19    INFO  valid result: 
+recall@10 : 0.1251    recall@20 : 0.1843    recall@50 : 0.2922    ndcg@10 : 0.0863    ndcg@20 : 0.1035    ndcg@50 : 0.1298    
+26 Oct 22:19    INFO  epoch 35 training [time: 13.42s, train loss: -18.2846]
+26 Oct 22:20    INFO  epoch 35 evaluating [time: 84.51s, valid_score: 0.104400]
+26 Oct 22:20    INFO  valid result: 
+recall@10 : 0.1258    recall@20 : 0.1855    recall@50 : 0.2927    ndcg@10 : 0.087    ndcg@20 : 0.1044    ndcg@50 : 0.1306    
+26 Oct 22:20    INFO  Saving current best: saved/DirectAU-Oct-26-2023_21-21-27.pth
+26 Oct 22:21    INFO  epoch 36 training [time: 13.06s, train loss: -18.2858]
+26 Oct 22:22    INFO  epoch 36 evaluating [time: 87.01s, valid_score: 0.104900]
+26 Oct 22:22    INFO  valid result: 
+recall@10 : 0.1271    recall@20 : 0.1866    recall@50 : 0.2946    ndcg@10 : 0.0876    ndcg@20 : 0.1049    ndcg@50 : 0.1312    
+26 Oct 22:22    INFO  Saving current best: saved/DirectAU-Oct-26-2023_21-21-27.pth
+26 Oct 22:22    INFO  epoch 37 training [time: 13.16s, train loss: -18.2875]
+26 Oct 22:24    INFO  epoch 37 evaluating [time: 86.06s, valid_score: 0.105000]
+26 Oct 22:24    INFO  valid result: 
+recall@10 : 0.1274    recall@20 : 0.1871    recall@50 : 0.2964    ndcg@10 : 0.0877    ndcg@20 : 0.105    ndcg@50 : 0.1317    
+26 Oct 22:24    INFO  Saving current best: saved/DirectAU-Oct-26-2023_21-21-27.pth
+26 Oct 22:24    INFO  epoch 38 training [time: 13.28s, train loss: -18.2878]
+26 Oct 22:25    INFO  epoch 38 evaluating [time: 84.23s, valid_score: 0.105100]
+26 Oct 22:25    INFO  valid result: 
+recall@10 : 0.1276    recall@20 : 0.1868    recall@50 : 0.2959    ndcg@10 : 0.0879    ndcg@20 : 0.1051    ndcg@50 : 0.1317    
+26 Oct 22:25    INFO  Saving current best: saved/DirectAU-Oct-26-2023_21-21-27.pth
+26 Oct 22:26    INFO  epoch 39 training [time: 13.48s, train loss: -18.2882]
+26 Oct 22:27    INFO  epoch 39 evaluating [time: 70.75s, valid_score: 0.105700]
+26 Oct 22:27    INFO  valid result: 
+recall@10 : 0.1278    recall@20 : 0.1883    recall@50 : 0.2967    ndcg@10 : 0.0881    ndcg@20 : 0.1057    ndcg@50 : 0.1322    
+26 Oct 22:27    INFO  Saving current best: saved/DirectAU-Oct-26-2023_21-21-27.pth
+26 Oct 22:27    INFO  epoch 40 training [time: 13.39s, train loss: -18.2886]
+26 Oct 22:28    INFO  epoch 40 evaluating [time: 56.05s, valid_score: 0.105700]
+26 Oct 22:28    INFO  valid result: 
+recall@10 : 0.1285    recall@20 : 0.1879    recall@50 : 0.2987    ndcg@10 : 0.0883    ndcg@20 : 0.1057    ndcg@50 : 0.1326    
+26 Oct 22:28    INFO  epoch 41 training [time: 12.60s, train loss: -18.2889]
+26 Oct 22:29    INFO  epoch 41 evaluating [time: 56.10s, valid_score: 0.105700]
+26 Oct 22:29    INFO  valid result: 
+recall@10 : 0.1291    recall@20 : 0.1886    recall@50 : 0.2974    ndcg@10 : 0.0884    ndcg@20 : 0.1057    ndcg@50 : 0.1323    
+26 Oct 22:29    INFO  epoch 42 training [time: 12.28s, train loss: -18.2897]
+26 Oct 22:30    INFO  epoch 42 evaluating [time: 56.93s, valid_score: 0.106000]
+26 Oct 22:30    INFO  valid result: 
+recall@10 : 0.1282    recall@20 : 0.1896    recall@50 : 0.2996    ndcg@10 : 0.0883    ndcg@20 : 0.106    ndcg@50 : 0.1329    
+26 Oct 22:30    INFO  Saving current best: saved/DirectAU-Oct-26-2023_21-21-27.pth
+26 Oct 22:30    INFO  epoch 43 training [time: 12.29s, train loss: -18.2894]
+26 Oct 22:31    INFO  epoch 43 evaluating [time: 56.40s, valid_score: 0.106300]
+26 Oct 22:31    INFO  valid result: 
+recall@10 : 0.129    recall@20 : 0.1889    recall@50 : 0.3    ndcg@10 : 0.0889    ndcg@20 : 0.1063    ndcg@50 : 0.1334    
+26 Oct 22:31    INFO  Saving current best: saved/DirectAU-Oct-26-2023_21-21-27.pth
+26 Oct 22:32    INFO  epoch 44 training [time: 12.34s, train loss: -18.2905]
+26 Oct 22:32    INFO  epoch 44 evaluating [time: 56.74s, valid_score: 0.106700]
+26 Oct 22:32    INFO  valid result: 
+recall@10 : 0.1289    recall@20 : 0.19    recall@50 : 0.2994    ndcg@10 : 0.0889    ndcg@20 : 0.1067    ndcg@50 : 0.1333    
+26 Oct 22:32    INFO  Saving current best: saved/DirectAU-Oct-26-2023_21-21-27.pth
+26 Oct 22:33    INFO  epoch 45 training [time: 12.28s, train loss: -18.2908]
+26 Oct 22:34    INFO  epoch 45 evaluating [time: 55.73s, valid_score: 0.106500]
+26 Oct 22:34    INFO  valid result: 
+recall@10 : 0.13    recall@20 : 0.1903    recall@50 : 0.2995    ndcg@10 : 0.0889    ndcg@20 : 0.1065    ndcg@50 : 0.1332    
+26 Oct 22:34    INFO  epoch 46 training [time: 12.33s, train loss: -18.2911]
+26 Oct 22:35    INFO  epoch 46 evaluating [time: 57.27s, valid_score: 0.106900]
+26 Oct 22:35    INFO  valid result: 
+recall@10 : 0.1301    recall@20 : 0.1906    recall@50 : 0.3005    ndcg@10 : 0.0892    ndcg@20 : 0.1069    ndcg@50 : 0.1337    
+26 Oct 22:35    INFO  Saving current best: saved/DirectAU-Oct-26-2023_21-21-27.pth
+26 Oct 22:35    INFO  epoch 47 training [time: 12.23s, train loss: -18.2911]
+26 Oct 22:36    INFO  epoch 47 evaluating [time: 56.03s, valid_score: 0.107500]
+26 Oct 22:36    INFO  valid result: 
+recall@10 : 0.1305    recall@20 : 0.1918    recall@50 : 0.3012    ndcg@10 : 0.0897    ndcg@20 : 0.1075    ndcg@50 : 0.1343    
+26 Oct 22:36    INFO  Saving current best: saved/DirectAU-Oct-26-2023_21-21-27.pth
+26 Oct 22:36    INFO  epoch 48 training [time: 12.43s, train loss: -18.2917]
+26 Oct 22:37    INFO  epoch 48 evaluating [time: 56.32s, valid_score: 0.107600]
+26 Oct 22:37    INFO  valid result: 
+recall@10 : 0.1304    recall@20 : 0.1912    recall@50 : 0.3019    ndcg@10 : 0.0898    ndcg@20 : 0.1076    ndcg@50 : 0.1347    
+26 Oct 22:37    INFO  Saving current best: saved/DirectAU-Oct-26-2023_21-21-27.pth
+26 Oct 22:37    INFO  epoch 49 training [time: 13.69s, train loss: -18.2919]
+26 Oct 22:38    INFO  epoch 49 evaluating [time: 55.86s, valid_score: 0.108200]
+26 Oct 22:38    INFO  valid result: 
+recall@10 : 0.1319    recall@20 : 0.1926    recall@50 : 0.3031    ndcg@10 : 0.0905    ndcg@20 : 0.1082    ndcg@50 : 0.1352    
+26 Oct 22:38    INFO  Saving current best: saved/DirectAU-Oct-26-2023_21-21-27.pth
+26 Oct 22:38    INFO  epoch 50 training [time: 12.29s, train loss: -18.2926]
+26 Oct 22:39    INFO  epoch 50 evaluating [time: 55.73s, valid_score: 0.108800]
+26 Oct 22:39    INFO  valid result: 
+recall@10 : 0.1313    recall@20 : 0.193    recall@50 : 0.3025    ndcg@10 : 0.0909    ndcg@20 : 0.1088    ndcg@50 : 0.1356    
+26 Oct 22:39    INFO  Saving current best: saved/DirectAU-Oct-26-2023_21-21-27.pth
+26 Oct 22:40    INFO  epoch 51 training [time: 12.17s, train loss: -18.2923]
+26 Oct 22:41    INFO  epoch 51 evaluating [time: 56.61s, valid_score: 0.108900]
+26 Oct 22:41    INFO  valid result: 
+recall@10 : 0.1326    recall@20 : 0.1928    recall@50 : 0.303    ndcg@10 : 0.0914    ndcg@20 : 0.1089    ndcg@50 : 0.136    
+26 Oct 22:41    INFO  Saving current best: saved/DirectAU-Oct-26-2023_21-21-27.pth
+26 Oct 22:41    INFO  epoch 52 training [time: 11.94s, train loss: -18.2923]
+26 Oct 22:42    INFO  epoch 52 evaluating [time: 56.07s, valid_score: 0.109000]
+26 Oct 22:42    INFO  valid result: 
+recall@10 : 0.1331    recall@20 : 0.1935    recall@50 : 0.3041    ndcg@10 : 0.0914    ndcg@20 : 0.109    ndcg@50 : 0.1361    
+26 Oct 22:42    INFO  Saving current best: saved/DirectAU-Oct-26-2023_21-21-27.pth
+26 Oct 22:42    INFO  epoch 53 training [time: 12.17s, train loss: -18.2925]
+26 Oct 22:43    INFO  epoch 53 evaluating [time: 56.90s, valid_score: 0.108700]
+26 Oct 22:43    INFO  valid result: 
+recall@10 : 0.1317    recall@20 : 0.1936    recall@50 : 0.3052    ndcg@10 : 0.0907    ndcg@20 : 0.1087    ndcg@50 : 0.136    
+26 Oct 22:43    INFO  epoch 54 training [time: 12.12s, train loss: -18.2927]
+26 Oct 22:44    INFO  epoch 54 evaluating [time: 55.75s, valid_score: 0.109300]
+26 Oct 22:44    INFO  valid result: 
+recall@10 : 0.1317    recall@20 : 0.1941    recall@50 : 0.3051    ndcg@10 : 0.0913    ndcg@20 : 0.1093    ndcg@50 : 0.1364    
+26 Oct 22:44    INFO  Saving current best: saved/DirectAU-Oct-26-2023_21-21-27.pth
+26 Oct 22:44    INFO  epoch 55 training [time: 12.24s, train loss: -18.2930]
+26 Oct 22:45    INFO  epoch 55 evaluating [time: 55.99s, valid_score: 0.109200]
+26 Oct 22:45    INFO  valid result: 
+recall@10 : 0.1318    recall@20 : 0.1935    recall@50 : 0.3047    ndcg@10 : 0.0912    ndcg@20 : 0.1092    ndcg@50 : 0.1362    
+26 Oct 22:45    INFO  epoch 56 training [time: 13.49s, train loss: -18.2937]
+26 Oct 22:46    INFO  epoch 56 evaluating [time: 56.10s, valid_score: 0.109700]
+26 Oct 22:46    INFO  valid result: 
+recall@10 : 0.1326    recall@20 : 0.1942    recall@50 : 0.3049    ndcg@10 : 0.0917    ndcg@20 : 0.1097    ndcg@50 : 0.1367    
+26 Oct 22:46    INFO  Saving current best: saved/DirectAU-Oct-26-2023_21-21-27.pth
+26 Oct 22:46    INFO  epoch 57 training [time: 12.35s, train loss: -18.2936]
+26 Oct 22:47    INFO  epoch 57 evaluating [time: 55.89s, valid_score: 0.109800]
+26 Oct 22:47    INFO  valid result: 
+recall@10 : 0.1336    recall@20 : 0.1944    recall@50 : 0.3077    ndcg@10 : 0.0921    ndcg@20 : 0.1098    ndcg@50 : 0.1373    
+26 Oct 22:47    INFO  Saving current best: saved/DirectAU-Oct-26-2023_21-21-27.pth
+26 Oct 22:48    INFO  epoch 58 training [time: 12.33s, train loss: -18.2930]
+26 Oct 22:49    INFO  epoch 58 evaluating [time: 57.17s, valid_score: 0.109200]
+26 Oct 22:49    INFO  valid result: 
+recall@10 : 0.1335    recall@20 : 0.1939    recall@50 : 0.3067    ndcg@10 : 0.0916    ndcg@20 : 0.1092    ndcg@50 : 0.1367    
+26 Oct 22:49    INFO  epoch 59 training [time: 12.31s, train loss: -18.2930]
+26 Oct 22:50    INFO  epoch 59 evaluating [time: 55.87s, valid_score: 0.109600]
+26 Oct 22:50    INFO  valid result: 
+recall@10 : 0.1327    recall@20 : 0.1942    recall@50 : 0.3059    ndcg@10 : 0.0918    ndcg@20 : 0.1096    ndcg@50 : 0.1369    
+26 Oct 22:50    INFO  epoch 60 training [time: 12.26s, train loss: -18.2938]
+26 Oct 22:51    INFO  epoch 60 evaluating [time: 56.52s, valid_score: 0.109600]
+26 Oct 22:51    INFO  valid result: 
+recall@10 : 0.1342    recall@20 : 0.1948    recall@50 : 0.3058    ndcg@10 : 0.0921    ndcg@20 : 0.1096    ndcg@50 : 0.1367    
+26 Oct 22:51    INFO  epoch 61 training [time: 12.19s, train loss: -18.2941]
+26 Oct 22:52    INFO  epoch 61 evaluating [time: 56.16s, valid_score: 0.110000]
+26 Oct 22:52    INFO  valid result: 
+recall@10 : 0.135    recall@20 : 0.1949    recall@50 : 0.3069    ndcg@10 : 0.0927    ndcg@20 : 0.11    ndcg@50 : 0.1374    
+26 Oct 22:52    INFO  Saving current best: saved/DirectAU-Oct-26-2023_21-21-27.pth
+26 Oct 22:52    INFO  epoch 62 training [time: 12.16s, train loss: -18.2941]
+26 Oct 22:53    INFO  epoch 62 evaluating [time: 55.73s, valid_score: 0.109800]
+26 Oct 22:53    INFO  valid result: 
+recall@10 : 0.1343    recall@20 : 0.1937    recall@50 : 0.3068    ndcg@10 : 0.0925    ndcg@20 : 0.1098    ndcg@50 : 0.1374    
+26 Oct 22:53    INFO  epoch 63 training [time: 12.26s, train loss: -18.2940]
+26 Oct 22:54    INFO  epoch 63 evaluating [time: 56.81s, valid_score: 0.110500]
+26 Oct 22:54    INFO  valid result: 
+recall@10 : 0.134    recall@20 : 0.1941    recall@50 : 0.3072    ndcg@10 : 0.0931    ndcg@20 : 0.1105    ndcg@50 : 0.1381    
+26 Oct 22:54    INFO  Saving current best: saved/DirectAU-Oct-26-2023_21-21-27.pth
+26 Oct 22:54    INFO  epoch 64 training [time: 12.22s, train loss: -18.2941]
+26 Oct 22:55    INFO  epoch 64 evaluating [time: 55.95s, valid_score: 0.110100]
+26 Oct 22:55    INFO  valid result: 
+recall@10 : 0.1349    recall@20 : 0.1948    recall@50 : 0.3066    ndcg@10 : 0.0927    ndcg@20 : 0.1101    ndcg@50 : 0.1374    
+26 Oct 22:56    INFO  epoch 65 training [time: 12.23s, train loss: -18.2946]
+26 Oct 22:57    INFO  epoch 65 evaluating [time: 57.01s, valid_score: 0.109700]
+26 Oct 22:57    INFO  valid result: 
+recall@10 : 0.1343    recall@20 : 0.1952    recall@50 : 0.3077    ndcg@10 : 0.092    ndcg@20 : 0.1097    ndcg@50 : 0.1372    
+26 Oct 22:57    INFO  epoch 66 training [time: 12.24s, train loss: -18.2945]
+26 Oct 22:58    INFO  epoch 66 evaluating [time: 55.55s, valid_score: 0.109800]
+26 Oct 22:58    INFO  valid result: 
+recall@10 : 0.134    recall@20 : 0.1942    recall@50 : 0.3074    ndcg@10 : 0.0923    ndcg@20 : 0.1098    ndcg@50 : 0.1375    
+26 Oct 22:58    INFO  epoch 67 training [time: 12.09s, train loss: -18.2949]
+26 Oct 22:59    INFO  epoch 67 evaluating [time: 56.27s, valid_score: 0.110000]
+26 Oct 22:59    INFO  valid result: 
+recall@10 : 0.1345    recall@20 : 0.1947    recall@50 : 0.3063    ndcg@10 : 0.0924    ndcg@20 : 0.11    ndcg@50 : 0.1373    
+26 Oct 22:59    INFO  epoch 68 training [time: 13.64s, train loss: -18.2949]
+26 Oct 23:00    INFO  epoch 68 evaluating [time: 55.62s, valid_score: 0.110400]
+26 Oct 23:00    INFO  valid result: 
+recall@10 : 0.1349    recall@20 : 0.1952    recall@50 : 0.3066    ndcg@10 : 0.0929    ndcg@20 : 0.1104    ndcg@50 : 0.1377    
+26 Oct 23:00    INFO  epoch 69 training [time: 12.24s, train loss: -18.2950]
+26 Oct 23:01    INFO  epoch 69 evaluating [time: 55.52s, valid_score: 0.110500]
+26 Oct 23:01    INFO  valid result: 
+recall@10 : 0.135    recall@20 : 0.1952    recall@50 : 0.3072    ndcg@10 : 0.0931    ndcg@20 : 0.1105    ndcg@50 : 0.1379    
+26 Oct 23:01    INFO  epoch 70 training [time: 12.24s, train loss: -18.2952]
+26 Oct 23:02    INFO  epoch 70 evaluating [time: 57.14s, valid_score: 0.110200]
+26 Oct 23:02    INFO  valid result: 
+recall@10 : 0.1344    recall@20 : 0.1944    recall@50 : 0.3066    ndcg@10 : 0.0927    ndcg@20 : 0.1102    ndcg@50 : 0.1376    
+26 Oct 23:02    INFO  epoch 71 training [time: 12.19s, train loss: -18.2951]
+26 Oct 23:03    INFO  epoch 71 evaluating [time: 55.82s, valid_score: 0.110500]
+26 Oct 23:03    INFO  valid result: 
+recall@10 : 0.135    recall@20 : 0.1958    recall@50 : 0.3078    ndcg@10 : 0.0928    ndcg@20 : 0.1105    ndcg@50 : 0.1378    
+26 Oct 23:04    INFO  epoch 72 training [time: 11.54s, train loss: -18.2952]
+26 Oct 23:05    INFO  epoch 72 evaluating [time: 55.87s, valid_score: 0.110200]
+26 Oct 23:05    INFO  valid result: 
+recall@10 : 0.134    recall@20 : 0.1953    recall@50 : 0.3079    ndcg@10 : 0.0924    ndcg@20 : 0.1102    ndcg@50 : 0.1376    
+26 Oct 23:05    INFO  epoch 73 training [time: 12.99s, train loss: -18.2950]
+26 Oct 23:06    INFO  epoch 73 evaluating [time: 55.82s, valid_score: 0.110400]
+26 Oct 23:06    INFO  valid result: 
+recall@10 : 0.135    recall@20 : 0.1954    recall@50 : 0.3101    ndcg@10 : 0.0928    ndcg@20 : 0.1104    ndcg@50 : 0.1382    
+26 Oct 23:06    INFO  epoch 74 training [time: 11.94s, train loss: -18.2956]
+26 Oct 23:07    INFO  epoch 74 evaluating [time: 55.82s, valid_score: 0.111000]
+26 Oct 23:07    INFO  valid result: 
+recall@10 : 0.1349    recall@20 : 0.1956    recall@50 : 0.3087    ndcg@10 : 0.0933    ndcg@20 : 0.111    ndcg@50 : 0.1386    
+26 Oct 23:07    INFO  Saving current best: saved/DirectAU-Oct-26-2023_21-21-27.pth
+26 Oct 23:07    INFO  epoch 75 training [time: 12.28s, train loss: -18.2957]
+26 Oct 23:08    INFO  epoch 75 evaluating [time: 56.54s, valid_score: 0.111200]
+26 Oct 23:08    INFO  valid result: 
+recall@10 : 0.1343    recall@20 : 0.1962    recall@50 : 0.3081    ndcg@10 : 0.0932    ndcg@20 : 0.1112    ndcg@50 : 0.1386    
+26 Oct 23:08    INFO  Saving current best: saved/DirectAU-Oct-26-2023_21-21-27.pth
+26 Oct 23:08    INFO  epoch 76 training [time: 12.21s, train loss: -18.2956]
+26 Oct 23:09    INFO  epoch 76 evaluating [time: 56.02s, valid_score: 0.110800]
+26 Oct 23:09    INFO  valid result: 
+recall@10 : 0.1348    recall@20 : 0.1959    recall@50 : 0.3085    ndcg@10 : 0.093    ndcg@20 : 0.1108    ndcg@50 : 0.1382    
+26 Oct 23:09    INFO  epoch 77 training [time: 12.23s, train loss: -18.2958]
+26 Oct 23:10    INFO  epoch 77 evaluating [time: 56.90s, valid_score: 0.110600]
+26 Oct 23:10    INFO  valid result: 
+recall@10 : 0.134    recall@20 : 0.1952    recall@50 : 0.3087    ndcg@10 : 0.0928    ndcg@20 : 0.1106    ndcg@50 : 0.1383    
+26 Oct 23:10    INFO  epoch 78 training [time: 11.98s, train loss: -18.2959]
+26 Oct 23:11    INFO  epoch 78 evaluating [time: 55.62s, valid_score: 0.110800]
+26 Oct 23:11    INFO  valid result: 
+recall@10 : 0.1335    recall@20 : 0.1946    recall@50 : 0.3091    ndcg@10 : 0.093    ndcg@20 : 0.1108    ndcg@50 : 0.1387    
+26 Oct 23:12    INFO  epoch 79 training [time: 11.93s, train loss: -18.2958]
+26 Oct 23:12    INFO  epoch 79 evaluating [time: 56.21s, valid_score: 0.111300]
+26 Oct 23:12    INFO  valid result: 
+recall@10 : 0.1353    recall@20 : 0.1961    recall@50 : 0.3094    ndcg@10 : 0.0937    ndcg@20 : 0.1113    ndcg@50 : 0.139    
+26 Oct 23:12    INFO  Saving current best: saved/DirectAU-Oct-26-2023_21-21-27.pth
+26 Oct 23:13    INFO  epoch 80 training [time: 12.24s, train loss: -18.2963]
+26 Oct 23:14    INFO  epoch 80 evaluating [time: 56.52s, valid_score: 0.111100]
+26 Oct 23:14    INFO  valid result: 
+recall@10 : 0.1346    recall@20 : 0.1965    recall@50 : 0.3091    ndcg@10 : 0.0931    ndcg@20 : 0.1111    ndcg@50 : 0.1387    
+26 Oct 23:14    INFO  epoch 81 training [time: 12.26s, train loss: -18.2959]
+26 Oct 23:15    INFO  epoch 81 evaluating [time: 55.88s, valid_score: 0.110500]
+26 Oct 23:15    INFO  valid result: 
+recall@10 : 0.1348    recall@20 : 0.1948    recall@50 : 0.3088    ndcg@10 : 0.0931    ndcg@20 : 0.1105    ndcg@50 : 0.1384    
+26 Oct 23:15    INFO  epoch 82 training [time: 11.55s, train loss: -18.2961]
+26 Oct 23:16    INFO  epoch 82 evaluating [time: 57.02s, valid_score: 0.111000]
+26 Oct 23:16    INFO  valid result: 
+recall@10 : 0.1343    recall@20 : 0.1964    recall@50 : 0.3099    ndcg@10 : 0.093    ndcg@20 : 0.111    ndcg@50 : 0.1387    
+26 Oct 23:16    INFO  epoch 83 training [time: 12.09s, train loss: -18.2965]
+26 Oct 23:17    INFO  epoch 83 evaluating [time: 55.80s, valid_score: 0.111600]
+26 Oct 23:17    INFO  valid result: 
+recall@10 : 0.1351    recall@20 : 0.1969    recall@50 : 0.31    ndcg@10 : 0.0936    ndcg@20 : 0.1116    ndcg@50 : 0.1393    
+26 Oct 23:17    INFO  Saving current best: saved/DirectAU-Oct-26-2023_21-21-27.pth
+26 Oct 23:17    INFO  epoch 84 training [time: 11.91s, train loss: -18.2963]
+26 Oct 23:18    INFO  epoch 84 evaluating [time: 55.59s, valid_score: 0.111500]
+26 Oct 23:18    INFO  valid result: 
+recall@10 : 0.1357    recall@20 : 0.1975    recall@50 : 0.3092    ndcg@10 : 0.0936    ndcg@20 : 0.1115    ndcg@50 : 0.1389    
+26 Oct 23:18    INFO  epoch 85 training [time: 12.26s, train loss: -18.2961]
+26 Oct 23:19    INFO  epoch 85 evaluating [time: 57.17s, valid_score: 0.111400]
+26 Oct 23:19    INFO  valid result: 
+recall@10 : 0.1362    recall@20 : 0.1966    recall@50 : 0.3093    ndcg@10 : 0.0939    ndcg@20 : 0.1114    ndcg@50 : 0.139    
+26 Oct 23:20    INFO  epoch 86 training [time: 11.79s, train loss: -18.2964]
+26 Oct 23:20    INFO  epoch 86 evaluating [time: 55.54s, valid_score: 0.110900]
+26 Oct 23:20    INFO  valid result: 
+recall@10 : 0.1353    recall@20 : 0.1962    recall@50 : 0.3088    ndcg@10 : 0.0933    ndcg@20 : 0.1109    ndcg@50 : 0.1385    
+26 Oct 23:21    INFO  epoch 87 training [time: 12.18s, train loss: -18.2965]
+26 Oct 23:22    INFO  epoch 87 evaluating [time: 56.76s, valid_score: 0.110800]
+26 Oct 23:22    INFO  valid result: 
+recall@10 : 0.135    recall@20 : 0.1959    recall@50 : 0.3082    ndcg@10 : 0.093    ndcg@20 : 0.1108    ndcg@50 : 0.1383    
+26 Oct 23:22    INFO  epoch 88 training [time: 12.08s, train loss: -18.2967]
+26 Oct 23:23    INFO  epoch 88 evaluating [time: 56.03s, valid_score: 0.110500]
+26 Oct 23:23    INFO  valid result: 
+recall@10 : 0.1345    recall@20 : 0.1959    recall@50 : 0.309    ndcg@10 : 0.0927    ndcg@20 : 0.1105    ndcg@50 : 0.1382    
+26 Oct 23:23    INFO  epoch 89 training [time: 12.26s, train loss: -18.2966]
+26 Oct 23:24    INFO  epoch 89 evaluating [time: 55.83s, valid_score: 0.111200]
+26 Oct 23:24    INFO  valid result: 
+recall@10 : 0.1352    recall@20 : 0.1965    recall@50 : 0.3095    ndcg@10 : 0.0934    ndcg@20 : 0.1112    ndcg@50 : 0.1389    
+26 Oct 23:24    INFO  epoch 90 training [time: 12.27s, train loss: -18.2964]
+26 Oct 23:25    INFO  epoch 90 evaluating [time: 56.65s, valid_score: 0.111100]
+26 Oct 23:25    INFO  valid result: 
+recall@10 : 0.1353    recall@20 : 0.1968    recall@50 : 0.3101    ndcg@10 : 0.0933    ndcg@20 : 0.1111    ndcg@50 : 0.1389    
+26 Oct 23:25    INFO  epoch 91 training [time: 12.46s, train loss: -18.2965]
+26 Oct 23:26    INFO  epoch 91 evaluating [time: 56.31s, valid_score: 0.111300]
+26 Oct 23:26    INFO  valid result: 
+recall@10 : 0.1344    recall@20 : 0.1975    recall@50 : 0.3106    ndcg@10 : 0.0931    ndcg@20 : 0.1113    ndcg@50 : 0.139    
+26 Oct 23:26    INFO  epoch 92 training [time: 12.19s, train loss: -18.2967]
+26 Oct 23:27    INFO  epoch 92 evaluating [time: 56.71s, valid_score: 0.111600]
+26 Oct 23:27    INFO  valid result: 
+recall@10 : 0.135    recall@20 : 0.1978    recall@50 : 0.3096    ndcg@10 : 0.0935    ndcg@20 : 0.1116    ndcg@50 : 0.139    
+26 Oct 23:27    INFO  epoch 93 training [time: 11.54s, train loss: -18.2970]
+26 Oct 23:28    INFO  epoch 93 evaluating [time: 55.50s, valid_score: 0.111900]
+26 Oct 23:28    INFO  valid result: 
+recall@10 : 0.1354    recall@20 : 0.1974    recall@50 : 0.3103    ndcg@10 : 0.0939    ndcg@20 : 0.1119    ndcg@50 : 0.1395    
+26 Oct 23:28    INFO  Saving current best: saved/DirectAU-Oct-26-2023_21-21-27.pth
+26 Oct 23:29    INFO  epoch 94 training [time: 12.22s, train loss: -18.2970]
+26 Oct 23:30    INFO  epoch 94 evaluating [time: 56.14s, valid_score: 0.112300]
+26 Oct 23:30    INFO  valid result: 
+recall@10 : 0.1364    recall@20 : 0.1982    recall@50 : 0.3097    ndcg@10 : 0.0944    ndcg@20 : 0.1123    ndcg@50 : 0.1396    
+26 Oct 23:30    INFO  Saving current best: saved/DirectAU-Oct-26-2023_21-21-27.pth
+26 Oct 23:30    INFO  epoch 95 training [time: 13.62s, train loss: -18.2968]
+26 Oct 23:31    INFO  epoch 95 evaluating [time: 55.60s, valid_score: 0.112300]
+26 Oct 23:31    INFO  valid result: 
+recall@10 : 0.135    recall@20 : 0.1978    recall@50 : 0.309    ndcg@10 : 0.0941    ndcg@20 : 0.1123    ndcg@50 : 0.1396    
+26 Oct 23:31    INFO  epoch 96 training [time: 12.22s, train loss: -18.2972]
+26 Oct 23:32    INFO  epoch 96 evaluating [time: 55.83s, valid_score: 0.111700]
+26 Oct 23:32    INFO  valid result: 
+recall@10 : 0.137    recall@20 : 0.1965    recall@50 : 0.31    ndcg@10 : 0.0944    ndcg@20 : 0.1117    ndcg@50 : 0.1394    
+26 Oct 23:32    INFO  epoch 97 training [time: 12.18s, train loss: -18.2970]
+26 Oct 23:33    INFO  epoch 97 evaluating [time: 57.17s, valid_score: 0.111700]
+26 Oct 23:33    INFO  valid result: 
+recall@10 : 0.1361    recall@20 : 0.1979    recall@50 : 0.311    ndcg@10 : 0.0937    ndcg@20 : 0.1117    ndcg@50 : 0.1394    
+26 Oct 23:33    INFO  epoch 98 training [time: 12.22s, train loss: -18.2976]
+26 Oct 23:34    INFO  epoch 98 evaluating [time: 55.66s, valid_score: 0.112200]
+26 Oct 23:34    INFO  valid result: 
+recall@10 : 0.1357    recall@20 : 0.1983    recall@50 : 0.3095    ndcg@10 : 0.0939    ndcg@20 : 0.1122    ndcg@50 : 0.1394    
+26 Oct 23:34    INFO  epoch 99 training [time: 12.46s, train loss: -18.2970]
+26 Oct 23:35    INFO  epoch 99 evaluating [time: 55.58s, valid_score: 0.112000]
+26 Oct 23:35    INFO  valid result: 
+recall@10 : 0.136    recall@20 : 0.1979    recall@50 : 0.3104    ndcg@10 : 0.0939    ndcg@20 : 0.112    ndcg@50 : 0.1395    
+26 Oct 23:36    INFO  epoch 100 training [time: 13.80s, train loss: -18.2971]
+26 Oct 23:36    INFO  epoch 100 evaluating [time: 56.03s, valid_score: 0.112200]
+26 Oct 23:36    INFO  valid result: 
+recall@10 : 0.1361    recall@20 : 0.1987    recall@50 : 0.3088    ndcg@10 : 0.094    ndcg@20 : 0.1122    ndcg@50 : 0.1393    
+26 Oct 23:37    INFO  epoch 101 training [time: 12.45s, train loss: -18.2971]
+26 Oct 23:38    INFO  epoch 101 evaluating [time: 55.37s, valid_score: 0.112400]
+26 Oct 23:38    INFO  valid result: 
+recall@10 : 0.1367    recall@20 : 0.1988    recall@50 : 0.3104    ndcg@10 : 0.0943    ndcg@20 : 0.1124    ndcg@50 : 0.1397    
+26 Oct 23:38    INFO  Saving current best: saved/DirectAU-Oct-26-2023_21-21-27.pth
+26 Oct 23:38    INFO  epoch 102 training [time: 12.02s, train loss: -18.2977]
+26 Oct 23:39    INFO  epoch 102 evaluating [time: 56.40s, valid_score: 0.112600]
+26 Oct 23:39    INFO  valid result: 
+recall@10 : 0.1359    recall@20 : 0.1992    recall@50 : 0.3111    ndcg@10 : 0.0942    ndcg@20 : 0.1126    ndcg@50 : 0.1399    
+26 Oct 23:39    INFO  Saving current best: saved/DirectAU-Oct-26-2023_21-21-27.pth
+26 Oct 23:39    INFO  epoch 103 training [time: 12.14s, train loss: -18.2974]
+26 Oct 23:40    INFO  epoch 103 evaluating [time: 55.57s, valid_score: 0.112700]
+26 Oct 23:40    INFO  valid result: 
+recall@10 : 0.1357    recall@20 : 0.1995    recall@50 : 0.3095    ndcg@10 : 0.0942    ndcg@20 : 0.1127    ndcg@50 : 0.1397    
+26 Oct 23:40    INFO  Saving current best: saved/DirectAU-Oct-26-2023_21-21-27.pth
+26 Oct 23:40    INFO  epoch 104 training [time: 12.33s, train loss: -18.2974]
+26 Oct 23:41    INFO  epoch 104 evaluating [time: 56.43s, valid_score: 0.112400]
+26 Oct 23:41    INFO  valid result: 
+recall@10 : 0.1365    recall@20 : 0.1989    recall@50 : 0.3107    ndcg@10 : 0.0943    ndcg@20 : 0.1124    ndcg@50 : 0.1397    
+26 Oct 23:41    INFO  epoch 105 training [time: 12.15s, train loss: -18.2978]
+26 Oct 23:42    INFO  epoch 105 evaluating [time: 55.55s, valid_score: 0.111800]
+26 Oct 23:42    INFO  valid result: 
+recall@10 : 0.1359    recall@20 : 0.1979    recall@50 : 0.311    ndcg@10 : 0.0937    ndcg@20 : 0.1118    ndcg@50 : 0.1394    
+26 Oct 23:42    INFO  epoch 106 training [time: 12.14s, train loss: -18.2975]
+26 Oct 23:43    INFO  epoch 106 evaluating [time: 55.40s, valid_score: 0.112000]
+26 Oct 23:43    INFO  valid result: 
+recall@10 : 0.1354    recall@20 : 0.1986    recall@50 : 0.3111    ndcg@10 : 0.0936    ndcg@20 : 0.112    ndcg@50 : 0.1395    
+26 Oct 23:43    INFO  epoch 107 training [time: 13.17s, train loss: -18.2976]
+26 Oct 23:44    INFO  epoch 107 evaluating [time: 55.48s, valid_score: 0.112200]
+26 Oct 23:44    INFO  valid result: 
+recall@10 : 0.1356    recall@20 : 0.1991    recall@50 : 0.311    ndcg@10 : 0.0937    ndcg@20 : 0.1122    ndcg@50 : 0.1396    
+26 Oct 23:45    INFO  epoch 108 training [time: 12.15s, train loss: -18.2975]
+26 Oct 23:46    INFO  epoch 108 evaluating [time: 55.19s, valid_score: 0.112300]
+26 Oct 23:46    INFO  valid result: 
+recall@10 : 0.137    recall@20 : 0.199    recall@50 : 0.3121    ndcg@10 : 0.0942    ndcg@20 : 0.1123    ndcg@50 : 0.1399    
+26 Oct 23:46    INFO  epoch 109 training [time: 12.02s, train loss: -18.2971]
+26 Oct 23:47    INFO  epoch 109 evaluating [time: 56.71s, valid_score: 0.112500]
+26 Oct 23:47    INFO  valid result: 
+recall@10 : 0.1364    recall@20 : 0.1987    recall@50 : 0.3114    ndcg@10 : 0.0945    ndcg@20 : 0.1125    ndcg@50 : 0.1401    
+26 Oct 23:47    INFO  epoch 110 training [time: 12.08s, train loss: -18.2976]
+26 Oct 23:48    INFO  epoch 110 evaluating [time: 55.28s, valid_score: 0.112300]
+26 Oct 23:48    INFO  valid result: 
+recall@10 : 0.1367    recall@20 : 0.1978    recall@50 : 0.3108    ndcg@10 : 0.0946    ndcg@20 : 0.1123    ndcg@50 : 0.1399    
+26 Oct 23:48    INFO  epoch 111 training [time: 12.21s, train loss: -18.2975]
+26 Oct 23:49    INFO  epoch 111 evaluating [time: 55.10s, valid_score: 0.112300]
+26 Oct 23:49    INFO  valid result: 
+recall@10 : 0.1357    recall@20 : 0.1978    recall@50 : 0.3105    ndcg@10 : 0.0943    ndcg@20 : 0.1123    ndcg@50 : 0.1399    
+26 Oct 23:49    INFO  epoch 112 training [time: 12.99s, train loss: -18.2979]
+26 Oct 23:50    INFO  epoch 112 evaluating [time: 55.93s, valid_score: 0.112400]
+26 Oct 23:50    INFO  valid result: 
+recall@10 : 0.1359    recall@20 : 0.1975    recall@50 : 0.3108    ndcg@10 : 0.0946    ndcg@20 : 0.1124    ndcg@50 : 0.1402    
+26 Oct 23:50    INFO  epoch 113 training [time: 12.17s, train loss: -18.2973]
+26 Oct 23:51    INFO  epoch 113 evaluating [time: 55.37s, valid_score: 0.113200]
+26 Oct 23:51    INFO  valid result: 
+recall@10 : 0.1374    recall@20 : 0.1995    recall@50 : 0.311    ndcg@10 : 0.0951    ndcg@20 : 0.1132    ndcg@50 : 0.1405    
+26 Oct 23:51    INFO  Saving current best: saved/DirectAU-Oct-26-2023_21-21-27.pth
+26 Oct 23:51    INFO  epoch 114 training [time: 11.66s, train loss: -18.2979]
+26 Oct 23:52    INFO  epoch 114 evaluating [time: 56.47s, valid_score: 0.112900]
+26 Oct 23:52    INFO  valid result: 
+recall@10 : 0.1363    recall@20 : 0.1983    recall@50 : 0.3109    ndcg@10 : 0.0948    ndcg@20 : 0.1129    ndcg@50 : 0.1404    
+26 Oct 23:53    INFO  epoch 115 training [time: 11.49s, train loss: -18.2979]
+26 Oct 23:53    INFO  epoch 115 evaluating [time: 55.54s, valid_score: 0.112800]
+26 Oct 23:53    INFO  valid result: 
+recall@10 : 0.1367    recall@20 : 0.1984    recall@50 : 0.3116    ndcg@10 : 0.095    ndcg@20 : 0.1128    ndcg@50 : 0.1405    
+26 Oct 23:54    INFO  epoch 116 training [time: 12.14s, train loss: -18.2976]
+26 Oct 23:55    INFO  epoch 116 evaluating [time: 55.56s, valid_score: 0.112700]
+26 Oct 23:55    INFO  valid result: 
+recall@10 : 0.137    recall@20 : 0.1979    recall@50 : 0.3124    ndcg@10 : 0.095    ndcg@20 : 0.1127    ndcg@50 : 0.1407    
+26 Oct 23:55    INFO  epoch 117 training [time: 13.53s, train loss: -18.2975]
+26 Oct 23:56    INFO  epoch 117 evaluating [time: 55.55s, valid_score: 0.112800]
+26 Oct 23:56    INFO  valid result: 
+recall@10 : 0.1364    recall@20 : 0.1978    recall@50 : 0.3119    ndcg@10 : 0.0949    ndcg@20 : 0.1128    ndcg@50 : 0.1407    
+26 Oct 23:56    INFO  epoch 118 training [time: 12.14s, train loss: -18.2979]
+26 Oct 23:57    INFO  epoch 118 evaluating [time: 55.80s, valid_score: 0.112400]
+26 Oct 23:57    INFO  valid result: 
+recall@10 : 0.1364    recall@20 : 0.1985    recall@50 : 0.3111    ndcg@10 : 0.0945    ndcg@20 : 0.1124    ndcg@50 : 0.14    
+26 Oct 23:57    INFO  epoch 119 training [time: 12.25s, train loss: -18.2981]
+26 Oct 23:58    INFO  epoch 119 evaluating [time: 56.38s, valid_score: 0.112500]
+26 Oct 23:58    INFO  valid result: 
+recall@10 : 0.1368    recall@20 : 0.1978    recall@50 : 0.3097    ndcg@10 : 0.0948    ndcg@20 : 0.1125    ndcg@50 : 0.1398    
+26 Oct 23:58    INFO  epoch 120 training [time: 12.22s, train loss: -18.2977]
+26 Oct 23:59    INFO  epoch 120 evaluating [time: 55.39s, valid_score: 0.112000]
+26 Oct 23:59    INFO  valid result: 
+recall@10 : 0.1364    recall@20 : 0.198    recall@50 : 0.3111    ndcg@10 : 0.0941    ndcg@20 : 0.112    ndcg@50 : 0.1397    
+26 Oct 23:59    INFO  epoch 121 training [time: 12.20s, train loss: -18.2986]
+27 Oct 00:00    INFO  epoch 121 evaluating [time: 55.59s, valid_score: 0.112100]
+27 Oct 00:00    INFO  valid result: 
+recall@10 : 0.1354    recall@20 : 0.198    recall@50 : 0.31    ndcg@10 : 0.0939    ndcg@20 : 0.1121    ndcg@50 : 0.1396    
+27 Oct 00:00    INFO  epoch 122 training [time: 13.67s, train loss: -18.2982]
+27 Oct 00:01    INFO  epoch 122 evaluating [time: 55.47s, valid_score: 0.111500]
+27 Oct 00:01    INFO  valid result: 
+recall@10 : 0.1354    recall@20 : 0.1971    recall@50 : 0.3095    ndcg@10 : 0.0935    ndcg@20 : 0.1115    ndcg@50 : 0.139    
+27 Oct 00:02    INFO  epoch 123 training [time: 11.50s, train loss: -18.2982]
+27 Oct 00:03    INFO  epoch 123 evaluating [time: 55.02s, valid_score: 0.111500]
+27 Oct 00:03    INFO  valid result: 
+recall@10 : 0.1357    recall@20 : 0.1973    recall@50 : 0.3112    ndcg@10 : 0.0936    ndcg@20 : 0.1115    ndcg@50 : 0.1394    
+27 Oct 00:03    INFO  epoch 124 training [time: 11.66s, train loss: -18.2977]
+27 Oct 00:04    INFO  epoch 124 evaluating [time: 56.56s, valid_score: 0.112300]
+27 Oct 00:04    INFO  valid result: 
+recall@10 : 0.1372    recall@20 : 0.1979    recall@50 : 0.3129    ndcg@10 : 0.0947    ndcg@20 : 0.1123    ndcg@50 : 0.1404    
+27 Oct 00:04    INFO  Finished training, best eval result in epoch 113
+27 Oct 00:04    INFO  Loading model structure and parameters from saved/DirectAU-Oct-26-2023_21-21-27.pth
+27 Oct 00:05    INFO  best valid : {'recall@10': 0.1374, 'recall@20': 0.1995, 'recall@50': 0.311, 'ndcg@10': 0.0951, 'ndcg@20': 0.1132, 'ndcg@50': 0.1405}
+27 Oct 00:05    INFO  test result: {'recall@10': 0.1376, 'recall@20': 0.1984, 'recall@50': 0.3092, 'ndcg@10': 0.0989, 'ndcg@20': 0.1163, 'ndcg@50': 0.1435}

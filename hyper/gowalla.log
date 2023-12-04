@@ -1,0 +1,59 @@
+  0%|          | 0/96 [00:00<?, ?trial/s, best loss=?]                                                      running parameters:
+  0%|          | 0/96 [00:00<?, ?trial/s, best loss=?]                                                      {'alpha': 0.9, 'd': 0.1, 'gamma': 0.5, 'gpu_id': 6, 'std': 0.01, 'train_batch_size': 1024, 'weight_decay': 1e-06}
+  0%|          | 0/96 [00:00<?, ?trial/s, best loss=?]                                                      this is encoder MF...
+  0%|          | 0/96 [00:04<?, ?trial/s, best loss=?]                                                      这是directau 的 RE 版本...
+  0%|          | 0/96 [00:04<?, ?trial/s, best loss=?]                                                      current best valid score: 0.0896
+  0%|          | 0/96 [1:01:25<?, ?trial/s, best loss=?]                                                        current best valid result:
+  0%|          | 0/96 [1:01:25<?, ?trial/s, best loss=?]                                                        {'recall@10': 0.1071, 'recall@20': 0.157, 'recall@50': 0.2511, 'ndcg@10': 0.0753, 'ndcg@20': 0.0896, 'ndcg@50': 0.1125}
+  0%|          | 0/96 [1:01:25<?, ?trial/s, best loss=?]                                                        current test result:
+  0%|          | 0/96 [1:01:25<?, ?trial/s, best loss=?]                                                        {'recall@10': 0.1068, 'recall@20': 0.1573, 'recall@50': 0.2527, 'ndcg@10': 0.0772, 'ndcg@20': 0.0916, 'ndcg@50': 0.1148}
+  0%|          | 0/96 [1:01:25<?, ?trial/s, best loss=?]  1%|          | 1/96 [1:01:25<97:15:00, 3685.26s/trial, best loss: -0.0896]                                                                            running parameters:
+  1%|          | 1/96 [1:01:25<97:15:00, 3685.26s/trial, best loss: -0.0896]                                                                            {'alpha': 0.9, 'd': 0.1, 'gamma': 0.5, 'gpu_id': 6, 'std': 0.1, 'train_batch_size': 1024, 'weight_decay': 1e-06}
+  1%|          | 1/96 [1:01:25<97:15:00, 3685.26s/trial, best loss: -0.0896]                                                                            this is encoder MF...
+  1%|          | 1/96 [1:01:29<97:15:00, 3685.26s/trial, best loss: -0.0896]                                                                            这是directau 的 RE 版本...
+  1%|          | 1/96 [1:01:29<97:15:00, 3685.26s/trial, best loss: -0.0896]                                                                            current best valid score: 0.0900
+  1%|          | 1/96 [2:02:35<97:15:00, 3685.26s/trial, best loss: -0.0896]                                                                            current best valid result:
+  1%|          | 1/96 [2:02:35<97:15:00, 3685.26s/trial, best loss: -0.0896]                                                                            {'recall@10': 0.1073, 'recall@20': 0.1574, 'recall@50': 0.2518, 'ndcg@10': 0.0756, 'ndcg@20': 0.09, 'ndcg@50': 0.1129}
+  1%|          | 1/96 [2:02:35<97:15:00, 3685.26s/trial, best loss: -0.0896]                                                                            current test result:
+  1%|          | 1/96 [2:02:35<97:15:00, 3685.26s/trial, best loss: -0.0896]                                                                            {'recall@10': 0.1074, 'recall@20': 0.1577, 'recall@50': 0.2535, 'ndcg@10': 0.0776, 'ndcg@20': 0.0919, 'ndcg@50': 0.1152}
+  1%|          | 1/96 [2:02:35<97:15:00, 3685.26s/trial, best loss: -0.0896]  2%|▏         | 2/96 [2:02:35<96:00:04, 3676.64s/trial, best loss: -0.09]                                                                            running parameters:
+  2%|▏         | 2/96 [2:02:35<96:00:04, 3676.64s/trial, best loss: -0.09]                                                                          {'alpha': 0.9, 'd': 0.02, 'gamma': 0.5, 'gpu_id': 6, 'std': 0, 'train_batch_size': 1024, 'weight_decay': 1e-06}
+  2%|▏         | 2/96 [2:02:35<96:00:04, 3676.64s/trial, best loss: -0.09]                                                                          this is encoder MF...
+  2%|▏         | 2/96 [2:02:40<96:00:04, 3676.64s/trial, best loss: -0.09]                                                                          这是directau 的 RE 版本...
+  2%|▏         | 2/96 [2:02:40<96:00:04, 3676.64s/trial, best loss: -0.09]  3%|▎         | 3/96 [3:03:54<95:00:23, 3677.67s/trial, best loss: -0.09]                                                                          running parameters:
+  3%|▎         | 3/96 [3:03:54<95:00:23, 3677.67s/trial, best loss: -0.09]                                                                          {'alpha': 0.4, 'd': 0.1, 'gamma': 0.5, 'gpu_id': 6, 'std': 0, 'train_batch_size': 1024, 'weight_decay': 1e-06}
+  3%|▎         | 3/96 [3:03:54<95:00:23, 3677.67s/trial, best loss: -0.09]                                                                          this is encoder MF...
+  3%|▎         | 3/96 [3:03:58<95:00:23, 3677.67s/trial, best loss: -0.09]                                                                          这是directau 的 RE 版本...
+  3%|▎         | 3/96 [3:03:58<95:00:23, 3677.67s/trial, best loss: -0.09]  3%|▎         | 3/96 [3:30:53<108:57:45, 4217.91s/trial, best loss: -0.09]
+Traceback (most recent call last):
+  File "run_hyper.py", line 36, in <module>
+    main()
+  File "run_hyper.py", line 28, in main
+    hp.run()
+  File "/data/danzhang/zhouchao/GCL/recbole/trainer/hyper_tuning.py", line 309, in run
+    fmin(self.trial, self.space, algo=self.algo, max_evals=self.max_evals)
+  File "/home/danzhang/miniconda3/lib/python3.7/site-packages/hyperopt/fmin.py", line 553, in fmin
+    rval.exhaust()
+  File "/home/danzhang/miniconda3/lib/python3.7/site-packages/hyperopt/fmin.py", line 356, in exhaust
+    self.run(self.max_evals - n_done, block_until_done=self.asynchronous)
+  File "/home/danzhang/miniconda3/lib/python3.7/site-packages/hyperopt/fmin.py", line 292, in run
+    self.serial_evaluate()
+  File "/home/danzhang/miniconda3/lib/python3.7/site-packages/hyperopt/fmin.py", line 170, in serial_evaluate
+    result = self.domain.evaluate(spec, ctrl)
+  File "/home/danzhang/miniconda3/lib/python3.7/site-packages/hyperopt/base.py", line 907, in evaluate
+    rval = self.fn(pyll_rval)
+  File "/data/danzhang/zhouchao/GCL/recbole/trainer/hyper_tuning.py", line 280, in trial
+    result_dict = self.objective_function(config_dict, self.fixed_config_file_list)
+  File "/data/danzhang/zhouchao/GCL/recbole/quick_start/quick_start.py", line 91, in objective_function
+    best_valid_score, best_valid_result = trainer.fit(train_data, valid_data, verbose=False, saved=saved)
+  File "/data/danzhang/zhouchao/GCL/recbole/trainer/trainer.py", line 316, in fit
+    valid_score, valid_result = self._valid_epoch(valid_data, show_progress=show_progress)
+  File "/data/danzhang/zhouchao/GCL/recbole/trainer/trainer.py", line 213, in _valid_epoch
+    valid_result = self.evaluate(valid_data, load_best_model=False, show_progress=show_progress)
+  File "/home/danzhang/miniconda3/lib/python3.7/site-packages/torch/autograd/grad_mode.py", line 28, in decorate_context
+    return func(*args, **kwargs)
+  File "/data/danzhang/zhouchao/GCL/recbole/trainer/trainer.py", line 429, in evaluate
+    interaction, scores = self._full_sort_batch_eval(batched_data)
+  File "/data/danzhang/zhouchao/GCL/recbole/trainer/trainer.py", line 373, in _full_sort_batch_eval
+    swap_row = swap_row.to(self.device)
+KeyboardInterrupt

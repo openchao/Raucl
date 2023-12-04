@@ -1,0 +1,5 @@
+  0%|          | 0/38 [00:00<?, ?trial/s, best loss=?]                                                      running parameters:
+  0%|          | 0/38 [00:00<?, ?trial/s, best loss=?]                                                      {'alpha': 0.9, 'd': 0.5, 'gamma': 0.46, 'gpu_id': 4, 'std': 0.7, 'train_batch_size': 256, 'weight_decay': 1e-06}
+  0%|          | 0/38 [00:00<?, ?trial/s, best loss=?]                                                      this is encoder MF...
+  0%|          | 0/38 [00:13<?, ?trial/s, best loss=?]                                                      这是directau 的 RE 版本...gamma0.46, d0.5, alpha0.9, std0.7
+  0%|          | 0/38 [00:13<?, ?trial/s, best loss=?]

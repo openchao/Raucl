@@ -1,0 +1,18 @@
+Traceback (most recent call last):
+  File "test.py", line 12, in <module>
+    from recbole.quick_start import run_recbole
+  File "/data/danzhang/wuxi/DirectAU/recbole/quick_start/__init__.py", line 1, in <module>
+    from recbole.quick_start.quick_start import run_recbole, objective_function
+  File "/data/danzhang/wuxi/DirectAU/recbole/quick_start/quick_start.py", line 12, in <module>
+    from recbole.config import Config
+  File "/data/danzhang/wuxi/DirectAU/recbole/config/__init__.py", line 1, in <module>
+    from recbole.config.configurator import Config
+  File "/data/danzhang/wuxi/DirectAU/recbole/config/configurator.py", line 19, in <module>
+    import torch
+  File "/home/danzhang/miniconda3/envs/divrec/lib/python3.8/site-packages/torch/__init__.py", line 191, in <module>
+    _load_global_deps()
+  File "/home/danzhang/miniconda3/envs/divrec/lib/python3.8/site-packages/torch/__init__.py", line 153, in _load_global_deps
+    ctypes.CDLL(lib_path, mode=ctypes.RTLD_GLOBAL)
+  File "/home/danzhang/miniconda3/envs/divrec/lib/python3.8/ctypes/__init__.py", line 373, in __init__
+    self._handle = _dlopen(self._name, mode)
+OSError: /home/danzhang/miniconda3/envs/divrec/lib/python3.8/site-packages/torch/lib/../../nvidia/cublas/lib/libcublas.so.11: symbol cublasLtHSHMatmulAlgoInit version libcublasLt.so.11 not defined in file libcublasLt.so.11 with link time reference

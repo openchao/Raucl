@@ -1,0 +1,26 @@
+  0%|          | 0/12 [00:00<?, ?trial/s, best loss=?]                                                      running parameters:
+  0%|          | 0/12 [00:00<?, ?trial/s, best loss=?]                                                      {'alpha': 0.9, 'd': 0.2, 'gamma': 6, 'gpu_id': 9, 'std': 1, 'train_batch_size': 1024, 'weight_decay': 1e-06}
+  0%|          | 0/12 [00:00<?, ?trial/s, best loss=?]                                                      this is encoder MF...
+  0%|          | 0/12 [00:04<?, ?trial/s, best loss=?]                                                      这是directau 的 RE 版本...gamma6, d0.2, alpha0.9, std1
+  0%|          | 0/12 [00:04<?, ?trial/s, best loss=?]                                                      current best valid score: 0.1187
+  0%|          | 0/12 [1:27:26<?, ?trial/s, best loss=?]                                                        current best valid result:
+  0%|          | 0/12 [1:27:26<?, ?trial/s, best loss=?]                                                        {'recall@10': 0.1419, 'recall@20': 0.2072, 'recall@50': 0.3219, 'ndcg@10': 0.0998, 'ndcg@20': 0.1187, 'ndcg@50': 0.1469}
+  0%|          | 0/12 [1:27:26<?, ?trial/s, best loss=?]                                                        current test result:
+  0%|          | 0/12 [1:27:26<?, ?trial/s, best loss=?]                                                        {'recall@10': 0.1458, 'recall@20': 0.2092, 'recall@50': 0.3233, 'ndcg@10': 0.1054, 'ndcg@20': 0.1237, 'ndcg@50': 0.1517}
+  0%|          | 0/12 [1:27:26<?, ?trial/s, best loss=?]  8%|▊         | 1/12 [1:27:26<16:01:55, 5246.91s/trial, best loss: -0.1187]                                                                            running parameters:
+  8%|▊         | 1/12 [1:27:26<16:01:55, 5246.91s/trial, best loss: -0.1187]                                                                            {'alpha': 0.9, 'd': 0.1, 'gamma': 6, 'gpu_id': 9, 'std': 1, 'train_batch_size': 1024, 'weight_decay': 1e-06}
+  8%|▊         | 1/12 [1:27:26<16:01:55, 5246.91s/trial, best loss: -0.1187]                                                                            this is encoder MF...
+  8%|▊         | 1/12 [1:27:31<16:01:55, 5246.91s/trial, best loss: -0.1187]                                                                            这是directau 的 RE 版本...gamma6, d0.1, alpha0.9, std1
+  8%|▊         | 1/12 [1:27:31<16:01:55, 5246.91s/trial, best loss: -0.1187] 17%|█▋        | 2/12 [2:37:30<12:52:11, 4633.17s/trial, best loss: -0.1187]                                                                            running parameters:
+ 17%|█▋        | 2/12 [2:37:30<12:52:11, 4633.17s/trial, best loss: -0.1187]                                                                            {'alpha': 0.9, 'd': 0.2, 'gamma': 6, 'gpu_id': 9, 'std': 0.5, 'train_batch_size': 1024, 'weight_decay': 1e-06}
+ 17%|█▋        | 2/12 [2:37:30<12:52:11, 4633.17s/trial, best loss: -0.1187]                                                                            this is encoder MF...
+ 17%|█▋        | 2/12 [2:37:34<12:52:11, 4633.17s/trial, best loss: -0.1187]                                                                            这是directau 的 RE 版本...gamma6, d0.2, alpha0.9, std0.5
+ 17%|█▋        | 2/12 [2:37:34<12:52:11, 4633.17s/trial, best loss: -0.1187] 25%|██▌       | 3/12 [3:29:13<9:50:11, 3934.56s/trial, best loss: -0.1187]                                                                            running parameters:
+ 25%|██▌       | 3/12 [3:29:13<9:50:11, 3934.56s/trial, best loss: -0.1187]                                                                           {'alpha': 0.9, 'd': 0.001, 'gamma': 6, 'gpu_id': 9, 'std': 1, 'train_batch_size': 1024, 'weight_decay': 1e-06}
+ 25%|██▌       | 3/12 [3:29:13<9:50:11, 3934.56s/trial, best loss: -0.1187]                                                                           this is encoder MF...
+ 25%|██▌       | 3/12 [3:29:18<9:50:11, 3934.56s/trial, best loss: -0.1187]                                                                           这是directau 的 RE 版本...gamma6, d0.001, alpha0.9, std1
+ 25%|██▌       | 3/12 [3:29:18<9:50:11, 3934.56s/trial, best loss: -0.1187] 33%|███▎      | 4/12 [4:28:46<8:25:34, 3791.84s/trial, best loss: -0.1187]                                                                           running parameters:
+ 33%|███▎      | 4/12 [4:28:46<8:25:34, 3791.84s/trial, best loss: -0.1187]                                                                           {'alpha': 0.9, 'd': 0.001, 'gamma': 6, 'gpu_id': 9, 'std': 0.5, 'train_batch_size': 1024, 'weight_decay': 1e-06}
+ 33%|███▎      | 4/12 [4:28:46<8:25:34, 3791.84s/trial, best loss: -0.1187]                                                                           this is encoder MF...
+ 33%|███▎      | 4/12 [4:28:51<8:25:34, 3791.84s/trial, best loss: -0.1187]                                                                           这是directau 的 RE 版本...gamma6, d0.001, alpha0.9, std0.5
+ 33%|███▎      | 4/12 [4:28:51<8:25:34, 3791.84s/trial, best loss: -0.1187]

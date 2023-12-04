@@ -28,15 +28,15 @@ if __name__ == '__main__':
     config_file_list = args.config_files.strip().split(' ') if args.config_files else None
     # for zc in [0.01,0.1,0.2,0.5,0.7,0.8,0.9,0.95,1.0]:
     
-    with open('recbole/properties/model/RauCL.yaml', 'r') as file:
-        data = yaml.load(file, Loader=yaml.FullLoader)
-        data['d'] = args.d
-        data['alpha'] = args.alpha
-        data['std'] = args.std
-        data['gamma'] = args.gamma
-    print(data)
-    with open('recbole/properties/model/RauCL.yaml', 'w') as file:
-        yaml.dump(data, file)
+    # with open('recbole/properties/model/RauCL.yaml', 'r') as file:
+    #     data = yaml.load(file, Loader=yaml.FullLoader)
+    #     data['d'] = args.d
+    #     data['alpha'] = args.alpha
+    #     data['std'] = args.std
+    #     data['gamma'] = args.gamma
+    # print(data)
+    # with open('recbole/properties/model/RauCL.yaml', 'w') as file:
+    #     yaml.dump(data, file)
 
     run_recbole(model=args.model, dataset=args.dataset, config_file_list=config_file_list)
 

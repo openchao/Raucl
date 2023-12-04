@@ -1,0 +1,916 @@
+03 Dec 10:43    INFO  
+General Hyper Parameters:
+gpu_id = 9
+use_gpu = True
+seed = 0
+state = INFO
+reproducibility = True
+data_path = dataset/Gowalla
+show_progress = False
+
+Training Hyper Parameters:
+checkpoint_dir = saved_best
+epochs = 500
+train_batch_size = 1024
+learner = adam
+learning_rate = 0.001
+training_neg_sample_num = 0
+training_neg_sample_distribution = uniform
+eval_step = 1
+stopping_step = 10
+clip_grad_norm = None
+weight_decay = 1e-06
+draw_loss_pic = False
+loss_decimal_place = 4
+
+Evaluation Hyper Parameters:
+eval_setting = RO_RS,full
+group_by_user = True
+split_ratio = [0.8, 0.1, 0.1]
+leave_one_num = 2
+real_time_process = False
+metrics = ['Recall', 'NDCG']
+topk = [10, 20, 50]
+valid_metric = NDCG@20
+eval_batch_size = 4096
+metric_decimal_place = 4
+
+Dataset Hyper Parameters:
+field_separator = 	
+seq_separator =  
+USER_ID_FIELD = user_id
+ITEM_ID_FIELD = item_id
+RATING_FIELD = rating
+TIME_FIELD = timestamp
+seq_len = None
+LABEL_FIELD = label
+threshold = None
+NEG_PREFIX = neg_
+load_col = {'inter': ['user_id', 'item_id', 'timestamp']}
+unload_col = None
+unused_col = None
+additional_feat_suffix = None
+lowest_val = None
+highest_val = None
+equal_val = None
+not_equal_val = None
+max_user_inter_num = None
+min_user_inter_num = 5
+max_item_inter_num = None
+min_item_inter_num = 5
+fields_in_same_space = None
+preload_weight = None
+normalize_field = None
+normalize_all = None
+ITEM_LIST_LENGTH_FIELD = item_length
+LIST_SUFFIX = _list
+MAX_ITEM_LIST_LENGTH = 50
+POSITION_FIELD = position_id
+HEAD_ENTITY_ID_FIELD = head_id
+TAIL_ENTITY_ID_FIELD = tail_id
+RELATION_ID_FIELD = relation_id
+ENTITY_ID_FIELD = entity_id
+
+Other Hyper Parameters: 
+valid_metric_bigger = True
+BT = 0.1
+alpha = 0.9
+alpha_i = None
+alpha_u = None
+d = 0.1
+embedding_size = 64
+encoder = MF
+gamma = 5.5
+std = 1
+std_i = None
+std_u = None
+times = 1
+rm_dup_inter = None
+filter_inter_by_user_or_item = True
+SOURCE_ID_FIELD = source_id
+TARGET_ID_FIELD = target_id
+benchmark_filename = None
+MODEL_TYPE = ModelType.GENERAL
+MODEL_INPUT_TYPE = InputType.POINTWISE
+eval_type = EvaluatorType.RANKING
+device = cuda
+train_neg_sample_args = {'strategy': 'none'}
+
+
+03 Dec 10:43    INFO  Gowalla
+The number of users: 29859
+Average actions of users: 34.408533726304505
+The number of items: 40982
+Average actions of items: 25.06942241526561
+The number of inters: 1027370
+The sparsity of the dataset: 99.91604269835769%
+Remain Fields: ['user_id', 'item_id']
+03 Dec 10:43    INFO  Build [GeneralDataLoader] for [train] with format [InputType.POINTWISE]
+03 Dec 10:43    INFO  [train] No Negative Sampling
+03 Dec 10:43    INFO  [train] batch_size = [1024], shuffle = [True]
+
+03 Dec 10:43    INFO  Build [GeneralFullDataLoader] for [evaluation] with format [InputType.POINTWISE]
+03 Dec 10:43    INFO  Evaluation Setting:
+	Group by user_id
+	Ordering: {'strategy': 'shuffle'}
+	Splitting: {'strategy': 'by_ratio', 'ratios': [0.8, 0.1, 0.1]}
+	Negative Sampling: {'strategy': 'full', 'distribution': 'uniform'}
+03 Dec 10:43    INFO  [evaluation] batch_size = [4096], shuffle = [False]
+
+03 Dec 10:43    WARNING  Batch size is changed to 40982.
+03 Dec 10:43    WARNING  Batch size is changed to 40982.
+this is encoder MF...
+这是directau 的 RE 版本...gamma5.5, d0.1, alpha0.9, std1
+03 Dec 10:43    INFO  RauCL(
+  (encoder): MFEncoder(
+    (user_embedding): Embedding(29859, 64)
+    (item_embedding): Embedding(40982, 64)
+  )
+)
+Trainable parameters: 4533824
+03 Dec 10:43    INFO  epoch 0 training [time: 16.21s, train loss: -19.3439]
+03 Dec 10:43    INFO  epoch 0 evaluating [time: 15.42s, valid_score: 0.028800]
+03 Dec 10:43    INFO  valid result: 
+recall@10 : 0.0322    recall@20 : 0.0511    recall@50 : 0.0888    ndcg@10 : 0.023    ndcg@20 : 0.0288    ndcg@50 : 0.0387    
+03 Dec 10:43    INFO  Saving current best: saved_best/RauCL-Dec-03-2023_10-43-15.pth
+03 Dec 10:44    INFO  epoch 1 training [time: 16.28s, train loss: -19.7523]
+03 Dec 10:44    INFO  epoch 1 evaluating [time: 15.29s, valid_score: 0.046500]
+03 Dec 10:44    INFO  valid result: 
+recall@10 : 0.0538    recall@20 : 0.0839    recall@50 : 0.1424    ndcg@10 : 0.0374    ndcg@20 : 0.0465    ndcg@50 : 0.0613    
+03 Dec 10:44    INFO  Saving current best: saved_best/RauCL-Dec-03-2023_10-43-15.pth
+03 Dec 10:44    INFO  epoch 2 training [time: 16.29s, train loss: -19.8651]
+03 Dec 10:44    INFO  epoch 2 evaluating [time: 15.30s, valid_score: 0.055300]
+03 Dec 10:44    INFO  valid result: 
+recall@10 : 0.0658    recall@20 : 0.1004    recall@50 : 0.1643    ndcg@10 : 0.045    ndcg@20 : 0.0553    ndcg@50 : 0.0715    
+03 Dec 10:44    INFO  Saving current best: saved_best/RauCL-Dec-03-2023_10-43-15.pth
+03 Dec 10:45    INFO  epoch 3 training [time: 16.24s, train loss: -19.9199]
+03 Dec 10:45    INFO  epoch 3 evaluating [time: 15.22s, valid_score: 0.059800]
+03 Dec 10:45    INFO  valid result: 
+recall@10 : 0.0711    recall@20 : 0.1077    recall@50 : 0.1794    ndcg@10 : 0.0489    ndcg@20 : 0.0598    ndcg@50 : 0.0777    
+03 Dec 10:45    INFO  Saving current best: saved_best/RauCL-Dec-03-2023_10-43-15.pth
+03 Dec 10:45    INFO  epoch 4 training [time: 16.24s, train loss: -19.9546]
+03 Dec 10:45    INFO  epoch 4 evaluating [time: 15.25s, valid_score: 0.063500]
+03 Dec 10:45    INFO  valid result: 
+recall@10 : 0.0764    recall@20 : 0.1149    recall@50 : 0.1888    ndcg@10 : 0.0519    ndcg@20 : 0.0635    ndcg@50 : 0.0819    
+03 Dec 10:45    INFO  Saving current best: saved_best/RauCL-Dec-03-2023_10-43-15.pth
+03 Dec 10:46    INFO  epoch 5 training [time: 16.22s, train loss: -19.9804]
+03 Dec 10:46    INFO  epoch 5 evaluating [time: 15.10s, valid_score: 0.066900]
+03 Dec 10:46    INFO  valid result: 
+recall@10 : 0.0798    recall@20 : 0.1213    recall@50 : 0.1967    ndcg@10 : 0.0546    ndcg@20 : 0.0669    ndcg@50 : 0.0857    
+03 Dec 10:46    INFO  Saving current best: saved_best/RauCL-Dec-03-2023_10-43-15.pth
+03 Dec 10:46    INFO  epoch 6 training [time: 16.19s, train loss: -20.0005]
+03 Dec 10:46    INFO  epoch 6 evaluating [time: 15.40s, valid_score: 0.069700]
+03 Dec 10:46    INFO  valid result: 
+recall@10 : 0.0844    recall@20 : 0.1256    recall@50 : 0.2042    ndcg@10 : 0.0574    ndcg@20 : 0.0697    ndcg@50 : 0.0892    
+03 Dec 10:46    INFO  Saving current best: saved_best/RauCL-Dec-03-2023_10-43-15.pth
+03 Dec 10:47    INFO  epoch 7 training [time: 16.23s, train loss: -20.0172]
+03 Dec 10:47    INFO  epoch 7 evaluating [time: 15.29s, valid_score: 0.072000]
+03 Dec 10:47    INFO  valid result: 
+recall@10 : 0.0876    recall@20 : 0.1293    recall@50 : 0.2114    ndcg@10 : 0.0596    ndcg@20 : 0.072    ndcg@50 : 0.0922    
+03 Dec 10:47    INFO  Saving current best: saved_best/RauCL-Dec-03-2023_10-43-15.pth
+03 Dec 10:47    INFO  epoch 8 training [time: 16.25s, train loss: -20.0318]
+03 Dec 10:48    INFO  epoch 8 evaluating [time: 15.38s, valid_score: 0.074300]
+03 Dec 10:48    INFO  valid result: 
+recall@10 : 0.0903    recall@20 : 0.1346    recall@50 : 0.2169    ndcg@10 : 0.0612    ndcg@20 : 0.0743    ndcg@50 : 0.0947    
+03 Dec 10:48    INFO  Saving current best: saved_best/RauCL-Dec-03-2023_10-43-15.pth
+03 Dec 10:48    INFO  epoch 9 training [time: 16.27s, train loss: -20.0446]
+03 Dec 10:48    INFO  epoch 9 evaluating [time: 15.03s, valid_score: 0.075800]
+03 Dec 10:48    INFO  valid result: 
+recall@10 : 0.0936    recall@20 : 0.1373    recall@50 : 0.2232    ndcg@10 : 0.063    ndcg@20 : 0.0758    ndcg@50 : 0.0971    
+03 Dec 10:48    INFO  Saving current best: saved_best/RauCL-Dec-03-2023_10-43-15.pth
+03 Dec 10:48    INFO  epoch 10 training [time: 16.25s, train loss: -20.0553]
+03 Dec 10:49    INFO  epoch 10 evaluating [time: 15.31s, valid_score: 0.077900]
+03 Dec 10:49    INFO  valid result: 
+recall@10 : 0.0959    recall@20 : 0.1403    recall@50 : 0.2286    ndcg@10 : 0.0648    ndcg@20 : 0.0779    ndcg@50 : 0.0997    
+03 Dec 10:49    INFO  Saving current best: saved_best/RauCL-Dec-03-2023_10-43-15.pth
+03 Dec 10:49    INFO  epoch 11 training [time: 16.29s, train loss: -20.0656]
+03 Dec 10:49    INFO  epoch 11 evaluating [time: 15.25s, valid_score: 0.079400]
+03 Dec 10:49    INFO  valid result: 
+recall@10 : 0.0957    recall@20 : 0.1423    recall@50 : 0.2328    ndcg@10 : 0.0655    ndcg@20 : 0.0794    ndcg@50 : 0.1017    
+03 Dec 10:49    INFO  Saving current best: saved_best/RauCL-Dec-03-2023_10-43-15.pth
+03 Dec 10:49    INFO  epoch 12 training [time: 16.25s, train loss: -20.0748]
+03 Dec 10:50    INFO  epoch 12 evaluating [time: 15.04s, valid_score: 0.081700]
+03 Dec 10:50    INFO  valid result: 
+recall@10 : 0.0996    recall@20 : 0.1471    recall@50 : 0.2371    ndcg@10 : 0.0677    ndcg@20 : 0.0817    ndcg@50 : 0.1039    
+03 Dec 10:50    INFO  Saving current best: saved_best/RauCL-Dec-03-2023_10-43-15.pth
+03 Dec 10:50    INFO  epoch 13 training [time: 16.23s, train loss: -20.0831]
+03 Dec 10:50    INFO  epoch 13 evaluating [time: 15.48s, valid_score: 0.083100]
+03 Dec 10:50    INFO  valid result: 
+recall@10 : 0.1011    recall@20 : 0.15    recall@50 : 0.2424    ndcg@10 : 0.0687    ndcg@20 : 0.0831    ndcg@50 : 0.1059    
+03 Dec 10:50    INFO  Saving current best: saved_best/RauCL-Dec-03-2023_10-43-15.pth
+03 Dec 10:50    INFO  epoch 14 training [time: 16.13s, train loss: -20.0905]
+03 Dec 10:51    INFO  epoch 14 evaluating [time: 14.90s, valid_score: 0.085000]
+03 Dec 10:51    INFO  valid result: 
+recall@10 : 0.1043    recall@20 : 0.1525    recall@50 : 0.2468    ndcg@10 : 0.0708    ndcg@20 : 0.085    ndcg@50 : 0.1083    
+03 Dec 10:51    INFO  Saving current best: saved_best/RauCL-Dec-03-2023_10-43-15.pth
+03 Dec 10:51    INFO  epoch 15 training [time: 16.11s, train loss: -20.0974]
+03 Dec 10:51    INFO  epoch 15 evaluating [time: 15.19s, valid_score: 0.086800]
+03 Dec 10:51    INFO  valid result: 
+recall@10 : 0.105    recall@20 : 0.1566    recall@50 : 0.252    ndcg@10 : 0.0714    ndcg@20 : 0.0868    ndcg@50 : 0.1102    
+03 Dec 10:51    INFO  Saving current best: saved_best/RauCL-Dec-03-2023_10-43-15.pth
+03 Dec 10:51    INFO  epoch 16 training [time: 16.24s, train loss: -20.1031]
+03 Dec 10:52    INFO  epoch 16 evaluating [time: 15.11s, valid_score: 0.088200]
+03 Dec 10:52    INFO  valid result: 
+recall@10 : 0.1077    recall@20 : 0.1587    recall@50 : 0.2549    ndcg@10 : 0.0732    ndcg@20 : 0.0882    ndcg@50 : 0.1119    
+03 Dec 10:52    INFO  Saving current best: saved_best/RauCL-Dec-03-2023_10-43-15.pth
+03 Dec 10:52    INFO  epoch 17 training [time: 16.30s, train loss: -20.1084]
+03 Dec 10:52    INFO  epoch 17 evaluating [time: 15.07s, valid_score: 0.089500]
+03 Dec 10:52    INFO  valid result: 
+recall@10 : 0.1093    recall@20 : 0.161    recall@50 : 0.2585    ndcg@10 : 0.0743    ndcg@20 : 0.0895    ndcg@50 : 0.1134    
+03 Dec 10:52    INFO  Saving current best: saved_best/RauCL-Dec-03-2023_10-43-15.pth
+03 Dec 10:53    INFO  epoch 18 training [time: 16.29s, train loss: -20.1139]
+03 Dec 10:53    INFO  epoch 18 evaluating [time: 15.14s, valid_score: 0.091100]
+03 Dec 10:53    INFO  valid result: 
+recall@10 : 0.1106    recall@20 : 0.1633    recall@50 : 0.2627    ndcg@10 : 0.0756    ndcg@20 : 0.0911    ndcg@50 : 0.1154    
+03 Dec 10:53    INFO  Saving current best: saved_best/RauCL-Dec-03-2023_10-43-15.pth
+03 Dec 10:53    INFO  epoch 19 training [time: 16.23s, train loss: -20.1187]
+03 Dec 10:53    INFO  epoch 19 evaluating [time: 15.25s, valid_score: 0.092700]
+03 Dec 10:53    INFO  valid result: 
+recall@10 : 0.1126    recall@20 : 0.1673    recall@50 : 0.2654    ndcg@10 : 0.0766    ndcg@20 : 0.0927    ndcg@50 : 0.1169    
+03 Dec 10:53    INFO  Saving current best: saved_best/RauCL-Dec-03-2023_10-43-15.pth
+03 Dec 10:54    INFO  epoch 20 training [time: 16.34s, train loss: -20.1233]
+03 Dec 10:54    INFO  epoch 20 evaluating [time: 17.30s, valid_score: 0.093300]
+03 Dec 10:54    INFO  valid result: 
+recall@10 : 0.113    recall@20 : 0.1679    recall@50 : 0.269    ndcg@10 : 0.0772    ndcg@20 : 0.0933    ndcg@50 : 0.1181    
+03 Dec 10:54    INFO  Saving current best: saved_best/RauCL-Dec-03-2023_10-43-15.pth
+03 Dec 10:54    INFO  epoch 21 training [time: 16.40s, train loss: -20.1272]
+03 Dec 10:54    INFO  epoch 21 evaluating [time: 17.65s, valid_score: 0.094800]
+03 Dec 10:54    INFO  valid result: 
+recall@10 : 0.1157    recall@20 : 0.1712    recall@50 : 0.2712    ndcg@10 : 0.0785    ndcg@20 : 0.0948    ndcg@50 : 0.1193    
+03 Dec 10:54    INFO  Saving current best: saved_best/RauCL-Dec-03-2023_10-43-15.pth
+03 Dec 10:55    INFO  epoch 22 training [time: 16.27s, train loss: -20.1302]
+03 Dec 10:55    INFO  epoch 22 evaluating [time: 15.03s, valid_score: 0.096000]
+03 Dec 10:55    INFO  valid result: 
+recall@10 : 0.1164    recall@20 : 0.1729    recall@50 : 0.2739    ndcg@10 : 0.0794    ndcg@20 : 0.096    ndcg@50 : 0.1208    
+03 Dec 10:55    INFO  Saving current best: saved_best/RauCL-Dec-03-2023_10-43-15.pth
+03 Dec 10:55    INFO  epoch 23 training [time: 16.27s, train loss: -20.1336]
+03 Dec 10:55    INFO  epoch 23 evaluating [time: 16.85s, valid_score: 0.097200]
+03 Dec 10:55    INFO  valid result: 
+recall@10 : 0.1175    recall@20 : 0.1741    recall@50 : 0.2759    ndcg@10 : 0.0806    ndcg@20 : 0.0972    ndcg@50 : 0.1222    
+03 Dec 10:55    INFO  Saving current best: saved_best/RauCL-Dec-03-2023_10-43-15.pth
+03 Dec 10:56    INFO  epoch 24 training [time: 16.31s, train loss: -20.1363]
+03 Dec 10:56    INFO  epoch 24 evaluating [time: 15.04s, valid_score: 0.098600]
+03 Dec 10:56    INFO  valid result: 
+recall@10 : 0.1179    recall@20 : 0.1754    recall@50 : 0.2783    ndcg@10 : 0.0818    ndcg@20 : 0.0986    ndcg@50 : 0.1238    
+03 Dec 10:56    INFO  Saving current best: saved_best/RauCL-Dec-03-2023_10-43-15.pth
+03 Dec 10:56    INFO  epoch 25 training [time: 16.26s, train loss: -20.1394]
+03 Dec 10:57    INFO  epoch 25 evaluating [time: 15.29s, valid_score: 0.098800]
+03 Dec 10:57    INFO  valid result: 
+recall@10 : 0.1195    recall@20 : 0.1761    recall@50 : 0.2799    ndcg@10 : 0.0822    ndcg@20 : 0.0988    ndcg@50 : 0.1243    
+03 Dec 10:57    INFO  Saving current best: saved_best/RauCL-Dec-03-2023_10-43-15.pth
+03 Dec 10:57    INFO  epoch 26 training [time: 16.35s, train loss: -20.1414]
+03 Dec 10:57    INFO  epoch 26 evaluating [time: 16.01s, valid_score: 0.099600]
+03 Dec 10:57    INFO  valid result: 
+recall@10 : 0.1203    recall@20 : 0.1783    recall@50 : 0.282    ndcg@10 : 0.0826    ndcg@20 : 0.0996    ndcg@50 : 0.125    
+03 Dec 10:57    INFO  Saving current best: saved_best/RauCL-Dec-03-2023_10-43-15.pth
+03 Dec 10:57    INFO  epoch 27 training [time: 16.38s, train loss: -20.1440]
+03 Dec 10:58    INFO  epoch 27 evaluating [time: 14.98s, valid_score: 0.100000]
+03 Dec 10:58    INFO  valid result: 
+recall@10 : 0.1217    recall@20 : 0.1791    recall@50 : 0.2841    ndcg@10 : 0.0831    ndcg@20 : 0.1    ndcg@50 : 0.1258    
+03 Dec 10:58    INFO  Saving current best: saved_best/RauCL-Dec-03-2023_10-43-15.pth
+03 Dec 10:58    INFO  epoch 28 training [time: 16.31s, train loss: -20.1455]
+03 Dec 10:58    INFO  epoch 28 evaluating [time: 15.13s, valid_score: 0.101600]
+03 Dec 10:58    INFO  valid result: 
+recall@10 : 0.1222    recall@20 : 0.1812    recall@50 : 0.2855    ndcg@10 : 0.0842    ndcg@20 : 0.1016    ndcg@50 : 0.1272    
+03 Dec 10:58    INFO  Saving current best: saved_best/RauCL-Dec-03-2023_10-43-15.pth
+03 Dec 10:58    INFO  epoch 29 training [time: 16.33s, train loss: -20.1477]
+03 Dec 10:59    INFO  epoch 29 evaluating [time: 15.00s, valid_score: 0.101700]
+03 Dec 10:59    INFO  valid result: 
+recall@10 : 0.1232    recall@20 : 0.1814    recall@50 : 0.2882    ndcg@10 : 0.0846    ndcg@20 : 0.1017    ndcg@50 : 0.1278    
+03 Dec 10:59    INFO  Saving current best: saved_best/RauCL-Dec-03-2023_10-43-15.pth
+03 Dec 10:59    INFO  epoch 30 training [time: 16.27s, train loss: -20.1492]
+03 Dec 10:59    INFO  epoch 30 evaluating [time: 15.30s, valid_score: 0.102300]
+03 Dec 10:59    INFO  valid result: 
+recall@10 : 0.1236    recall@20 : 0.1817    recall@50 : 0.2897    ndcg@10 : 0.0851    ndcg@20 : 0.1023    ndcg@50 : 0.1286    
+03 Dec 10:59    INFO  Saving current best: saved_best/RauCL-Dec-03-2023_10-43-15.pth
+03 Dec 10:59    INFO  epoch 31 training [time: 16.28s, train loss: -20.1512]
+03 Dec 11:00    INFO  epoch 31 evaluating [time: 17.16s, valid_score: 0.103300]
+03 Dec 11:00    INFO  valid result: 
+recall@10 : 0.1248    recall@20 : 0.1838    recall@50 : 0.2912    ndcg@10 : 0.086    ndcg@20 : 0.1033    ndcg@50 : 0.1295    
+03 Dec 11:00    INFO  Saving current best: saved_best/RauCL-Dec-03-2023_10-43-15.pth
+03 Dec 11:00    INFO  epoch 32 training [time: 16.36s, train loss: -20.1527]
+03 Dec 11:00    INFO  epoch 32 evaluating [time: 15.34s, valid_score: 0.104100]
+03 Dec 11:00    INFO  valid result: 
+recall@10 : 0.125    recall@20 : 0.1851    recall@50 : 0.293    ndcg@10 : 0.0864    ndcg@20 : 0.1041    ndcg@50 : 0.1304    
+03 Dec 11:00    INFO  Saving current best: saved_best/RauCL-Dec-03-2023_10-43-15.pth
+03 Dec 11:01    INFO  epoch 33 training [time: 16.36s, train loss: -20.1539]
+03 Dec 11:01    INFO  epoch 33 evaluating [time: 15.17s, valid_score: 0.104400]
+03 Dec 11:01    INFO  valid result: 
+recall@10 : 0.1256    recall@20 : 0.1855    recall@50 : 0.2942    ndcg@10 : 0.0868    ndcg@20 : 0.1044    ndcg@50 : 0.131    
+03 Dec 11:01    INFO  Saving current best: saved_best/RauCL-Dec-03-2023_10-43-15.pth
+03 Dec 11:01    INFO  epoch 34 training [time: 16.13s, train loss: -20.1549]
+03 Dec 11:01    INFO  epoch 34 evaluating [time: 15.26s, valid_score: 0.105300]
+03 Dec 11:01    INFO  valid result: 
+recall@10 : 0.1262    recall@20 : 0.1874    recall@50 : 0.2953    ndcg@10 : 0.0873    ndcg@20 : 0.1053    ndcg@50 : 0.1317    
+03 Dec 11:01    INFO  Saving current best: saved_best/RauCL-Dec-03-2023_10-43-15.pth
+03 Dec 11:02    INFO  epoch 35 training [time: 16.27s, train loss: -20.1566]
+03 Dec 11:02    INFO  epoch 35 evaluating [time: 15.91s, valid_score: 0.105400]
+03 Dec 11:02    INFO  valid result: 
+recall@10 : 0.1269    recall@20 : 0.1875    recall@50 : 0.2967    ndcg@10 : 0.0876    ndcg@20 : 0.1054    ndcg@50 : 0.1322    
+03 Dec 11:02    INFO  Saving current best: saved_best/RauCL-Dec-03-2023_10-43-15.pth
+03 Dec 11:02    INFO  epoch 36 training [time: 16.29s, train loss: -20.1573]
+03 Dec 11:02    INFO  epoch 36 evaluating [time: 15.19s, valid_score: 0.105900]
+03 Dec 11:02    INFO  valid result: 
+recall@10 : 0.1278    recall@20 : 0.1879    recall@50 : 0.2985    ndcg@10 : 0.0882    ndcg@20 : 0.1059    ndcg@50 : 0.1329    
+03 Dec 11:02    INFO  Saving current best: saved_best/RauCL-Dec-03-2023_10-43-15.pth
+03 Dec 11:03    INFO  epoch 37 training [time: 16.29s, train loss: -20.1585]
+03 Dec 11:03    INFO  epoch 37 evaluating [time: 17.65s, valid_score: 0.105800]
+03 Dec 11:03    INFO  valid result: 
+recall@10 : 0.128    recall@20 : 0.1887    recall@50 : 0.2995    ndcg@10 : 0.088    ndcg@20 : 0.1058    ndcg@50 : 0.1329    
+03 Dec 11:03    INFO  epoch 38 training [time: 16.27s, train loss: -20.1591]
+03 Dec 11:03    INFO  epoch 38 evaluating [time: 15.11s, valid_score: 0.106500]
+03 Dec 11:03    INFO  valid result: 
+recall@10 : 0.129    recall@20 : 0.1897    recall@50 : 0.3008    ndcg@10 : 0.0886    ndcg@20 : 0.1065    ndcg@50 : 0.1336    
+03 Dec 11:03    INFO  Saving current best: saved_best/RauCL-Dec-03-2023_10-43-15.pth
+03 Dec 11:04    INFO  epoch 39 training [time: 16.38s, train loss: -20.1598]
+03 Dec 11:04    INFO  epoch 39 evaluating [time: 15.32s, valid_score: 0.107000]
+03 Dec 11:04    INFO  valid result: 
+recall@10 : 0.1288    recall@20 : 0.1908    recall@50 : 0.3021    ndcg@10 : 0.0888    ndcg@20 : 0.107    ndcg@50 : 0.1341    
+03 Dec 11:04    INFO  Saving current best: saved_best/RauCL-Dec-03-2023_10-43-15.pth
+03 Dec 11:04    INFO  epoch 40 training [time: 16.40s, train loss: -20.1604]
+03 Dec 11:05    INFO  epoch 40 evaluating [time: 15.33s, valid_score: 0.107300]
+03 Dec 11:05    INFO  valid result: 
+recall@10 : 0.1292    recall@20 : 0.192    recall@50 : 0.3035    ndcg@10 : 0.0889    ndcg@20 : 0.1073    ndcg@50 : 0.1345    
+03 Dec 11:05    INFO  Saving current best: saved_best/RauCL-Dec-03-2023_10-43-15.pth
+03 Dec 11:05    INFO  epoch 41 training [time: 16.39s, train loss: -20.1615]
+03 Dec 11:05    INFO  epoch 41 evaluating [time: 17.65s, valid_score: 0.107600]
+03 Dec 11:05    INFO  valid result: 
+recall@10 : 0.1294    recall@20 : 0.1916    recall@50 : 0.3042    ndcg@10 : 0.0894    ndcg@20 : 0.1076    ndcg@50 : 0.135    
+03 Dec 11:05    INFO  Saving current best: saved_best/RauCL-Dec-03-2023_10-43-15.pth
+03 Dec 11:05    INFO  epoch 42 training [time: 16.27s, train loss: -20.1624]
+03 Dec 11:06    INFO  epoch 42 evaluating [time: 15.03s, valid_score: 0.108000]
+03 Dec 11:06    INFO  valid result: 
+recall@10 : 0.1308    recall@20 : 0.1927    recall@50 : 0.3047    ndcg@10 : 0.0899    ndcg@20 : 0.108    ndcg@50 : 0.1353    
+03 Dec 11:06    INFO  Saving current best: saved_best/RauCL-Dec-03-2023_10-43-15.pth
+03 Dec 11:06    INFO  epoch 43 training [time: 16.28s, train loss: -20.1628]
+03 Dec 11:06    INFO  epoch 43 evaluating [time: 15.36s, valid_score: 0.108200]
+03 Dec 11:06    INFO  valid result: 
+recall@10 : 0.1312    recall@20 : 0.1938    recall@50 : 0.3045    ndcg@10 : 0.0899    ndcg@20 : 0.1082    ndcg@50 : 0.1353    
+03 Dec 11:06    INFO  Saving current best: saved_best/RauCL-Dec-03-2023_10-43-15.pth
+03 Dec 11:06    INFO  epoch 44 training [time: 16.26s, train loss: -20.1624]
+03 Dec 11:07    INFO  epoch 44 evaluating [time: 17.80s, valid_score: 0.108100]
+03 Dec 11:07    INFO  valid result: 
+recall@10 : 0.1305    recall@20 : 0.1927    recall@50 : 0.3055    ndcg@10 : 0.0899    ndcg@20 : 0.1081    ndcg@50 : 0.1357    
+03 Dec 11:07    INFO  epoch 45 training [time: 16.32s, train loss: -20.1628]
+03 Dec 11:07    INFO  epoch 45 evaluating [time: 15.17s, valid_score: 0.108900]
+03 Dec 11:07    INFO  valid result: 
+recall@10 : 0.1312    recall@20 : 0.1941    recall@50 : 0.3063    ndcg@10 : 0.0905    ndcg@20 : 0.1089    ndcg@50 : 0.1363    
+03 Dec 11:07    INFO  Saving current best: saved_best/RauCL-Dec-03-2023_10-43-15.pth
+03 Dec 11:08    INFO  epoch 46 training [time: 16.31s, train loss: -20.1640]
+03 Dec 11:08    INFO  epoch 46 evaluating [time: 15.52s, valid_score: 0.109300]
+03 Dec 11:08    INFO  valid result: 
+recall@10 : 0.1319    recall@20 : 0.1943    recall@50 : 0.3069    ndcg@10 : 0.0911    ndcg@20 : 0.1093    ndcg@50 : 0.1368    
+03 Dec 11:08    INFO  Saving current best: saved_best/RauCL-Dec-03-2023_10-43-15.pth
+03 Dec 11:08    INFO  epoch 47 training [time: 16.26s, train loss: -20.1647]
+03 Dec 11:08    INFO  epoch 47 evaluating [time: 15.63s, valid_score: 0.109600]
+03 Dec 11:08    INFO  valid result: 
+recall@10 : 0.1327    recall@20 : 0.1947    recall@50 : 0.307    ndcg@10 : 0.0914    ndcg@20 : 0.1096    ndcg@50 : 0.1371    
+03 Dec 11:08    INFO  Saving current best: saved_best/RauCL-Dec-03-2023_10-43-15.pth
+03 Dec 11:09    INFO  epoch 48 training [time: 16.29s, train loss: -20.1651]
+03 Dec 11:09    INFO  epoch 48 evaluating [time: 15.71s, valid_score: 0.109700]
+03 Dec 11:09    INFO  valid result: 
+recall@10 : 0.1326    recall@20 : 0.1948    recall@50 : 0.3071    ndcg@10 : 0.0915    ndcg@20 : 0.1097    ndcg@50 : 0.1372    
+03 Dec 11:09    INFO  Saving current best: saved_best/RauCL-Dec-03-2023_10-43-15.pth
+03 Dec 11:09    INFO  epoch 49 training [time: 16.26s, train loss: -20.1652]
+03 Dec 11:09    INFO  epoch 49 evaluating [time: 15.18s, valid_score: 0.109900]
+03 Dec 11:09    INFO  valid result: 
+recall@10 : 0.1328    recall@20 : 0.1956    recall@50 : 0.3095    ndcg@10 : 0.0915    ndcg@20 : 0.1099    ndcg@50 : 0.1376    
+03 Dec 11:09    INFO  Saving current best: saved_best/RauCL-Dec-03-2023_10-43-15.pth
+03 Dec 11:10    INFO  epoch 50 training [time: 16.27s, train loss: -20.1659]
+03 Dec 11:10    INFO  epoch 50 evaluating [time: 16.15s, valid_score: 0.110100]
+03 Dec 11:10    INFO  valid result: 
+recall@10 : 0.1327    recall@20 : 0.1955    recall@50 : 0.3096    ndcg@10 : 0.0917    ndcg@20 : 0.1101    ndcg@50 : 0.1379    
+03 Dec 11:10    INFO  Saving current best: saved_best/RauCL-Dec-03-2023_10-43-15.pth
+03 Dec 11:10    INFO  epoch 51 training [time: 16.33s, train loss: -20.1659]
+03 Dec 11:11    INFO  epoch 51 evaluating [time: 16.79s, valid_score: 0.110200]
+03 Dec 11:11    INFO  valid result: 
+recall@10 : 0.1335    recall@20 : 0.1962    recall@50 : 0.3101    ndcg@10 : 0.0918    ndcg@20 : 0.1102    ndcg@50 : 0.138    
+03 Dec 11:11    INFO  Saving current best: saved_best/RauCL-Dec-03-2023_10-43-15.pth
+03 Dec 11:11    INFO  epoch 52 training [time: 16.29s, train loss: -20.1666]
+03 Dec 11:11    INFO  epoch 52 evaluating [time: 15.51s, valid_score: 0.110800]
+03 Dec 11:11    INFO  valid result: 
+recall@10 : 0.1333    recall@20 : 0.1966    recall@50 : 0.3106    ndcg@10 : 0.0923    ndcg@20 : 0.1108    ndcg@50 : 0.1386    
+03 Dec 11:11    INFO  Saving current best: saved_best/RauCL-Dec-03-2023_10-43-15.pth
+03 Dec 11:11    INFO  epoch 53 training [time: 16.32s, train loss: -20.1668]
+03 Dec 11:12    INFO  epoch 53 evaluating [time: 17.44s, valid_score: 0.111000]
+03 Dec 11:12    INFO  valid result: 
+recall@10 : 0.1323    recall@20 : 0.1975    recall@50 : 0.3115    ndcg@10 : 0.0919    ndcg@20 : 0.111    ndcg@50 : 0.1387    
+03 Dec 11:12    INFO  Saving current best: saved_best/RauCL-Dec-03-2023_10-43-15.pth
+03 Dec 11:12    INFO  epoch 54 training [time: 16.28s, train loss: -20.1674]
+03 Dec 11:12    INFO  epoch 54 evaluating [time: 17.39s, valid_score: 0.110900]
+03 Dec 11:12    INFO  valid result: 
+recall@10 : 0.1335    recall@20 : 0.1971    recall@50 : 0.3104    ndcg@10 : 0.0923    ndcg@20 : 0.1109    ndcg@50 : 0.1385    
+03 Dec 11:12    INFO  epoch 55 training [time: 16.28s, train loss: -20.1673]
+03 Dec 11:13    INFO  epoch 55 evaluating [time: 15.45s, valid_score: 0.111200]
+03 Dec 11:13    INFO  valid result: 
+recall@10 : 0.1337    recall@20 : 0.1981    recall@50 : 0.3115    ndcg@10 : 0.0924    ndcg@20 : 0.1112    ndcg@50 : 0.1389    
+03 Dec 11:13    INFO  Saving current best: saved_best/RauCL-Dec-03-2023_10-43-15.pth
+03 Dec 11:13    INFO  epoch 56 training [time: 16.27s, train loss: -20.1675]
+03 Dec 11:13    INFO  epoch 56 evaluating [time: 15.40s, valid_score: 0.111100]
+03 Dec 11:13    INFO  valid result: 
+recall@10 : 0.1337    recall@20 : 0.1978    recall@50 : 0.3126    ndcg@10 : 0.0924    ndcg@20 : 0.1111    ndcg@50 : 0.1391    
+03 Dec 11:13    INFO  epoch 57 training [time: 16.26s, train loss: -20.1682]
+03 Dec 11:14    INFO  epoch 57 evaluating [time: 15.03s, valid_score: 0.111100]
+03 Dec 11:14    INFO  valid result: 
+recall@10 : 0.1339    recall@20 : 0.1973    recall@50 : 0.3127    ndcg@10 : 0.0927    ndcg@20 : 0.1111    ndcg@50 : 0.1393    
+03 Dec 11:14    INFO  epoch 58 training [time: 16.30s, train loss: -20.1676]
+03 Dec 11:14    INFO  epoch 58 evaluating [time: 17.50s, valid_score: 0.111100]
+03 Dec 11:14    INFO  valid result: 
+recall@10 : 0.1346    recall@20 : 0.1972    recall@50 : 0.3128    ndcg@10 : 0.093    ndcg@20 : 0.1111    ndcg@50 : 0.1393    
+03 Dec 11:15    INFO  epoch 59 training [time: 16.28s, train loss: -20.1681]
+03 Dec 11:15    INFO  epoch 59 evaluating [time: 16.93s, valid_score: 0.111700]
+03 Dec 11:15    INFO  valid result: 
+recall@10 : 0.1333    recall@20 : 0.1979    recall@50 : 0.3125    ndcg@10 : 0.0929    ndcg@20 : 0.1117    ndcg@50 : 0.1397    
+03 Dec 11:15    INFO  Saving current best: saved_best/RauCL-Dec-03-2023_10-43-15.pth
+03 Dec 11:15    INFO  epoch 60 training [time: 16.31s, train loss: -20.1686]
+03 Dec 11:15    INFO  epoch 60 evaluating [time: 15.07s, valid_score: 0.111800]
+03 Dec 11:15    INFO  valid result: 
+recall@10 : 0.135    recall@20 : 0.1978    recall@50 : 0.3125    ndcg@10 : 0.0936    ndcg@20 : 0.1118    ndcg@50 : 0.1398    
+03 Dec 11:15    INFO  Saving current best: saved_best/RauCL-Dec-03-2023_10-43-15.pth
+03 Dec 11:16    INFO  epoch 61 training [time: 16.27s, train loss: -20.1689]
+03 Dec 11:16    INFO  epoch 61 evaluating [time: 15.28s, valid_score: 0.111800]
+03 Dec 11:16    INFO  valid result: 
+recall@10 : 0.1351    recall@20 : 0.1991    recall@50 : 0.3133    ndcg@10 : 0.0933    ndcg@20 : 0.1118    ndcg@50 : 0.1397    
+03 Dec 11:16    INFO  epoch 62 training [time: 16.33s, train loss: -20.1692]
+03 Dec 11:16    INFO  epoch 62 evaluating [time: 15.06s, valid_score: 0.111800]
+03 Dec 11:16    INFO  valid result: 
+recall@10 : 0.1345    recall@20 : 0.1983    recall@50 : 0.3146    ndcg@10 : 0.0933    ndcg@20 : 0.1118    ndcg@50 : 0.1401    
+03 Dec 11:17    INFO  epoch 63 training [time: 16.26s, train loss: -20.1688]
+03 Dec 11:17    INFO  epoch 63 evaluating [time: 15.31s, valid_score: 0.111700]
+03 Dec 11:17    INFO  valid result: 
+recall@10 : 0.1342    recall@20 : 0.1982    recall@50 : 0.313    ndcg@10 : 0.0931    ndcg@20 : 0.1117    ndcg@50 : 0.1397    
+03 Dec 11:17    INFO  epoch 64 training [time: 16.22s, train loss: -20.1692]
+03 Dec 11:17    INFO  epoch 64 evaluating [time: 15.22s, valid_score: 0.112000]
+03 Dec 11:17    INFO  valid result: 
+recall@10 : 0.1347    recall@20 : 0.1981    recall@50 : 0.3141    ndcg@10 : 0.0936    ndcg@20 : 0.112    ndcg@50 : 0.1404    
+03 Dec 11:17    INFO  Saving current best: saved_best/RauCL-Dec-03-2023_10-43-15.pth
+03 Dec 11:18    INFO  epoch 65 training [time: 16.31s, train loss: -20.1688]
+03 Dec 11:18    INFO  epoch 65 evaluating [time: 15.04s, valid_score: 0.112300]
+03 Dec 11:18    INFO  valid result: 
+recall@10 : 0.1353    recall@20 : 0.1987    recall@50 : 0.3138    ndcg@10 : 0.0939    ndcg@20 : 0.1123    ndcg@50 : 0.1404    
+03 Dec 11:18    INFO  Saving current best: saved_best/RauCL-Dec-03-2023_10-43-15.pth
+03 Dec 11:18    INFO  epoch 66 training [time: 16.36s, train loss: -20.1696]
+03 Dec 11:19    INFO  epoch 66 evaluating [time: 15.11s, valid_score: 0.112200]
+03 Dec 11:19    INFO  valid result: 
+recall@10 : 0.1357    recall@20 : 0.1991    recall@50 : 0.3137    ndcg@10 : 0.0937    ndcg@20 : 0.1122    ndcg@50 : 0.1402    
+03 Dec 11:19    INFO  epoch 67 training [time: 16.37s, train loss: -20.1696]
+03 Dec 11:19    INFO  epoch 67 evaluating [time: 15.23s, valid_score: 0.112300]
+03 Dec 11:19    INFO  valid result: 
+recall@10 : 0.1355    recall@20 : 0.1991    recall@50 : 0.3151    ndcg@10 : 0.0937    ndcg@20 : 0.1123    ndcg@50 : 0.1405    
+03 Dec 11:19    INFO  epoch 68 training [time: 16.39s, train loss: -20.1696]
+03 Dec 11:20    INFO  epoch 68 evaluating [time: 15.41s, valid_score: 0.112100]
+03 Dec 11:20    INFO  valid result: 
+recall@10 : 0.1357    recall@20 : 0.1988    recall@50 : 0.3144    ndcg@10 : 0.0937    ndcg@20 : 0.1121    ndcg@50 : 0.1403    
+03 Dec 11:20    INFO  epoch 69 training [time: 16.32s, train loss: -20.1697]
+03 Dec 11:20    INFO  epoch 69 evaluating [time: 15.11s, valid_score: 0.112600]
+03 Dec 11:20    INFO  valid result: 
+recall@10 : 0.1351    recall@20 : 0.1991    recall@50 : 0.3164    ndcg@10 : 0.0941    ndcg@20 : 0.1126    ndcg@50 : 0.1413    
+03 Dec 11:20    INFO  Saving current best: saved_best/RauCL-Dec-03-2023_10-43-15.pth
+03 Dec 11:20    INFO  epoch 70 training [time: 16.25s, train loss: -20.1698]
+03 Dec 11:21    INFO  epoch 70 evaluating [time: 15.31s, valid_score: 0.112900]
+03 Dec 11:21    INFO  valid result: 
+recall@10 : 0.136    recall@20 : 0.1996    recall@50 : 0.3149    ndcg@10 : 0.0945    ndcg@20 : 0.1129    ndcg@50 : 0.1411    
+03 Dec 11:21    INFO  Saving current best: saved_best/RauCL-Dec-03-2023_10-43-15.pth
+03 Dec 11:21    INFO  epoch 71 training [time: 16.31s, train loss: -20.1697]
+03 Dec 11:21    INFO  epoch 71 evaluating [time: 16.61s, valid_score: 0.113300]
+03 Dec 11:21    INFO  valid result: 
+recall@10 : 0.1364    recall@20 : 0.1994    recall@50 : 0.3162    ndcg@10 : 0.0949    ndcg@20 : 0.1133    ndcg@50 : 0.1417    
+03 Dec 11:21    INFO  Saving current best: saved_best/RauCL-Dec-03-2023_10-43-15.pth
+03 Dec 11:21    INFO  epoch 72 training [time: 16.40s, train loss: -20.1701]
+03 Dec 11:22    INFO  epoch 72 evaluating [time: 17.38s, valid_score: 0.113100]
+03 Dec 11:22    INFO  valid result: 
+recall@10 : 0.1363    recall@20 : 0.199    recall@50 : 0.3154    ndcg@10 : 0.0948    ndcg@20 : 0.1131    ndcg@50 : 0.1414    
+03 Dec 11:22    INFO  epoch 73 training [time: 16.36s, train loss: -20.1701]
+03 Dec 11:22    INFO  epoch 73 evaluating [time: 15.25s, valid_score: 0.113200]
+03 Dec 11:22    INFO  valid result: 
+recall@10 : 0.1368    recall@20 : 0.1995    recall@50 : 0.3168    ndcg@10 : 0.0949    ndcg@20 : 0.1132    ndcg@50 : 0.1417    
+03 Dec 11:23    INFO  epoch 74 training [time: 16.31s, train loss: -20.1703]
+03 Dec 11:23    INFO  epoch 74 evaluating [time: 15.17s, valid_score: 0.113300]
+03 Dec 11:23    INFO  valid result: 
+recall@10 : 0.1373    recall@20 : 0.1998    recall@50 : 0.316    ndcg@10 : 0.0951    ndcg@20 : 0.1133    ndcg@50 : 0.1417    
+03 Dec 11:23    INFO  epoch 75 training [time: 16.37s, train loss: -20.1697]
+03 Dec 11:23    INFO  epoch 75 evaluating [time: 15.10s, valid_score: 0.113700]
+03 Dec 11:23    INFO  valid result: 
+recall@10 : 0.1374    recall@20 : 0.2005    recall@50 : 0.3176    ndcg@10 : 0.0954    ndcg@20 : 0.1137    ndcg@50 : 0.1423    
+03 Dec 11:23    INFO  Saving current best: saved_best/RauCL-Dec-03-2023_10-43-15.pth
+03 Dec 11:24    INFO  epoch 76 training [time: 16.33s, train loss: -20.1703]
+03 Dec 11:24    INFO  epoch 76 evaluating [time: 15.48s, valid_score: 0.113600]
+03 Dec 11:24    INFO  valid result: 
+recall@10 : 0.1365    recall@20 : 0.2003    recall@50 : 0.3185    ndcg@10 : 0.0951    ndcg@20 : 0.1136    ndcg@50 : 0.1424    
+03 Dec 11:24    INFO  epoch 77 training [time: 16.26s, train loss: -20.1701]
+03 Dec 11:24    INFO  epoch 77 evaluating [time: 15.08s, valid_score: 0.114000]
+03 Dec 11:24    INFO  valid result: 
+recall@10 : 0.1367    recall@20 : 0.2001    recall@50 : 0.3177    ndcg@10 : 0.0955    ndcg@20 : 0.114    ndcg@50 : 0.1426    
+03 Dec 11:24    INFO  Saving current best: saved_best/RauCL-Dec-03-2023_10-43-15.pth
+03 Dec 11:25    INFO  epoch 78 training [time: 16.26s, train loss: -20.1708]
+03 Dec 11:25    INFO  epoch 78 evaluating [time: 15.06s, valid_score: 0.114400]
+03 Dec 11:25    INFO  valid result: 
+recall@10 : 0.1369    recall@20 : 0.2014    recall@50 : 0.3167    ndcg@10 : 0.0956    ndcg@20 : 0.1144    ndcg@50 : 0.1425    
+03 Dec 11:25    INFO  Saving current best: saved_best/RauCL-Dec-03-2023_10-43-15.pth
+03 Dec 11:25    INFO  epoch 79 training [time: 16.24s, train loss: -20.1706]
+03 Dec 11:25    INFO  epoch 79 evaluating [time: 16.31s, valid_score: 0.113800]
+03 Dec 11:25    INFO  valid result: 
+recall@10 : 0.1378    recall@20 : 0.2008    recall@50 : 0.3183    ndcg@10 : 0.0954    ndcg@20 : 0.1138    ndcg@50 : 0.1424    
+03 Dec 11:26    INFO  epoch 80 training [time: 16.28s, train loss: -20.1706]
+03 Dec 11:26    INFO  epoch 80 evaluating [time: 15.01s, valid_score: 0.114300]
+03 Dec 11:26    INFO  valid result: 
+recall@10 : 0.1366    recall@20 : 0.2005    recall@50 : 0.3181    ndcg@10 : 0.0957    ndcg@20 : 0.1143    ndcg@50 : 0.143    
+03 Dec 11:26    INFO  epoch 81 training [time: 16.32s, train loss: -20.1707]
+03 Dec 11:27    INFO  epoch 81 evaluating [time: 15.42s, valid_score: 0.114400]
+03 Dec 11:27    INFO  valid result: 
+recall@10 : 0.138    recall@20 : 0.2005    recall@50 : 0.3182    ndcg@10 : 0.0962    ndcg@20 : 0.1144    ndcg@50 : 0.1431    
+03 Dec 11:27    INFO  epoch 82 training [time: 16.26s, train loss: -20.1712]
+03 Dec 11:27    INFO  epoch 82 evaluating [time: 14.87s, valid_score: 0.114300]
+03 Dec 11:27    INFO  valid result: 
+recall@10 : 0.1376    recall@20 : 0.2011    recall@50 : 0.3182    ndcg@10 : 0.0958    ndcg@20 : 0.1143    ndcg@50 : 0.1429    
+03 Dec 11:27    INFO  epoch 83 training [time: 16.32s, train loss: -20.1714]
+03 Dec 11:28    INFO  epoch 83 evaluating [time: 15.30s, valid_score: 0.114600]
+03 Dec 11:28    INFO  valid result: 
+recall@10 : 0.1376    recall@20 : 0.2018    recall@50 : 0.3186    ndcg@10 : 0.0959    ndcg@20 : 0.1146    ndcg@50 : 0.1432    
+03 Dec 11:28    INFO  Saving current best: saved_best/RauCL-Dec-03-2023_10-43-15.pth
+03 Dec 11:28    INFO  epoch 84 training [time: 16.23s, train loss: -20.1713]
+03 Dec 11:28    INFO  epoch 84 evaluating [time: 14.92s, valid_score: 0.114500]
+03 Dec 11:28    INFO  valid result: 
+recall@10 : 0.1382    recall@20 : 0.2015    recall@50 : 0.3199    ndcg@10 : 0.0961    ndcg@20 : 0.1145    ndcg@50 : 0.1433    
+03 Dec 11:28    INFO  epoch 85 training [time: 16.28s, train loss: -20.1712]
+03 Dec 11:29    INFO  epoch 85 evaluating [time: 15.26s, valid_score: 0.115100]
+03 Dec 11:29    INFO  valid result: 
+recall@10 : 0.1378    recall@20 : 0.2028    recall@50 : 0.3202    ndcg@10 : 0.0963    ndcg@20 : 0.1151    ndcg@50 : 0.1438    
+03 Dec 11:29    INFO  Saving current best: saved_best/RauCL-Dec-03-2023_10-43-15.pth
+03 Dec 11:29    INFO  epoch 86 training [time: 16.31s, train loss: -20.1709]
+03 Dec 11:29    INFO  epoch 86 evaluating [time: 15.12s, valid_score: 0.115300]
+03 Dec 11:29    INFO  valid result: 
+recall@10 : 0.1388    recall@20 : 0.2036    recall@50 : 0.3202    ndcg@10 : 0.0966    ndcg@20 : 0.1153    ndcg@50 : 0.1438    
+03 Dec 11:29    INFO  Saving current best: saved_best/RauCL-Dec-03-2023_10-43-15.pth
+03 Dec 11:29    INFO  epoch 87 training [time: 16.34s, train loss: -20.1714]
+03 Dec 11:30    INFO  epoch 87 evaluating [time: 15.22s, valid_score: 0.114900]
+03 Dec 11:30    INFO  valid result: 
+recall@10 : 0.1377    recall@20 : 0.202    recall@50 : 0.321    ndcg@10 : 0.0962    ndcg@20 : 0.1149    ndcg@50 : 0.1439    
+03 Dec 11:30    INFO  epoch 88 training [time: 16.29s, train loss: -20.1717]
+03 Dec 11:30    INFO  epoch 88 evaluating [time: 14.96s, valid_score: 0.115000]
+03 Dec 11:30    INFO  valid result: 
+recall@10 : 0.1377    recall@20 : 0.2027    recall@50 : 0.3202    ndcg@10 : 0.0961    ndcg@20 : 0.115    ndcg@50 : 0.1437    
+03 Dec 11:30    INFO  epoch 89 training [time: 16.37s, train loss: -20.1712]
+03 Dec 11:31    INFO  epoch 89 evaluating [time: 15.37s, valid_score: 0.114900]
+03 Dec 11:31    INFO  valid result: 
+recall@10 : 0.1381    recall@20 : 0.2027    recall@50 : 0.3197    ndcg@10 : 0.0961    ndcg@20 : 0.1149    ndcg@50 : 0.1435    
+03 Dec 11:31    INFO  epoch 90 training [time: 16.20s, train loss: -20.1717]
+03 Dec 11:31    INFO  epoch 90 evaluating [time: 15.12s, valid_score: 0.115000]
+03 Dec 11:31    INFO  valid result: 
+recall@10 : 0.138    recall@20 : 0.2028    recall@50 : 0.3205    ndcg@10 : 0.0963    ndcg@20 : 0.115    ndcg@50 : 0.1437    
+03 Dec 11:32    INFO  epoch 91 training [time: 16.31s, train loss: -20.1712]
+03 Dec 11:32    INFO  epoch 91 evaluating [time: 15.37s, valid_score: 0.114700]
+03 Dec 11:32    INFO  valid result: 
+recall@10 : 0.1378    recall@20 : 0.2025    recall@50 : 0.32    ndcg@10 : 0.0959    ndcg@20 : 0.1147    ndcg@50 : 0.1433    
+03 Dec 11:32    INFO  epoch 92 training [time: 16.25s, train loss: -20.1717]
+03 Dec 11:32    INFO  epoch 92 evaluating [time: 15.56s, valid_score: 0.115400]
+03 Dec 11:32    INFO  valid result: 
+recall@10 : 0.1383    recall@20 : 0.204    recall@50 : 0.3208    ndcg@10 : 0.0963    ndcg@20 : 0.1154    ndcg@50 : 0.1439    
+03 Dec 11:32    INFO  Saving current best: saved_best/RauCL-Dec-03-2023_10-43-15.pth
+03 Dec 11:33    INFO  epoch 93 training [time: 16.19s, train loss: -20.1717]
+03 Dec 11:33    INFO  epoch 93 evaluating [time: 15.07s, valid_score: 0.115200]
+03 Dec 11:33    INFO  valid result: 
+recall@10 : 0.1388    recall@20 : 0.2034    recall@50 : 0.321    ndcg@10 : 0.0964    ndcg@20 : 0.1152    ndcg@50 : 0.1439    
+03 Dec 11:33    INFO  epoch 94 training [time: 16.26s, train loss: -20.1716]
+03 Dec 11:33    INFO  epoch 94 evaluating [time: 15.31s, valid_score: 0.115500]
+03 Dec 11:33    INFO  valid result: 
+recall@10 : 0.1393    recall@20 : 0.2036    recall@50 : 0.3221    ndcg@10 : 0.0967    ndcg@20 : 0.1155    ndcg@50 : 0.1443    
+03 Dec 11:33    INFO  Saving current best: saved_best/RauCL-Dec-03-2023_10-43-15.pth
+03 Dec 11:34    INFO  epoch 95 training [time: 16.29s, train loss: -20.1715]
+03 Dec 11:34    INFO  epoch 95 evaluating [time: 15.16s, valid_score: 0.115700]
+03 Dec 11:34    INFO  valid result: 
+recall@10 : 0.14    recall@20 : 0.2047    recall@50 : 0.3215    ndcg@10 : 0.0969    ndcg@20 : 0.1157    ndcg@50 : 0.1442    
+03 Dec 11:34    INFO  Saving current best: saved_best/RauCL-Dec-03-2023_10-43-15.pth
+03 Dec 11:34    INFO  epoch 96 training [time: 16.27s, train loss: -20.1720]
+03 Dec 11:34    INFO  epoch 96 evaluating [time: 15.36s, valid_score: 0.115500]
+03 Dec 11:34    INFO  valid result: 
+recall@10 : 0.1389    recall@20 : 0.2039    recall@50 : 0.3218    ndcg@10 : 0.0966    ndcg@20 : 0.1155    ndcg@50 : 0.1444    
+03 Dec 11:35    INFO  epoch 97 training [time: 16.31s, train loss: -20.1716]
+03 Dec 11:35    INFO  epoch 97 evaluating [time: 17.15s, valid_score: 0.115900]
+03 Dec 11:35    INFO  valid result: 
+recall@10 : 0.1396    recall@20 : 0.2047    recall@50 : 0.3218    ndcg@10 : 0.097    ndcg@20 : 0.1159    ndcg@50 : 0.1445    
+03 Dec 11:35    INFO  Saving current best: saved_best/RauCL-Dec-03-2023_10-43-15.pth
+03 Dec 11:35    INFO  epoch 98 training [time: 16.28s, train loss: -20.1723]
+03 Dec 11:35    INFO  epoch 98 evaluating [time: 15.29s, valid_score: 0.115600]
+03 Dec 11:35    INFO  valid result: 
+recall@10 : 0.1401    recall@20 : 0.2036    recall@50 : 0.3209    ndcg@10 : 0.0971    ndcg@20 : 0.1156    ndcg@50 : 0.1442    
+03 Dec 11:36    INFO  epoch 99 training [time: 16.26s, train loss: -20.1723]
+03 Dec 11:36    INFO  epoch 99 evaluating [time: 14.95s, valid_score: 0.115700]
+03 Dec 11:36    INFO  valid result: 
+recall@10 : 0.1402    recall@20 : 0.2034    recall@50 : 0.3205    ndcg@10 : 0.0972    ndcg@20 : 0.1157    ndcg@50 : 0.1443    
+03 Dec 11:36    INFO  epoch 100 training [time: 16.24s, train loss: -20.1722]
+03 Dec 11:37    INFO  epoch 100 evaluating [time: 15.37s, valid_score: 0.116000]
+03 Dec 11:37    INFO  valid result: 
+recall@10 : 0.1392    recall@20 : 0.2041    recall@50 : 0.321    ndcg@10 : 0.0972    ndcg@20 : 0.116    ndcg@50 : 0.1446    
+03 Dec 11:37    INFO  Saving current best: saved_best/RauCL-Dec-03-2023_10-43-15.pth
+03 Dec 11:37    INFO  epoch 101 training [time: 16.28s, train loss: -20.1718]
+03 Dec 11:37    INFO  epoch 101 evaluating [time: 15.20s, valid_score: 0.115800]
+03 Dec 11:37    INFO  valid result: 
+recall@10 : 0.1402    recall@20 : 0.2039    recall@50 : 0.3207    ndcg@10 : 0.0972    ndcg@20 : 0.1158    ndcg@50 : 0.1443    
+03 Dec 11:37    INFO  epoch 102 training [time: 16.33s, train loss: -20.1723]
+03 Dec 11:38    INFO  epoch 102 evaluating [time: 15.01s, valid_score: 0.116000]
+03 Dec 11:38    INFO  valid result: 
+recall@10 : 0.1394    recall@20 : 0.204    recall@50 : 0.3199    ndcg@10 : 0.0973    ndcg@20 : 0.116    ndcg@50 : 0.1443    
+03 Dec 11:38    INFO  epoch 103 training [time: 16.26s, train loss: -20.1722]
+03 Dec 11:38    INFO  epoch 103 evaluating [time: 15.17s, valid_score: 0.115900]
+03 Dec 11:38    INFO  valid result: 
+recall@10 : 0.141    recall@20 : 0.2038    recall@50 : 0.3205    ndcg@10 : 0.0975    ndcg@20 : 0.1159    ndcg@50 : 0.1443    
+03 Dec 11:38    INFO  epoch 104 training [time: 16.33s, train loss: -20.1723]
+03 Dec 11:39    INFO  epoch 104 evaluating [time: 15.04s, valid_score: 0.115700]
+03 Dec 11:39    INFO  valid result: 
+recall@10 : 0.14    recall@20 : 0.2042    recall@50 : 0.321    ndcg@10 : 0.097    ndcg@20 : 0.1157    ndcg@50 : 0.1442    
+03 Dec 11:39    INFO  epoch 105 training [time: 16.20s, train loss: -20.1725]
+03 Dec 11:39    INFO  epoch 105 evaluating [time: 15.30s, valid_score: 0.115700]
+03 Dec 11:39    INFO  valid result: 
+recall@10 : 0.1391    recall@20 : 0.2044    recall@50 : 0.3211    ndcg@10 : 0.0967    ndcg@20 : 0.1157    ndcg@50 : 0.1442    
+03 Dec 11:39    INFO  epoch 106 training [time: 16.29s, train loss: -20.1724]
+03 Dec 11:40    INFO  epoch 106 evaluating [time: 15.09s, valid_score: 0.115700]
+03 Dec 11:40    INFO  valid result: 
+recall@10 : 0.1393    recall@20 : 0.2039    recall@50 : 0.3216    ndcg@10 : 0.097    ndcg@20 : 0.1157    ndcg@50 : 0.1445    
+03 Dec 11:40    INFO  epoch 107 training [time: 16.31s, train loss: -20.1726]
+03 Dec 11:40    INFO  epoch 107 evaluating [time: 15.22s, valid_score: 0.116200]
+03 Dec 11:40    INFO  valid result: 
+recall@10 : 0.1408    recall@20 : 0.2044    recall@50 : 0.3227    ndcg@10 : 0.0977    ndcg@20 : 0.1162    ndcg@50 : 0.1451    
+03 Dec 11:40    INFO  Saving current best: saved_best/RauCL-Dec-03-2023_10-43-15.pth
+03 Dec 11:40    INFO  epoch 108 training [time: 16.25s, train loss: -20.1723]
+03 Dec 11:41    INFO  epoch 108 evaluating [time: 14.93s, valid_score: 0.116300]
+03 Dec 11:41    INFO  valid result: 
+recall@10 : 0.1402    recall@20 : 0.2045    recall@50 : 0.3222    ndcg@10 : 0.0977    ndcg@20 : 0.1163    ndcg@50 : 0.1451    
+03 Dec 11:41    INFO  Saving current best: saved_best/RauCL-Dec-03-2023_10-43-15.pth
+03 Dec 11:41    INFO  epoch 109 training [time: 16.29s, train loss: -20.1720]
+03 Dec 11:41    INFO  epoch 109 evaluating [time: 15.17s, valid_score: 0.116300]
+03 Dec 11:41    INFO  valid result: 
+recall@10 : 0.1403    recall@20 : 0.2044    recall@50 : 0.3226    ndcg@10 : 0.0976    ndcg@20 : 0.1163    ndcg@50 : 0.1451    
+03 Dec 11:42    INFO  epoch 110 training [time: 16.34s, train loss: -20.1722]
+03 Dec 11:42    INFO  epoch 110 evaluating [time: 15.33s, valid_score: 0.116200]
+03 Dec 11:42    INFO  valid result: 
+recall@10 : 0.1409    recall@20 : 0.2038    recall@50 : 0.3222    ndcg@10 : 0.0979    ndcg@20 : 0.1162    ndcg@50 : 0.1451    
+03 Dec 11:42    INFO  epoch 111 training [time: 16.31s, train loss: -20.1729]
+03 Dec 11:42    INFO  epoch 111 evaluating [time: 16.67s, valid_score: 0.116200]
+03 Dec 11:42    INFO  valid result: 
+recall@10 : 0.1403    recall@20 : 0.204    recall@50 : 0.3223    ndcg@10 : 0.0976    ndcg@20 : 0.1162    ndcg@50 : 0.145    
+03 Dec 11:43    INFO  epoch 112 training [time: 16.28s, train loss: -20.1725]
+03 Dec 11:43    INFO  epoch 112 evaluating [time: 15.19s, valid_score: 0.115800]
+03 Dec 11:43    INFO  valid result: 
+recall@10 : 0.1409    recall@20 : 0.2028    recall@50 : 0.3231    ndcg@10 : 0.0978    ndcg@20 : 0.1158    ndcg@50 : 0.1451    
+03 Dec 11:43    INFO  epoch 113 training [time: 16.28s, train loss: -20.1722]
+03 Dec 11:43    INFO  epoch 113 evaluating [time: 14.96s, valid_score: 0.116400]
+03 Dec 11:43    INFO  valid result: 
+recall@10 : 0.1408    recall@20 : 0.204    recall@50 : 0.3217    ndcg@10 : 0.098    ndcg@20 : 0.1164    ndcg@50 : 0.1451    
+03 Dec 11:43    INFO  Saving current best: saved_best/RauCL-Dec-03-2023_10-43-15.pth
+03 Dec 11:44    INFO  epoch 114 training [time: 16.25s, train loss: -20.1729]
+03 Dec 11:44    INFO  epoch 114 evaluating [time: 17.46s, valid_score: 0.116700]
+03 Dec 11:44    INFO  valid result: 
+recall@10 : 0.1403    recall@20 : 0.2052    recall@50 : 0.3226    ndcg@10 : 0.0979    ndcg@20 : 0.1167    ndcg@50 : 0.1454    
+03 Dec 11:44    INFO  Saving current best: saved_best/RauCL-Dec-03-2023_10-43-15.pth
+03 Dec 11:44    INFO  epoch 115 training [time: 16.36s, train loss: -20.1729]
+03 Dec 11:44    INFO  epoch 115 evaluating [time: 14.91s, valid_score: 0.116200]
+03 Dec 11:44    INFO  valid result: 
+recall@10 : 0.1407    recall@20 : 0.2037    recall@50 : 0.3224    ndcg@10 : 0.0978    ndcg@20 : 0.1162    ndcg@50 : 0.1453    
+03 Dec 11:45    INFO  epoch 116 training [time: 16.28s, train loss: -20.1729]
+03 Dec 11:45    INFO  epoch 116 evaluating [time: 15.50s, valid_score: 0.116500]
+03 Dec 11:45    INFO  valid result: 
+recall@10 : 0.1406    recall@20 : 0.205    recall@50 : 0.3224    ndcg@10 : 0.0978    ndcg@20 : 0.1165    ndcg@50 : 0.1452    
+03 Dec 11:45    INFO  epoch 117 training [time: 16.20s, train loss: -20.1726]
+03 Dec 11:46    INFO  epoch 117 evaluating [time: 15.08s, valid_score: 0.116800]
+03 Dec 11:46    INFO  valid result: 
+recall@10 : 0.1412    recall@20 : 0.2056    recall@50 : 0.322    ndcg@10 : 0.0981    ndcg@20 : 0.1168    ndcg@50 : 0.1453    
+03 Dec 11:46    INFO  Saving current best: saved_best/RauCL-Dec-03-2023_10-43-15.pth
+03 Dec 11:46    INFO  epoch 118 training [time: 16.28s, train loss: -20.1725]
+03 Dec 11:46    INFO  epoch 118 evaluating [time: 15.40s, valid_score: 0.116400]
+03 Dec 11:46    INFO  valid result: 
+recall@10 : 0.1408    recall@20 : 0.2052    recall@50 : 0.3222    ndcg@10 : 0.0976    ndcg@20 : 0.1164    ndcg@50 : 0.145    
+03 Dec 11:46    INFO  epoch 119 training [time: 16.25s, train loss: -20.1725]
+03 Dec 11:47    INFO  epoch 119 evaluating [time: 15.04s, valid_score: 0.116800]
+03 Dec 11:47    INFO  valid result: 
+recall@10 : 0.1401    recall@20 : 0.2051    recall@50 : 0.3223    ndcg@10 : 0.0978    ndcg@20 : 0.1168    ndcg@50 : 0.1454    
+03 Dec 11:47    INFO  epoch 120 training [time: 16.31s, train loss: -20.1730]
+03 Dec 11:47    INFO  epoch 120 evaluating [time: 15.24s, valid_score: 0.116500]
+03 Dec 11:47    INFO  valid result: 
+recall@10 : 0.1408    recall@20 : 0.2047    recall@50 : 0.3237    ndcg@10 : 0.0979    ndcg@20 : 0.1165    ndcg@50 : 0.1455    
+03 Dec 11:47    INFO  epoch 121 training [time: 16.24s, train loss: -20.1731]
+03 Dec 11:48    INFO  epoch 121 evaluating [time: 15.39s, valid_score: 0.116800]
+03 Dec 11:48    INFO  valid result: 
+recall@10 : 0.1408    recall@20 : 0.2056    recall@50 : 0.3243    ndcg@10 : 0.0979    ndcg@20 : 0.1168    ndcg@50 : 0.1457    
+03 Dec 11:48    INFO  epoch 122 training [time: 16.30s, train loss: -20.1728]
+03 Dec 11:48    INFO  epoch 122 evaluating [time: 15.32s, valid_score: 0.117000]
+03 Dec 11:48    INFO  valid result: 
+recall@10 : 0.1396    recall@20 : 0.2059    recall@50 : 0.3239    ndcg@10 : 0.0977    ndcg@20 : 0.117    ndcg@50 : 0.1459    
+03 Dec 11:48    INFO  Saving current best: saved_best/RauCL-Dec-03-2023_10-43-15.pth
+03 Dec 11:48    INFO  epoch 123 training [time: 16.28s, train loss: -20.1727]
+03 Dec 11:49    INFO  epoch 123 evaluating [time: 14.86s, valid_score: 0.117100]
+03 Dec 11:49    INFO  valid result: 
+recall@10 : 0.1406    recall@20 : 0.2059    recall@50 : 0.3228    ndcg@10 : 0.0981    ndcg@20 : 0.1171    ndcg@50 : 0.1457    
+03 Dec 11:49    INFO  Saving current best: saved_best/RauCL-Dec-03-2023_10-43-15.pth
+03 Dec 11:49    INFO  epoch 124 training [time: 16.28s, train loss: -20.1729]
+03 Dec 11:49    INFO  epoch 124 evaluating [time: 15.26s, valid_score: 0.117100]
+03 Dec 11:49    INFO  valid result: 
+recall@10 : 0.1405    recall@20 : 0.2054    recall@50 : 0.3217    ndcg@10 : 0.0982    ndcg@20 : 0.1171    ndcg@50 : 0.1456    
+03 Dec 11:49    INFO  epoch 125 training [time: 16.31s, train loss: -20.1730]
+03 Dec 11:50    INFO  epoch 125 evaluating [time: 15.18s, valid_score: 0.116900]
+03 Dec 11:50    INFO  valid result: 
+recall@10 : 0.1404    recall@20 : 0.2058    recall@50 : 0.3224    ndcg@10 : 0.0978    ndcg@20 : 0.1169    ndcg@50 : 0.1454    
+03 Dec 11:50    INFO  epoch 126 training [time: 16.25s, train loss: -20.1726]
+03 Dec 11:50    INFO  epoch 126 evaluating [time: 14.99s, valid_score: 0.117200]
+03 Dec 11:50    INFO  valid result: 
+recall@10 : 0.141    recall@20 : 0.2067    recall@50 : 0.3227    ndcg@10 : 0.0982    ndcg@20 : 0.1172    ndcg@50 : 0.1456    
+03 Dec 11:50    INFO  Saving current best: saved_best/RauCL-Dec-03-2023_10-43-15.pth
+03 Dec 11:51    INFO  epoch 127 training [time: 16.34s, train loss: -20.1731]
+03 Dec 11:51    INFO  epoch 127 evaluating [time: 15.35s, valid_score: 0.117200]
+03 Dec 11:51    INFO  valid result: 
+recall@10 : 0.1407    recall@20 : 0.2056    recall@50 : 0.3238    ndcg@10 : 0.0983    ndcg@20 : 0.1172    ndcg@50 : 0.146    
+03 Dec 11:51    INFO  epoch 128 training [time: 16.15s, train loss: -20.1723]
+03 Dec 11:51    INFO  epoch 128 evaluating [time: 14.98s, valid_score: 0.116900]
+03 Dec 11:51    INFO  valid result: 
+recall@10 : 0.1411    recall@20 : 0.2054    recall@50 : 0.323    ndcg@10 : 0.0983    ndcg@20 : 0.1169    ndcg@50 : 0.1457    
+03 Dec 11:52    INFO  epoch 129 training [time: 16.32s, train loss: -20.1731]
+03 Dec 11:52    INFO  epoch 129 evaluating [time: 15.31s, valid_score: 0.117000]
+03 Dec 11:52    INFO  valid result: 
+recall@10 : 0.1416    recall@20 : 0.2051    recall@50 : 0.3228    ndcg@10 : 0.0985    ndcg@20 : 0.117    ndcg@50 : 0.1458    
+03 Dec 11:52    INFO  epoch 130 training [time: 16.20s, train loss: -20.1731]
+03 Dec 11:52    INFO  epoch 130 evaluating [time: 15.29s, valid_score: 0.116900]
+03 Dec 11:52    INFO  valid result: 
+recall@10 : 0.1407    recall@20 : 0.2054    recall@50 : 0.3227    ndcg@10 : 0.0981    ndcg@20 : 0.1169    ndcg@50 : 0.1456    
+03 Dec 11:53    INFO  epoch 131 training [time: 16.29s, train loss: -20.1731]
+03 Dec 11:53    INFO  epoch 131 evaluating [time: 17.21s, valid_score: 0.116700]
+03 Dec 11:53    INFO  valid result: 
+recall@10 : 0.1407    recall@20 : 0.2043    recall@50 : 0.3234    ndcg@10 : 0.0982    ndcg@20 : 0.1167    ndcg@50 : 0.1458    
+03 Dec 11:53    INFO  epoch 132 training [time: 16.19s, train loss: -20.1733]
+03 Dec 11:53    INFO  epoch 132 evaluating [time: 15.06s, valid_score: 0.116800]
+03 Dec 11:53    INFO  valid result: 
+recall@10 : 0.1405    recall@20 : 0.2045    recall@50 : 0.3229    ndcg@10 : 0.0983    ndcg@20 : 0.1168    ndcg@50 : 0.1458    
+03 Dec 11:54    INFO  epoch 133 training [time: 16.25s, train loss: -20.1736]
+03 Dec 11:54    INFO  epoch 133 evaluating [time: 15.14s, valid_score: 0.117300]
+03 Dec 11:54    INFO  valid result: 
+recall@10 : 0.1403    recall@20 : 0.2053    recall@50 : 0.3226    ndcg@10 : 0.0985    ndcg@20 : 0.1173    ndcg@50 : 0.146    
+03 Dec 11:54    INFO  Saving current best: saved_best/RauCL-Dec-03-2023_10-43-15.pth
+03 Dec 11:54    INFO  epoch 134 training [time: 16.27s, train loss: -20.1733]
+03 Dec 11:54    INFO  epoch 134 evaluating [time: 15.25s, valid_score: 0.117100]
+03 Dec 11:54    INFO  valid result: 
+recall@10 : 0.1403    recall@20 : 0.2051    recall@50 : 0.3238    ndcg@10 : 0.0982    ndcg@20 : 0.1171    ndcg@50 : 0.146    
+03 Dec 11:55    INFO  epoch 135 training [time: 16.25s, train loss: -20.1732]
+03 Dec 11:55    INFO  epoch 135 evaluating [time: 14.95s, valid_score: 0.116800]
+03 Dec 11:55    INFO  valid result: 
+recall@10 : 0.1411    recall@20 : 0.2049    recall@50 : 0.3233    ndcg@10 : 0.0983    ndcg@20 : 0.1168    ndcg@50 : 0.1458    
+03 Dec 11:55    INFO  epoch 136 training [time: 16.27s, train loss: -20.1727]
+03 Dec 11:56    INFO  epoch 136 evaluating [time: 16.19s, valid_score: 0.117200]
+03 Dec 11:56    INFO  valid result: 
+recall@10 : 0.1407    recall@20 : 0.2044    recall@50 : 0.3236    ndcg@10 : 0.0987    ndcg@20 : 0.1172    ndcg@50 : 0.1463    
+03 Dec 11:56    INFO  epoch 137 training [time: 16.40s, train loss: -20.1733]
+03 Dec 11:56    INFO  epoch 137 evaluating [time: 14.99s, valid_score: 0.117200]
+03 Dec 11:56    INFO  valid result: 
+recall@10 : 0.1405    recall@20 : 0.2053    recall@50 : 0.3238    ndcg@10 : 0.0983    ndcg@20 : 0.1172    ndcg@50 : 0.1461    
+03 Dec 11:56    INFO  epoch 138 training [time: 16.27s, train loss: -20.1733]
+03 Dec 11:57    INFO  epoch 138 evaluating [time: 17.05s, valid_score: 0.117200]
+03 Dec 11:57    INFO  valid result: 
+recall@10 : 0.1413    recall@20 : 0.2045    recall@50 : 0.3241    ndcg@10 : 0.0988    ndcg@20 : 0.1172    ndcg@50 : 0.1464    
+03 Dec 11:57    INFO  epoch 139 training [time: 16.34s, train loss: -20.1732]
+03 Dec 11:57    INFO  epoch 139 evaluating [time: 15.05s, valid_score: 0.117500]
+03 Dec 11:57    INFO  valid result: 
+recall@10 : 0.1414    recall@20 : 0.2052    recall@50 : 0.3226    ndcg@10 : 0.0989    ndcg@20 : 0.1175    ndcg@50 : 0.1462    
+03 Dec 11:57    INFO  Saving current best: saved_best/RauCL-Dec-03-2023_10-43-15.pth
+03 Dec 11:57    INFO  epoch 140 training [time: 16.27s, train loss: -20.1728]
+03 Dec 11:58    INFO  epoch 140 evaluating [time: 15.33s, valid_score: 0.117600]
+03 Dec 11:58    INFO  valid result: 
+recall@10 : 0.1414    recall@20 : 0.2053    recall@50 : 0.3224    ndcg@10 : 0.0991    ndcg@20 : 0.1176    ndcg@50 : 0.1462    
+03 Dec 11:58    INFO  Saving current best: saved_best/RauCL-Dec-03-2023_10-43-15.pth
+03 Dec 11:58    INFO  epoch 141 training [time: 16.27s, train loss: -20.1732]
+03 Dec 11:58    INFO  epoch 141 evaluating [time: 15.00s, valid_score: 0.117400]
+03 Dec 11:58    INFO  valid result: 
+recall@10 : 0.1416    recall@20 : 0.2059    recall@50 : 0.3224    ndcg@10 : 0.0987    ndcg@20 : 0.1174    ndcg@50 : 0.1459    
+03 Dec 11:58    INFO  epoch 142 training [time: 16.31s, train loss: -20.1731]
+03 Dec 11:59    INFO  epoch 142 evaluating [time: 15.31s, valid_score: 0.117600]
+03 Dec 11:59    INFO  valid result: 
+recall@10 : 0.1419    recall@20 : 0.2056    recall@50 : 0.3226    ndcg@10 : 0.099    ndcg@20 : 0.1176    ndcg@50 : 0.1461    
+03 Dec 11:59    INFO  epoch 143 training [time: 16.30s, train loss: -20.1734]
+03 Dec 11:59    INFO  epoch 143 evaluating [time: 15.12s, valid_score: 0.117600]
+03 Dec 11:59    INFO  valid result: 
+recall@10 : 0.1432    recall@20 : 0.206    recall@50 : 0.3221    ndcg@10 : 0.0994    ndcg@20 : 0.1176    ndcg@50 : 0.146    
+03 Dec 12:00    INFO  epoch 144 training [time: 16.31s, train loss: -20.1735]
+03 Dec 12:00    INFO  epoch 144 evaluating [time: 15.04s, valid_score: 0.117200]
+03 Dec 12:00    INFO  valid result: 
+recall@10 : 0.1425    recall@20 : 0.2053    recall@50 : 0.3239    ndcg@10 : 0.0988    ndcg@20 : 0.1172    ndcg@50 : 0.1461    
+03 Dec 12:00    INFO  epoch 145 training [time: 16.37s, train loss: -20.1729]
+03 Dec 12:00    INFO  epoch 145 evaluating [time: 15.26s, valid_score: 0.117200]
+03 Dec 12:00    INFO  valid result: 
+recall@10 : 0.1422    recall@20 : 0.2052    recall@50 : 0.3238    ndcg@10 : 0.0989    ndcg@20 : 0.1172    ndcg@50 : 0.1462    
+03 Dec 12:01    INFO  epoch 146 training [time: 16.32s, train loss: -20.1735]
+03 Dec 12:01    INFO  epoch 146 evaluating [time: 14.97s, valid_score: 0.117500]
+03 Dec 12:01    INFO  valid result: 
+recall@10 : 0.1414    recall@20 : 0.2062    recall@50 : 0.3236    ndcg@10 : 0.0986    ndcg@20 : 0.1175    ndcg@50 : 0.1461    
+03 Dec 12:01    INFO  epoch 147 training [time: 16.35s, train loss: -20.1733]
+03 Dec 12:01    INFO  epoch 147 evaluating [time: 15.37s, valid_score: 0.117400]
+03 Dec 12:01    INFO  valid result: 
+recall@10 : 0.142    recall@20 : 0.2061    recall@50 : 0.3233    ndcg@10 : 0.0988    ndcg@20 : 0.1174    ndcg@50 : 0.1461    
+03 Dec 12:02    INFO  epoch 148 training [time: 16.11s, train loss: -20.1737]
+03 Dec 12:02    INFO  epoch 148 evaluating [time: 15.14s, valid_score: 0.117200]
+03 Dec 12:02    INFO  valid result: 
+recall@10 : 0.1422    recall@20 : 0.2053    recall@50 : 0.323    ndcg@10 : 0.0989    ndcg@20 : 0.1172    ndcg@50 : 0.146    
+03 Dec 12:02    INFO  epoch 149 training [time: 16.35s, train loss: -20.1741]
+03 Dec 12:02    INFO  epoch 149 evaluating [time: 15.27s, valid_score: 0.117600]
+03 Dec 12:02    INFO  valid result: 
+recall@10 : 0.1425    recall@20 : 0.2065    recall@50 : 0.3232    ndcg@10 : 0.099    ndcg@20 : 0.1176    ndcg@50 : 0.1462    
+03 Dec 12:03    INFO  epoch 150 training [time: 16.32s, train loss: -20.1735]
+03 Dec 12:03    INFO  epoch 150 evaluating [time: 15.08s, valid_score: 0.117700]
+03 Dec 12:03    INFO  valid result: 
+recall@10 : 0.1425    recall@20 : 0.2064    recall@50 : 0.3232    ndcg@10 : 0.0992    ndcg@20 : 0.1177    ndcg@50 : 0.1463    
+03 Dec 12:03    INFO  Saving current best: saved_best/RauCL-Dec-03-2023_10-43-15.pth
+03 Dec 12:03    INFO  epoch 151 training [time: 16.30s, train loss: -20.1735]
+03 Dec 12:03    INFO  epoch 151 evaluating [time: 15.95s, valid_score: 0.117600]
+03 Dec 12:03    INFO  valid result: 
+recall@10 : 0.1418    recall@20 : 0.2062    recall@50 : 0.3239    ndcg@10 : 0.0989    ndcg@20 : 0.1176    ndcg@50 : 0.1464    
+03 Dec 12:04    INFO  epoch 152 training [time: 16.12s, train loss: -20.1735]
+03 Dec 12:04    INFO  epoch 152 evaluating [time: 15.17s, valid_score: 0.117800]
+03 Dec 12:04    INFO  valid result: 
+recall@10 : 0.1419    recall@20 : 0.2067    recall@50 : 0.3246    ndcg@10 : 0.099    ndcg@20 : 0.1178    ndcg@50 : 0.1466    
+03 Dec 12:04    INFO  Saving current best: saved_best/RauCL-Dec-03-2023_10-43-15.pth
+03 Dec 12:04    INFO  epoch 153 training [time: 16.29s, train loss: -20.1739]
+03 Dec 12:05    INFO  epoch 153 evaluating [time: 15.55s, valid_score: 0.117700]
+03 Dec 12:05    INFO  valid result: 
+recall@10 : 0.1417    recall@20 : 0.2061    recall@50 : 0.3239    ndcg@10 : 0.0989    ndcg@20 : 0.1177    ndcg@50 : 0.1464    
+03 Dec 12:05    INFO  epoch 154 training [time: 16.19s, train loss: -20.1735]
+03 Dec 12:05    INFO  epoch 154 evaluating [time: 15.09s, valid_score: 0.117700]
+03 Dec 12:05    INFO  valid result: 
+recall@10 : 0.1422    recall@20 : 0.2062    recall@50 : 0.3239    ndcg@10 : 0.0991    ndcg@20 : 0.1177    ndcg@50 : 0.1464    
+03 Dec 12:05    INFO  epoch 155 training [time: 16.26s, train loss: -20.1735]
+03 Dec 12:06    INFO  epoch 155 evaluating [time: 15.35s, valid_score: 0.117600]
+03 Dec 12:06    INFO  valid result: 
+recall@10 : 0.1412    recall@20 : 0.2059    recall@50 : 0.3245    ndcg@10 : 0.0988    ndcg@20 : 0.1176    ndcg@50 : 0.1465    
+03 Dec 12:06    INFO  epoch 156 training [time: 16.33s, train loss: -20.1733]
+03 Dec 12:06    INFO  epoch 156 evaluating [time: 15.08s, valid_score: 0.117600]
+03 Dec 12:06    INFO  valid result: 
+recall@10 : 0.1429    recall@20 : 0.2057    recall@50 : 0.3234    ndcg@10 : 0.0994    ndcg@20 : 0.1176    ndcg@50 : 0.1464    
+03 Dec 12:06    INFO  epoch 157 training [time: 16.07s, train loss: -20.1736]
+03 Dec 12:07    INFO  epoch 157 evaluating [time: 15.39s, valid_score: 0.117700]
+03 Dec 12:07    INFO  valid result: 
+recall@10 : 0.142    recall@20 : 0.2063    recall@50 : 0.3234    ndcg@10 : 0.099    ndcg@20 : 0.1177    ndcg@50 : 0.1464    
+03 Dec 12:07    INFO  epoch 158 training [time: 16.25s, train loss: -20.1739]
+03 Dec 12:07    INFO  epoch 158 evaluating [time: 15.42s, valid_score: 0.117600]
+03 Dec 12:07    INFO  valid result: 
+recall@10 : 0.1423    recall@20 : 0.2055    recall@50 : 0.324    ndcg@10 : 0.0992    ndcg@20 : 0.1176    ndcg@50 : 0.1465    
+03 Dec 12:07    INFO  epoch 159 training [time: 16.26s, train loss: -20.1738]
+03 Dec 12:08    INFO  epoch 159 evaluating [time: 15.11s, valid_score: 0.117800]
+03 Dec 12:08    INFO  valid result: 
+recall@10 : 0.1417    recall@20 : 0.2063    recall@50 : 0.3238    ndcg@10 : 0.0991    ndcg@20 : 0.1178    ndcg@50 : 0.1465    
+03 Dec 12:08    INFO  epoch 160 training [time: 16.29s, train loss: -20.1737]
+03 Dec 12:08    INFO  epoch 160 evaluating [time: 15.27s, valid_score: 0.118300]
+03 Dec 12:08    INFO  valid result: 
+recall@10 : 0.1416    recall@20 : 0.207    recall@50 : 0.3239    ndcg@10 : 0.0994    ndcg@20 : 0.1183    ndcg@50 : 0.1469    
+03 Dec 12:08    INFO  Saving current best: saved_best/RauCL-Dec-03-2023_10-43-15.pth
+03 Dec 12:08    INFO  epoch 161 training [time: 16.29s, train loss: -20.1734]
+03 Dec 12:09    INFO  epoch 161 evaluating [time: 15.20s, valid_score: 0.118000]
+03 Dec 12:09    INFO  valid result: 
+recall@10 : 0.1414    recall@20 : 0.2069    recall@50 : 0.3221    ndcg@10 : 0.0991    ndcg@20 : 0.118    ndcg@50 : 0.1463    
+03 Dec 12:09    INFO  epoch 162 training [time: 16.36s, train loss: -20.1738]
+03 Dec 12:09    INFO  epoch 162 evaluating [time: 15.17s, valid_score: 0.118600]
+03 Dec 12:09    INFO  valid result: 
+recall@10 : 0.1419    recall@20 : 0.2074    recall@50 : 0.322    ndcg@10 : 0.0996    ndcg@20 : 0.1186    ndcg@50 : 0.1467    
+03 Dec 12:09    INFO  Saving current best: saved_best/RauCL-Dec-03-2023_10-43-15.pth
+03 Dec 12:10    INFO  epoch 163 training [time: 16.24s, train loss: -20.1737]
+03 Dec 12:10    INFO  epoch 163 evaluating [time: 15.23s, valid_score: 0.118200]
+03 Dec 12:10    INFO  valid result: 
+recall@10 : 0.1422    recall@20 : 0.2068    recall@50 : 0.3232    ndcg@10 : 0.0994    ndcg@20 : 0.1182    ndcg@50 : 0.1467    
+03 Dec 12:10    INFO  epoch 164 training [time: 16.31s, train loss: -20.1738]
+03 Dec 12:10    INFO  epoch 164 evaluating [time: 15.01s, valid_score: 0.118100]
+03 Dec 12:10    INFO  valid result: 
+recall@10 : 0.1417    recall@20 : 0.2063    recall@50 : 0.3231    ndcg@10 : 0.0993    ndcg@20 : 0.1181    ndcg@50 : 0.1467    
+03 Dec 12:11    INFO  epoch 165 training [time: 16.30s, train loss: -20.1737]
+03 Dec 12:11    INFO  epoch 165 evaluating [time: 15.10s, valid_score: 0.117800]
+03 Dec 12:11    INFO  valid result: 
+recall@10 : 0.1416    recall@20 : 0.2063    recall@50 : 0.3226    ndcg@10 : 0.099    ndcg@20 : 0.1178    ndcg@50 : 0.1464    
+03 Dec 12:11    INFO  epoch 166 training [time: 16.28s, train loss: -20.1740]
+03 Dec 12:11    INFO  epoch 166 evaluating [time: 15.20s, valid_score: 0.118200]
+03 Dec 12:11    INFO  valid result: 
+recall@10 : 0.1423    recall@20 : 0.2068    recall@50 : 0.3235    ndcg@10 : 0.0995    ndcg@20 : 0.1182    ndcg@50 : 0.1468    
+03 Dec 12:12    INFO  epoch 167 training [time: 16.32s, train loss: -20.1738]
+03 Dec 12:12    INFO  epoch 167 evaluating [time: 15.12s, valid_score: 0.117800]
+03 Dec 12:12    INFO  valid result: 
+recall@10 : 0.1424    recall@20 : 0.2067    recall@50 : 0.3229    ndcg@10 : 0.0992    ndcg@20 : 0.1178    ndcg@50 : 0.1463    
+03 Dec 12:12    INFO  epoch 168 training [time: 16.15s, train loss: -20.1742]
+03 Dec 12:12    INFO  epoch 168 evaluating [time: 14.90s, valid_score: 0.118100]
+03 Dec 12:12    INFO  valid result: 
+recall@10 : 0.1417    recall@20 : 0.2057    recall@50 : 0.3241    ndcg@10 : 0.0995    ndcg@20 : 0.1181    ndcg@50 : 0.1471    
+03 Dec 12:13    INFO  epoch 169 training [time: 16.33s, train loss: -20.1737]
+03 Dec 12:13    INFO  epoch 169 evaluating [time: 15.31s, valid_score: 0.118100]
+03 Dec 12:13    INFO  valid result: 
+recall@10 : 0.1414    recall@20 : 0.2063    recall@50 : 0.3237    ndcg@10 : 0.0993    ndcg@20 : 0.1181    ndcg@50 : 0.1468    
+03 Dec 12:13    INFO  epoch 170 training [time: 16.27s, train loss: -20.1737]
+03 Dec 12:13    INFO  epoch 170 evaluating [time: 15.28s, valid_score: 0.118200]
+03 Dec 12:13    INFO  valid result: 
+recall@10 : 0.1417    recall@20 : 0.2067    recall@50 : 0.3241    ndcg@10 : 0.0994    ndcg@20 : 0.1182    ndcg@50 : 0.1469    
+03 Dec 12:14    INFO  epoch 171 training [time: 16.18s, train loss: -20.1733]
+03 Dec 12:14    INFO  epoch 171 evaluating [time: 15.31s, valid_score: 0.117700]
+03 Dec 12:14    INFO  valid result: 
+recall@10 : 0.1418    recall@20 : 0.2053    recall@50 : 0.3233    ndcg@10 : 0.0993    ndcg@20 : 0.1177    ndcg@50 : 0.1466    
+03 Dec 12:14    INFO  epoch 172 training [time: 16.13s, train loss: -20.1738]
+03 Dec 12:14    INFO  epoch 172 evaluating [time: 15.31s, valid_score: 0.118300]
+03 Dec 12:14    INFO  valid result: 
+recall@10 : 0.1419    recall@20 : 0.2066    recall@50 : 0.3232    ndcg@10 : 0.0996    ndcg@20 : 0.1183    ndcg@50 : 0.1468    
+03 Dec 12:15    INFO  epoch 173 training [time: 16.29s, train loss: -20.1743]
+03 Dec 12:15    INFO  epoch 173 evaluating [time: 15.38s, valid_score: 0.118200]
+03 Dec 12:15    INFO  valid result: 
+recall@10 : 0.142    recall@20 : 0.2062    recall@50 : 0.323    ndcg@10 : 0.0996    ndcg@20 : 0.1182    ndcg@50 : 0.1468    
+03 Dec 12:15    INFO  Finished training, best eval result in epoch 162
+03 Dec 12:15    INFO  Loading model structure and parameters from saved_best/RauCL-Dec-03-2023_10-43-15.pth
+03 Dec 12:15    INFO  best valid : {'recall@10': 0.1419, 'recall@20': 0.2074, 'recall@50': 0.322, 'ndcg@10': 0.0996, 'ndcg@20': 0.1186, 'ndcg@50': 0.1467}
+03 Dec 12:15    INFO  test result: {'recall@10': 0.1452, 'recall@20': 0.2096, 'recall@50': 0.3244, 'ndcg@10': 0.1053, 'ndcg@20': 0.1238, 'ndcg@50': 0.1519}

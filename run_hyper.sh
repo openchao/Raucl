@@ -1,0 +1,21 @@
+# nohup python run_hyper.py --model=RauCL --dataset=Beauty --config_files='recbole/properties/overall.yaml recbole/properties/model/RauCL.yaml recbole/properties/dataset/sample.yaml' --params_file=1202raucl_beauty2.hyper --output_file=./hyper/1202_RauCL_Beauty2.result > ./hyper/1202Beauty2.log 2>&1 &
+# nohup python run_hyper.py --model=RauCL --dataset=Beauty --config_files='recbole/properties/overall.yaml recbole/properties/model/RauCL.yaml recbole/properties/dataset/sample.yaml' --params_file=1202raucl_beauty1.hyper --output_file=./hyper/1202_RauCL_Beauty1.result > ./hyper/1202Beauty1.log 2>&1 &
+# nohup python run_hyper.py --model=RauCL --dataset=Beauty --config_files='recbole/properties/overall.yaml recbole/properties/model/RauCL.yaml recbole/properties/dataset/sample.yaml' --params_file=1201raucl_beauty3.hyper --output_file=./hyper/1201_RauCL_Beauty3.result > ./hyper/1201Beauty3.log 2>&1 &
+# nohup python run_hyper.py --model=RauCL --dataset=Beauty --config_files='recbole/properties/overall.yaml recbole/properties/model/RauCL.yaml recbole/properties/dataset/sample.yaml' --params_file=1201raucl_beauty4.hyper --output_file=./hyper/1201_RauCL_Beauty4.result > ./hyper/1201Beauty4.log 2>&1 &
+
+
+
+# nohup python run_hyper.py --model=RauCL --dataset=Gowalla --config_files='recbole/properties/overall.yaml recbole/properties/model/RauCL.yaml recbole/properties/dataset/sample.yaml' --params_file=1202raucl_gowalla2.hyper --output_file=./hyper/1202_RauCL_Gowalla2.result > ./hyper/1202Gowalla2.log 2>&1 &
+# nohup python run_hyper.py --model=RauCL --dataset=Gowalla --config_files='recbole/properties/overall.yaml recbole/properties/model/RauCL.yaml recbole/properties/dataset/sample.yaml' --params_file=1202raucl_gowalla1.hyper --output_file=./hyper/1202_RauCL_Gowalla1.result > ./hyper/1202Gowalla1.log 2>&1 &
+# nohup python run_hyper.py --model=RauCL --dataset=Gowalla --config_files='recbole/properties/overall.yaml recbole/properties/model/RauCL.yaml recbole/properties/dataset/sample.yaml' --params_file=1202raucl_gowalla3.hyper --output_file=./hyper/1202_RauCL_Gowalla3.result > ./hyper/1202Gowalla3.log 2>&1 &
+
+# 1204
+# nohup python run_hyper.py --model=RauCL --dataset=Beauty --config_files='recbole/properties/overall.yaml recbole/properties/model/RauCL.yaml recbole/properties/dataset/sample.yaml' --params_file=1204raucl_beauty2.hyper --output_file=./hyper/1204_RauCL_Beauty2.result > ./hyper/1204Beauty2.log 2>&1 &
+# nohup python run_hyper.py --model=RauCL --dataset=Beauty --config_files='recbole/properties/overall.yaml recbole/properties/model/RauCL.yaml recbole/properties/dataset/sample.yaml' --params_file=1204raucl_beauty3.hyper --output_file=./hyper/1204_RauCL_Beauty3.result > ./hyper/1204Beauty3.log 2>&1 &
+# nohup python run_hyper.py --model=RauCL --dataset=Beauty --config_files='recbole/properties/overall.yaml recbole/properties/model/RauCL.yaml recbole/properties/dataset/sample.yaml' --params_file=1204raucl_beauty4.hyper --output_file=./hyper/1204_RauCL_Beauty4.result > ./hyper/1204Beauty4.log 2>&1 &
+# nohup python run_hyper.py --model=RauCL --dataset=Beauty --config_files='recbole/properties/overall.yaml recbole/properties/model/RauCL.yaml recbole/properties/dataset/sample.yaml' --params_file=1204raucl_beauty5.hyper --output_file=./hyper/1204_RauCL_Beauty5.result > ./hyper/1204Beauty5.log 2>&1 &
+# nohup python run_hyper.py --model=RauCL --dataset=Beauty --config_files='recbole/properties/overall.yaml recbole/properties/model/RauCL.yaml recbole/properties/dataset/sample.yaml' --params_file=1204raucl_beauty6.hyper --output_file=./hyper/1204_RauCL_Beauty6.result > ./hyper/1204Beauty6.log 2>&1 &
+# nohup python run_hyper.py --model=RauCL --dataset=Beauty --config_files='recbole/properties/overall.yaml recbole/properties/model/RauCL.yaml recbole/properties/dataset/sample.yaml' --params_file=1204raucl_beauty7.hyper --output_file=./hyper/1204_RauCL_Beauty7.result > ./hyper/1204Beauty7.log 2>&1 &
+# nohup python run_hyper.py --model=RauCL --dataset=Beauty --config_files='recbole/properties/overall.yaml recbole/properties/model/RauCL.yaml recbole/properties/dataset/sample.yaml' --params_file=1204raucl_beauty1.hyper --output_file=./hyper/1204_RauCL_Beauty1.result > ./hyper/1204Beauty1.log 2>&1 &
+
+
