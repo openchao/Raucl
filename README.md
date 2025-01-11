@@ -1,30 +1,37 @@
-# Official Implementation of GraphAU.  
+# RAU: Towards Regularized Alignment and Uniformity for Representation Learning in Recommendation
 
-An official Pytorch and DGL implementation for the CIKM 2023 paper (Best Short Paper Honorable Mention) below:
-[Graph-based Alignment and Uniformity for Recommendation](https://arxiv.org/abs/2308.09292)
-  
+This is the official code for RAU in the paper "[RAU: Towards Regularized Alignment and Uniformity for Representation Learning in Recommendation](https://arxiv.org/abs/xxx.xx)". This code is implemented on [RecBole](https://github.com/RUCAIBox/RecBole).
 
-* How to use:  
-    python main.py --dataset amazon-office --model graphau --lr 0.1 --weight_decay 1e-6 --layers 2 --gamma_au 0.4 --alpha_n 0.1
-  
-    python main.py --dataset amazon-toys --model graphau --lr 0.1 --weight_decay 0.0 --layers 3 --gamma_au 0.4 --alpha_n 0.1
-  
-    python main.py --dataset amazon-beauty --model graphau --lr 0.1 --weight_decay 0.0 --layers 2 --gamma_au 0.4 --alpha_n 0.1
-  
-    python main.py --dataset gowalla --model graphau --lr 0.1 --weight_decay 0.0 --layers 2 --gamma_au 1.7 --alpha_n 0.1
-    
-    dataset currently support amazon-office amazon-beauty amazon-toys gowalla
+## How to run
 
-* If you use this code, please add the following citation:
+### Set conda environment
+```
+conda env create -f mawu.yaml
+conda activate mawu
+```
 
-``````bibtex
-@inproceedings{yang2023graph,
-  title={Graph-based Alignment and Uniformity for Recommendation},
-  author={Yang, Liangwei and Liu, Zhiwei and Wang, Chen and Yang, Mingdai and Liu, Xiaolong and Ma, Jing and Yu, Philip S},
-  booktitle={Proceedings of the 32nd ACM International Conference on Information and Knowledge Management},
-  pages={4395--4399},
-  year={2023}
+### Run commands for RAU on MF
+```
+python run_recbole.py --d=0.5 --alpha=0.9 --std=0.6 --gamma=0.35 --model=RauCL --dataset=Beauty --learning_rate=0.001 --train_batch_size=256 --weight_decay=1e-6 --encoder=MF
+python run_recbole.py --d=0.3 --alpha=0.9 --std=1.5 --gamma=5.5 --model=RauCL --dataset=Gowalla --learning_rate=0.001 --train_batch_size=1024 --weight_decay=1e-6 --encoder=MF
+python run_recbole.py --d=0 --alpha=0.7 --std=14 --gamma=0.5 --model=RauCL --dataset=Yelp --learning_rate=0.001 --train_batch_size=1024 --weight_decay=1e-6 --encoder=MF
+```
+
+### Run commands for RAU on LightGCN
+```
+python run_recbole.py --d=0.001 --alpha=0.9 --std=13 --gamma=2 --model=RauCL --dataset=Gowalla --learning_rate=0.001 --train_batch_size=1024 --weight_decay=1e-6 --encoder=LightGCN
+python run_recbole.py --d=0.001 --alpha=0.9 --std=13 --gamma=2 --model=RauCL --dataset=Gowalla --learning_rate=0.001 --train_batch_size=1024 --weight_decay=1e-6 --encoder=LightGCN
+python run_recbole.py --d=0.001 --alpha=0.9 --std=13 --gamma=2 --model=RauCL --dataset=Gowalla --learning_rate=0.001 --train_batch_size=1024 --weight_decay=1e-6 --encoder=LightGCN
+```
+
+## Citation
+If you find our work helpful, please cite our paper.
+```
+@inproceedings{rau,
+  title={RAU: Towards Regularized Alignment and Uniformity for Representation Learning in Recommendation},
+  author={... and ...},
+  booktitle={xxx},
+  year={xxxx}
 }
-
-``````
+```
 
