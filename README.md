@@ -19,7 +19,7 @@ python run_recbole.py --d=0 --alpha=0.7 --std=14 --gamma=0.5 --model=RauCL --dat
 
 ### Run commands for RAU on LightGCN
 ```
-python run_recbole.py --d=0.001 --alpha=0.9 --std=13 --gamma=2 --model=RauCL --dataset=Gowalla --learning_rate=0.001 --train_batch_size=1024 --weight_decay=1e-6 --encoder=LightGCN
+python run_recbole.py --d=0.06 --alpha=0.92 --std=7 --gamma=0.49 --model=RauCL --dataset=Beauty --learning_rate=0.001 --train_batch_size=256 --weight_decay=1e-6 --encoder=LightGCN
 python run_recbole.py --d=0.001 --alpha=0.9 --std=13 --gamma=2 --model=RauCL --dataset=Gowalla --learning_rate=0.001 --train_batch_size=1024 --weight_decay=1e-6 --encoder=LightGCN
 python run_recbole.py --d=0.001 --alpha=0.9 --std=13 --gamma=2 --model=RauCL --dataset=Gowalla --learning_rate=0.001 --train_batch_size=1024 --weight_decay=1e-6 --encoder=LightGCN
 ```

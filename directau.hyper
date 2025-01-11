@@ -1,6 +1,0 @@
-train_batch_size choice [1024]
-weight_decay choice [1e-6]
-bt choice [0.001]
-wuser choice [6]
-witem choice [0.5]
-BT choice [0.1,0.2,0.3,0.4,0.6,0.7,0.8]

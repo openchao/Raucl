@@ -1,7 +1,0 @@
-gpu_id choice [2]
-train_batch_size choice [1024]
-weight_decay choice [1e-6]
-alpha choice [0.6, 0.7, 0.8, 0.9]
-d choice [0.001, 0.01, 0.05, 0.1]
-gamma choice [4.5, 5, 5.5]
-std choice [0.01, 0.1]
